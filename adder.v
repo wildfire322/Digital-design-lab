@@ -137,5 +137,6 @@ module adder(
                 state9:result<=4'0111;
                 state10:result<=4'1000;
             endcase
+        endcase
     end
     endmodule
