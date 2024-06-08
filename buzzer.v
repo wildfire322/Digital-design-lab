@@ -64,7 +64,7 @@ endmodule
 //     buzzer buzzer1 (
 //         .clk(clk),
 //         .rst(rst),
-//         .activate(counter1 == 4'd10), // 当counter1达到10时激活
+//         .counter(counter1), // 当counter1达到10时激活
 //         .buzzer_pin(buzzer1_pin)
 //     );
 
@@ -72,7 +72,7 @@ endmodule
 //     buzzer buzzer2 (
 //         .clk(clk),
 //         .rst(rst),
-//         .activate(counter2 == 4'd10), // 当counter2达到10时激活
+//         .counter(counter2), // 当counter2达到10时激活
 //         .buzzer_pin(buzzer2_pin)
 //     );
 
