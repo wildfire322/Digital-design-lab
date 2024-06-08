@@ -1,4 +1,4 @@
-module top_module #(
+module chooseadder #(
     parameter N = 10 // 默认10个对象
 )(
     input clk,
