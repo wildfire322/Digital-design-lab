@@ -2,6 +2,7 @@ module chooseadder #(
     parameter N = 10 // 默认10个对象
 )(
     input clk,
+    input clkdiv,
     input [N-1:0] buttons, // N个按钮
     output reg [3:0] values [N-1:0] // N个可操作对象的值
 );
@@ -19,7 +20,7 @@ module chooseadder #(
     generate
         for (j = 0; j < N; j = j + 1) begin : gen
             pbdebounce pb(
-                .clk(clk),
+                .clk(clkdiv),
                 .button(buttons[j]),
                 .pbreg(out_buttons[j])
             );
