@@ -3,6 +3,7 @@ module top(
     input S1,
     input S2,
     input S3,
+    input S4,
     input [9:0] btn,//最多操控十个对象
     input  btn2,//控制个数的开关
     output [2:0]btnx,//我设想这是矩形键盘的信号
@@ -16,7 +17,15 @@ clkdiv clkdiv_inst(
 );
 wire btn2x;
 wire [3:0] number;
-wire [3:0] status [9:0];//我想用这个来储存对象的值，因为VGA显示的原理还不清楚，所以显示模块我没有写
+wire [3:0] status [9:0];
+always @(posedge clk) begin
+    if (S4) begin
+        integer i;
+        for (i = 0; i < 10; i = i + 1) begin
+            status[i] <= 4'b0001;
+        end
+    end
+end//我想用这个来储存对象的值，因为VGA显示的原理还不清楚，所以显示模块我没有写
 wire [9:0] mybuzzer;
 pbdebounce pbdebounce_inst(
     .clk(clk),
