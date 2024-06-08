@@ -1,6 +1,7 @@
 module chooseadder #(
     parameter N = 10 // 默认10个对象
 )(
+    input enable,
     input clk,
     input clkdiv,
     input [N-1:0] buttons, // N个按钮
@@ -27,17 +28,19 @@ module chooseadder #(
         end
     endgenerate
     always @(posedge clk) begin
-        integer i;
-        reg [3:0] selected_index; // 新增变量，用于保存第一次按下按钮时的i值
-        for (i = 0; i < N; i = i + 1) begin
-            if (out_buttons[i] == 1'b1) begin
-                if (selected == 4'b0) begin
-                    selected <= values[i]; // 第一次按下，选择为A
-                    selected_index <= i; // 保存第一次按下按钮时的i值
-                end else begin
-                    to_add <= values[i]; // 第二次按下，选择为B
-                    values[selected_index] <= adder_result; // 结果保存到第一次按下按钮时对应的values[i]
-                    selected <= 4'b0; // 重置选定
+        if (enable) begin
+            integer i;
+            reg [3:0] selected_index; // 新增变量，用于保存第一次按下按钮时的i值
+            for (i = 0; i < N; i = i + 1) begin
+                if (out_buttons[i] == 1'b1) begin
+                    if (selected == 4'b0) begin
+                        selected <= values[i]; // 第一次按下，选择为A
+                        selected_index <= i; // 保存第一次按下按钮时的i值
+                    end else begin
+                        to_add <= values[i]; // 第二次按下，选择为B
+                        values[selected_index] <= adder_result; // 结果保存到第一次按下按钮时对应的values[i]
+                        selected <= 4'b0; // 重置选定
+                    end
                 end
             end
         end

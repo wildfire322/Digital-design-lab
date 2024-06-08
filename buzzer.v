@@ -8,6 +8,7 @@ module buzzer (
     reg [31:0] tone_counter;
     reg tone_active;
     reg [31:0] tone_duration;
+    reg counter_checked; // 新增：用于跟踪 counter 的值是否已经被检查过
 
     // 设置音调频率，假设时钟频率为 50 MHz
     parameter TONE_1KHZ = 50000;  // 1 kHz 音调
@@ -19,11 +20,13 @@ module buzzer (
             buzzer_pin <= 0;
             tone_active <= 0;
             tone_duration <= 0;
+            counter_checked <= 0; // 新增：复位时，将 counter_checked 设置为 0
         end else begin
-            // 检测计数器是否达到 10
-            if (counter == 4'd10 && !tone_active) begin
+            // 检测计数器是否为0
+            if (counter == 0 && !tone_active && !counter_checked) begin
                 tone_active <= 1;
                 tone_duration <= 0;
+                counter_checked <= 1; // 新增：当 counter 的值被检查过，将 counter_checked 设置为 1
             end
             
             // 如果音调激活，生成蜂鸣器信号
@@ -31,6 +34,9 @@ module buzzer (
                 if (tone_duration >= TONE_DURATION) begin
                     tone_active <= 0;
                     buzzer_pin <= 0;
+                    if (counter != 0) begin
+                        counter_checked <= 0; // 新增：当 counter 的值不再是 10，将 counter_checked 设置为 0
+                    end
                 end else begin
                     if (tone_counter >= TONE_1KHZ) begin
                         tone_counter <= 0;
