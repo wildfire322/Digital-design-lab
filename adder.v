@@ -39,7 +39,7 @@ module adder(
                 state7:result<=4'b0111;
                 state8:result<=4'b1000;
                 state9:result<=4'b1001;
-                state10:result<=4'0000;
+                state10:result<=4'b0000;
             endcase
             state3:case(b)
                 state1:result<=4'b0010;
@@ -50,8 +50,8 @@ module adder(
                 state6:result<=4'b0111;
                 state7:result<=4'b1000;
                 state8:result<=4'b1001;
-                state9:result<=4'0000;
-                state10:result<=4'0001;
+                state9:result<=4'b0000;
+                state10:result<=4'b0001;
             endcase
             state4:case(b)
                 state1:result<=4'b0011;
@@ -61,9 +61,9 @@ module adder(
                 state5:result<=4'b0111;
                 state6:result<=4'b1000;
                 state7:result<=4'b1001;
-                state8:result<=4'0000;
-                state9:result<=4'0001;
-                state10:result<=4'0010;
+                state8:result<=4'b0000;
+                state9:result<=4'b0001;
+                state10:result<=4'b0010;
             endcase
             state5:case(b)
                 state1:result<=4'b0100;
@@ -72,10 +72,10 @@ module adder(
                 state4:result<=4'b0111;
                 state5:result<=4'b1000;
                 state6:result<=4'b1001;
-                state7:result<=4'0000;
-                state8:result<=4'0001;
-                state9:result<=4'0010;
-                state10:result<=4'0011;
+                state7:result<=4'b0000;
+                state8:result<=4'b0001;
+                state9:result<=4'b0010;
+                state10:result<=4'b0011;
             endcase
             state6:case(b)
                 state1:result<=4'b0101;
@@ -83,59 +83,59 @@ module adder(
                 state3:result<=4'b0111;
                 state4:result<=4'b1000;
                 state5:result<=4'b1001;
-                state6:result<=4'0000;
-                state7:result<=4'0001;
-                state8:result<=4'0010;
-                state9:result<=4'0011;
-                state10:result<=4'0100;
+                state6:result<=4'b0000;
+                state7:result<=4'b0001;
+                state8:result<=4'b0010;
+                state9:result<=4'b0011;
+                state10:result<=4'b0100;
             endcase
             state7:case(b)
                 state1:result<=4'b0110;
                 state2:result<=4'b0111;
                 state3:result<=4'b1000;
                 state4:result<=4'b1001;
-                state5:result<=4'0000;
-                state6:result<=4'0001;
-                state7:result<=4'0010;
-                state8:result<=4'0011;
-                state9:result<=4'0100;
-                state10:result<=4'0101;
+                state5:result<=4'b0000;
+                state6:result<=4'b0001;
+                state7:result<=4'b0010;
+                state8:result<=4'b0011;
+                state9:result<=4'b0100;
+                state10:result<=4'b0101;
             endcase
             state8:case(b)
                 state1:result<=4'b0111;
                 state2:result<=4'b1000;
                 state3:result<=4'b1001;
-                state4:result<=4'0000;
-                state5:result<=4'0001;
-                state6:result<=4'0010;
-                state7:result<=4'0011;
-                state8:result<=4'0100;
-                state9:result<=4'0101;
-                state10:result<=4'0110;
+                state4:result<=4'b0000;
+                state5:result<=4'b0001;
+                state6:result<=4'b0010;
+                state7:result<=4'b0011;
+                state8:result<=4'b0100;
+                state9:result<=4'b0101;
+                state10:result<=4'b0110;
             endcase
             state9:case(b)
                 state1:result<=4'b1000;
                 state2:result<=4'b1001;
-                state3:result<=4'0000;
-                state4:result<=4'0001;
-                state5:result<=4'0010;
-                state6:result<=4'0011;
-                state7:result<=4'0100;
-                state8:result<=4'0101;
-                state9:result<=4'0110;
-                state10:result<=4'0111;
+                state3:result<=4'b0000;
+                state4:result<=4'b0001;
+                state5:result<=4'b0010;
+                state6:result<=4'b0011;
+                state7:result<=4'b0100;
+                state8:result<=4'b0101;
+                state9:result<=4'b0110;
+                state10:result<=4'b0111;
             endcase
             state10:case(b)
                 state1:result<=4'b1001;
-                state2:result<=4'0000;
-                state3:result<=4'0001;
-                state4:result<=4'0010;
-                state5:result<=4'0011;
-                state6:result<=4'0100;
-                state7:result<=4'0101;
-                state8:result<=4'0110;
-                state9:result<=4'0111;
-                state10:result<=4'1000;
+                state2:result<=4'b0000;
+                state3:result<=4'b0001;
+                state4:result<=4'b0010;
+                state5:result<=4'b0011;
+                state6:result<=4'b0100;
+                state7:result<=4'b0101;
+                state8:result<=4'b0110;
+                state9:result<=4'b0111;
+                state10:result<=4'b1000;
             endcase
         endcase
     end
