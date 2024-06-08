@@ -8,7 +8,7 @@ module top(
     input  btn2,//控制个数的开关
     output [2:0]btnx,//我设想这是矩形键盘的信号
     output wire buzzer_pin//蜂鸣器
-)
+);
 assign btnx=0;//矩形键盘的信号
 wire [31:0] clkdiv;
 clkdiv clkdiv_inst(
@@ -45,7 +45,7 @@ generate//根据number的值，选择不同的加法器，这可能是唯一的�
             .buttons(btn[1:0]),
             .values(status[1:0]),
             .enable(S1)
-        )
+        );
     end
     if(number==3'b010)begin:gen2
         chooseadder #(.N(4))test(
@@ -54,7 +54,7 @@ generate//根据number的值，选择不同的加法器，这可能是唯一的�
             .buttons(btn[3:0]),
             .values(status[3:0]),
             .enable(S1)
-        )
+        );
     end
     if(number==3'b011)begin:gen3
         chooseadder #(.N(6)) test(
@@ -63,7 +63,7 @@ generate//根据number的值，选择不同的加法器，这可能是唯一的�
             .buttons(btn[5:0]),
             .values(status[5:0]),
             .enable(S1)
-        )
+        );
     end
     if(number==3'b100)begin:gen4
         chooseadder #(.N(8)) test(
@@ -72,7 +72,7 @@ generate//根据number的值，选择不同的加法器，这可能是唯一的�
             .buttons(btn[7:0]),
             .values(status[7:0]),
             .enable(S1)
-        )
+        );
     end
     if(number==3'b101)begin:gen5
         chooseadder #(.N(10)) test(
@@ -81,7 +81,7 @@ generate//根据number的值，选择不同的加法器，这可能是唯一的�
             .buttons(btn),
             .values(status),
             .enable(S1)
-        )
+        );
     end
 endgenerate
 genvar l;
@@ -92,7 +92,7 @@ generate
             .rstn(S3),
             .counter(status[l]),
             .buzzer(mybuzzer[l])
-        )
+        );
     end
 endgenerate
 assign buzzer_pin=|mybuzzer;//只要有对象的值达到0（也就是到达10，然后归零），蜂鸣器就会响
