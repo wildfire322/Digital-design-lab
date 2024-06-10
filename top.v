@@ -9,8 +9,13 @@ module top(
     input  btn2,//控制个数的开关
     output [2:0]btnx,//我设想这是矩形键盘的信号
     output wire buzzer_pin,//蜂鸣器
-    output reg [39:0] status
+    output reg [39:0] status,
+    output SEGDT,
+    output SEGCLK,
+    output SEGCLR,
+    output SEGEN//剩下的输入输出，包括LED，VGA待添加
 );
+wire [63:0] segnum;
 assign btnx=0;//矩形键盘的信号
 wire [31:0] clkdiv;
 clkdiv clkdiv_inst(
@@ -45,6 +50,18 @@ numberchoose numberchoose_inst(
     .numberchoose(number)
 );//如果正确的话，应该能设置要操控的对象的个数
 //我有一个设想，可以把这个number显示到七段数码管或者LED上，这样就可以知道要操控的对象的个数
+wire finish;
+assign segnum={number,61'b0};
+SEGDRV SEGDRV_inst(
+        .load(clkdiv[7]),
+        .clk(clk),
+        .in(segnum),
+        .dout(SEGDT),
+        .finish(finish)
+        );
+assign SEGCLK=clk|finish;
+assign SEGCLR=1'b1;
+assign SEGEN=1'b1;
 chooseadder #(.N(2)) chooseadder_inst_001 (
     .clk(clk),
     .rst(S5),
