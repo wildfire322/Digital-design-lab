@@ -14,7 +14,7 @@ wire [9:0] x_pos;
 wire [9:0] y_pos;
 wire [11:0] tmp_pixel_data;
 
-test_pic test_pic_inst(
+vga_test test_pic_inst(
     .vga_clk(vga_clk),
     .vga_rst(rst),
     .x_pos(x_pos),
