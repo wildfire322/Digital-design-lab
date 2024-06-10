@@ -44,7 +44,7 @@ numberchoose numberchoose_inst(
     .btn(btn2x),
     .numberchoose(number)
 );//如果正确的话，应该能设置要操控的对象的个数
-
+//我有一个设想，可以把这个number显示到七段数码管或者LED上，这样就可以知道要操控的对象的个数
 chooseadder #(.N(2)) chooseadder_inst_001 (
     .clk(clk),
     .rst(S5),
