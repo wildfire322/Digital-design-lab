@@ -84,3 +84,7 @@
 !*.elf
 !*.bmm
 !*.xmp
+#########
+#Typst files
+#########
+!*.typ
