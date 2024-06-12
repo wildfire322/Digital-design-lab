@@ -8,7 +8,7 @@ module vga_test(input vga_clk,
             pixel_data <= 0;
         end
         else begin
-            pixel_data <= 12'ha00;
+            pixel_data <= {x_pos[7:0], 4'h0};
         end
     end
 endmodule

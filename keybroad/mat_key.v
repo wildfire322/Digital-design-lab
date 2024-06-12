@@ -8,6 +8,7 @@ module mat_key(input wire [3:0] BTNY, // 输入列
     assign sync_clk = (BTNX == 4'b1110) ? 1'b1 : 1'b0;
     reg [7:0] buffer [3:0][3:0];
     reg status [3:0][3:0];
+    integer i, j;
     initial begin // 初始化
         BTNX = 4'b0111;
         for (i = 0; i < 4; i = i + 1) begin
