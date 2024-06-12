@@ -3,7 +3,7 @@
 module mat_key(input wire [3:0] BTNY, // 输入列
                input wire scan_clk,
                output reg [3:0] BTNX, // 输出行的扫描信号
-               output reg btn [3:0][3:0], // 开箱使用，第一个下标是行，第二个下标是列
+               output reg [15:0] btn , // 开箱使用，前两位是行，后两位是列
                output wire sync_clk); // 扫描到第四行时为1的时钟
     assign sync_clk = (BTNX == 4'b1110) ? 1'b1 : 1'b0;
     reg [7:0] buffer [3:0][3:0];
@@ -14,9 +14,9 @@ module mat_key(input wire [3:0] BTNY, // 输入列
         genvar i, j;
         for (i = 0; i < 4; i = i + 1) begin
             for (j = 0; j < 4; j = j + 1) begin
-                buffer[i][j] = 8'h00;
-                status[i][j] = 1'b0;
-                btn[i][j]    = 1'b0;
+                buffer[i][j]   = 8'h00;
+                status[i][j]   = 1'b0;
+                btn[i * 4 + j] = 1'b0;
             end
         end
         endgenerate
@@ -36,9 +36,9 @@ module mat_key(input wire [3:0] BTNY, // 输入列
                 for (j = 0; j < 4; j = j + 1) begin
                     buffer[i][j] = {buffer[i][j][6:0], status[i][j]};
                     if (buffer[i][j] == 8'hff) begin
-                        btn[i][j] <= 1'b1;
+                        btn[i * 4 + j] <= 1'b1;
                     end else if (buffer[i][j] == 8'h00) begin
-                        btn[i][j] <= 1'b0;
+                        btn[i * 4 + j] <= 1'b0;
                     end
                 end
             end
