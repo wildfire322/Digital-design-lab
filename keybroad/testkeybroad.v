@@ -1,12 +1,33 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 2024/06/11 15:14:13
+// Design Name: 
+// Module Name: toptest
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
 module toptest(
     input clk,
     output[3:0] AN,
     output[7:0] SEGMENT,
     input [3:0] col,
-    output reg [3:0] row
+    output [3:0] row
     );
-    initial row=4'b0111;
-    reg [3:0] key;
+    wire [15:0] btn;
     wire [15:0] num;
     reg [31:0] cnt = 0;
     reg scan_clk = 0;
@@ -18,26 +39,9 @@ module toptest(
         else
             cnt <= cnt + 1;
     end
-    wire [31:0] clkdi;
-    clkdiv clkdiv_inst(
-    .clk(clk),
-    .rst(1'b0),
-    .div_res(clkdi)
-);
-    always@(posedge scan_clk)
-        row <= {row[0],row[3:1]}; 
-    always@(negedge scan_clk) 
-        case(row)
-        4'b0111: key <= {2'b00,col[3]&col[2],col[3]&col[1]};//0代表按下
-        4'b1011: key <= {2'b01,col[3]&col[2],col[3]&col[1]};
-        4'b1101: key <= {2'b10,col[3]&col[2],col[3]&col[1]};
-        4'b1110: key <= {2'b11,col[3]&col[2],col[3]&col[1]};
-        endcase
-        wire[3:0]btn;
-        assign btn[0] = (key==4'b0000)?1'b1:1'b0;
-        assign btn[1] = (key==4'b0100)?1'b1:1'b0; 
-        assign btn[2] = (key==4'b1000)?1'b1:1'b0;
-        assign btn[3] = (key==4'b1100)?1'b1:1'b0;
-        CreateNumber CreateNumber1(.btn(btn),.num(num));
+    wire sync_clk;
+    mat_key mat_key1(.BTNY(col),.scan_clk(scan_clk),.BTNX(row),.btn(btn),.sync_clk(sync_clk));
+        CreateNumber CreateNumber1(.btn({btn[3],btn[7],btn[11],btn[15]}),.num(num));
         DisplayNumber DisplayNumber1(.clk(clk),.rst(1'b0),.hexs(num),.points(4'b0000),.LEs(4'b0000),.AN(AN),.SEGMENT(SEGMENT));
 endmodule
+

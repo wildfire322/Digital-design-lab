@@ -7,7 +7,7 @@ module mat_key(input wire [3:0] BTNY, // 输入列
                output wire sync_clk); // 扫描到第四行时为1的时钟
     assign sync_clk = (BTNX == 4'b1110) ? 1'b1 : 1'b0;
     reg [7:0] buffer [3:0][3:0];
-    reg status [3:0][3:0];
+    reg [3:0]status [3:0];
     integer i, j;
     initial begin // 初始化
         BTNX = 4'b0111;
@@ -21,10 +21,10 @@ module mat_key(input wire [3:0] BTNY, // 输入列
     end
     always @(posedge scan_clk) begin
         case(BTNX)
-            4'b0111: status[0] <= BTNY;
-            4'b1011: status[1] <= BTNY;
-            4'b1101: status[2] <= BTNY;
-            4'b1110: status[3] <= BTNY;
+            4'b0111: status[0][3:0] <= BTNY;
+            4'b1011: status[1][3:0] <= BTNY;
+            4'b1101: status[2][3:0] <= BTNY;
+            4'b1110: status[3][3:0] <= BTNY;
         endcase
         BTNX <= {BTNX[0], BTNX[3:1]}; // 行扫描
         if (sync_clk == 1'b1) begin // 扫描到第四行时去抖动
