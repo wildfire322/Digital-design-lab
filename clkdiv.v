@@ -1,9 +1,8 @@
 module clkdiv(
-    input               clk,
-    input               rst, // Active-high
-    output reg [31:0]   div_res
+    input             clk,
+    input             rst, // Active-high
+    output reg [31:0] div_res
 );
-
     always @(posedge clk or posedge rst) begin    
         if(rst == 1'b1) begin
             div_res <= 32'b0;
