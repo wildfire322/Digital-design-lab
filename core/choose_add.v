@@ -4,7 +4,6 @@ module chooseadder #(
     input enable,
     input clk,
     input clkdiv,
-    input rst,// 重置，每一次作加法前都要先拨动重置开关，在拨动使能开关，最后关闭使能开关把加完后的值赋回status
     input [N*4-1:0] status, // N个对象的状态
     input [N-1:0] buttons, // N个按钮
     output reg [3:0] values, // N个可操作对象的值
@@ -14,6 +13,12 @@ module chooseadder #(
     reg [3:0] to_add;
     wire [3:0] adder_result;
     wire [N-1:0] out_buttons;
+    initial begin
+            values <= 4'b0;
+            selected <= 4'b0000;
+            to_add <= 4'b0000;
+            selected_index<=4'b1111;
+    end
     genvar j;
     generate
         for (j = 0; j < N; j = j + 1) begin : gen
@@ -26,12 +31,6 @@ module chooseadder #(
     endgenerate            
     integer i;
      always @(posedge clk) begin
-        if (rst) begin
-            values <= 4'b0;
-            selected <= 4'b0000;
-            to_add <= 4'b0000;
-            selected_index<=4'b1111;
-        end 
         else if (enable) begin
             for (i = 0; i < N; i = i + 1) begin
                 if (buttons[i] == 1'b1&&i!=selected_index) begin
