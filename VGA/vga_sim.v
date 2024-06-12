@@ -11,11 +11,11 @@ module vga_sim();
     );
     initial begin
         clk = 0;
-        rst = 1;
-        #50;
         rst = 0;
         #50;
         rst = 1;
+        #50;
+        rst = 0;
     end
     always begin
         clk = ~clk;

@@ -8,13 +8,12 @@ module vga_test_top(
     output [11:0] pixel_data
 );
 wire vga_clk;
-wire lock;
 wire rst;
 wire [9:0] x_pos;
 wire [9:0] y_pos;
 wire [11:0] tmp_pixel_data;
 wire [31:0] counter;
-assign vga_clk = counter[2];
+assign vga_clk = counter[1];
 vga_test test_pic_inst(
     .vga_clk(vga_clk),
     .vga_rst(rst),
@@ -23,10 +22,10 @@ vga_test test_pic_inst(
     .pixel_data(tmp_pixel_data)
 );
 
-assign rst = (lock & sys_rst);
+assign rst = sys_rst;
 clkdiv clkdiv_inst(
     .clk(sys_clk),
-    .rst(~sys_rst),
+    .rst(sys_rst),
     .div_res(counter)
 );
 
