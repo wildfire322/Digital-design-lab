@@ -41,7 +41,7 @@ wire rd = (h_count > 142)
             && (h_count < 783) 
             && (v_count > 34) 
             && (v_count < 515);
-always @(posedge clk ) begin
+always @(posedge clk) begin
     row <= row_addr[8:0];
     col <= col_addr;
     read_pixel <= ~rd;
