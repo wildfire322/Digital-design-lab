@@ -64,7 +64,6 @@ assign SEGCLR=1'b1;
 assign SEGEN=1'b1;
 chooseadder #(.N(2)) chooseadder_inst_001 (
     .clk(clk),
-    .rst(S5),
     .clkdiv(clkdiv[17]),
     .buttons(btn[1:0]),
     .values(values_wire),
@@ -75,7 +74,6 @@ chooseadder #(.N(2)) chooseadder_inst_001 (
 
 chooseadder #(.N(4)) chooseadder_inst_010 (
     .clk(clk),
-    .rst(S5),
     .clkdiv(clkdiv[17]),
     .buttons(btn[3:0]),
     .values(values_wire[15:0]),
@@ -86,7 +84,6 @@ chooseadder #(.N(4)) chooseadder_inst_010 (
 
 chooseadder #(.N(6)) chooseadder_inst_011 (
     .clk(clk),
-    .rst(S5),
     .clkdiv(clkdiv[17]),
     .buttons(btn[5:0]),
     .values(values_wire[23:0]),
@@ -97,7 +94,6 @@ chooseadder #(.N(6)) chooseadder_inst_011 (
 
 chooseadder #(.N(8)) chooseadder_inst_100 (
     .clk(clk),
-    .rst(S5),
     .clkdiv(clkdiv[17]),
     .buttons(btn[7:0]),
     .values(values_wire[31:0]),
@@ -108,7 +104,6 @@ chooseadder #(.N(8)) chooseadder_inst_100 (
 
 chooseadder #(.N(10)) chooseadder_inst_101 (
     .clk(clk),
-    .rst(S5),
     .clkdiv(clkdiv[17]),
     .buttons(btn),
     .values(values_wire),
