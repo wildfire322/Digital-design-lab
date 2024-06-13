@@ -70,13 +70,22 @@ numberchoose numberchoose1(.S2(S2),
     .btn(btn[10]),
     .numberchoose(num)
 ); 
+wire [3:0] index;
+wire [3:0] values;
 chooseadder chooseadder_inst(
     .clk(clk),
     .btn(btn[10]),
-    .num(num),
+    .num(num), 
     .buttons({btn[5],btn[7],btn[6],btn[2]}),
-    .status(status)
+    .status(status),
+    .selected_index(index),
+    .values(values)
 );
+always@(posedge clk)begin
+    if(btn[3])begin
+        status[selected_index+:4]<=values;
+    end
+end
 genvar l;
 generate
     for(l=0;l<10;l=l+1)begin:gen6
