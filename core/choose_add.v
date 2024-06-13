@@ -1,6 +1,6 @@
 module chooseadder (
     input clk,
-    input btn;//确认按键
+    input btn,//确认按键
     input [2:0] num;
     input [39:0] status, // 10个对象的状态
     input [3:0] buttons //  0-3,上下左右

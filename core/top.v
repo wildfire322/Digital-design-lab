@@ -4,7 +4,7 @@ module top(
     input S2,
     input S3,
     input [3:0] col,
-    output [3:0] row
+    output [3:0] row,
     output wire buzzer_pin,//蜂鸣器
     output reg [39:0] status,
     output SEGDT,

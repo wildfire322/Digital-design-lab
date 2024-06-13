@@ -1,0 +1,185 @@
+module page_debug(input vga_clk,
+                input vga_rst,
+                input [9:0] x_pos,
+                input [9:0] y_pos,
+                input btns [15:0];
+                output reg [11:0] pixel_data); // 蓝蓝蓝蓝绿绿绿绿红红红红
+    // x_pos in (0, 639), y_pos in (0, 479)
+    reg [63:0] var = 63'h1234;
+    reg [4:0] num_font [15:0][6:0];
+    integer i;
+    initial begin
+        num_font[4'h0][0] = 4'b1111
+        num_font[4'h0][1] = 4'b1001
+        num_font[4'h0][2] = 4'b1001
+        num_font[4'h0][3] = 4'b1111
+        num_font[4'h0][4] = 4'b1001
+        num_font[4'h0][5] = 4'b1001
+        num_font[4'h0][6] = 4'b1111
+
+        num_font[4'h1][0] = 4'b0001
+        num_font[4'h1][1] = 4'b0001
+        num_font[4'h1][2] = 4'b0001
+        num_font[4'h1][3] = 4'b0001
+        num_font[4'h1][4] = 4'b0001
+        num_font[4'h1][5] = 4'b0001
+        num_font[4'h1][6] = 4'b0001
+
+        num_font[4'h2][0] = 4'b1111
+        num_font[4'h2][1] = 4'b0001
+        num_font[4'h2][2] = 4'b0001
+        num_font[4'h2][3] = 4'b1111
+        num_font[4'h2][4] = 4'b1000
+        num_font[4'h2][5] = 4'b1000
+        num_font[4'h2][6] = 4'b1111
+
+        num_font[4'h3][0] = 4'b1111
+        num_font[4'h3][1] = 4'b0001
+        num_font[4'h3][2] = 4'b0001
+        num_font[4'h3][3] = 4'b1111
+        num_font[4'h3][4] = 4'b0001
+        num_font[4'h3][5] = 4'b0001
+        num_font[4'h3][6] = 4'b1111
+
+        num_font[4'h4][0] = 4'b1001
+        num_font[4'h4][1] = 4'b1001
+        num_font[4'h4][2] = 4'b1001
+        num_font[4'h4][3] = 4'b1111
+        num_font[4'h4][4] = 4'b0001
+        num_font[4'h4][5] = 4'b0001
+        num_font[4'h4][6] = 4'b0001
+
+        num_font[4'h5][0] = 4'b1111
+        num_font[4'h5][1] = 4'b1000
+        num_font[4'h5][2] = 4'b1000
+        num_font[4'h5][3] = 4'b1111
+        num_font[4'h5][4] = 4'b0001
+        num_font[4'h5][5] = 4'b0001
+        num_font[4'h5][6] = 4'b1111
+
+        num_font[4'h6][0] = 4'b1111
+        num_font[4'h6][1] = 4'b1000
+        num_font[4'h6][2] = 4'b1000
+        num_font[4'h6][3] = 4'b1111
+        num_font[4'h6][4] = 4'b1001
+        num_font[4'h6][5] = 4'b1001
+        num_font[4'h6][6] = 4'b1111
+
+        num_font[4'h7][0] = 4'b1111
+        num_font[4'h7][1] = 4'b0001
+        num_font[4'h7][2] = 4'b0001
+        num_font[4'h7][3] = 4'b0001
+        num_font[4'h7][4] = 4'b0001
+        num_font[4'h7][5] = 4'b0001
+        num_font[4'h7][6] = 4'b0001
+
+        num_font[4'h8][0] = 4'b1111
+        num_font[4'h8][1] = 4'b1001
+        num_font[4'h8][2] = 4'b1001
+        num_font[4'h8][3] = 4'b1111
+        num_font[4'h8][4] = 4'b1001
+        num_font[4'h8][5] = 4'b1001
+        num_font[4'h8][6] = 4'b1111
+
+        num_font[4'h9][0] = 4'b1111
+        num_font[4'h9][1] = 4'b1001
+        num_font[4'h9][2] = 4'b1001
+        num_font[4'h9][3] = 4'b1111
+        num_font[4'h9][4] = 4'b0001
+        num_font[4'h9][5] = 4'b0001
+        num_font[4'h9][6] = 4'b1111
+
+        num_font[4'ha][0] = 4'b0000
+        num_font[4'ha][1] = 4'b0000
+        num_font[4'ha][2] = 4'b0110
+        num_font[4'ha][3] = 4'b1001
+        num_font[4'ha][4] = 4'b1001
+        num_font[4'ha][5] = 4'b1011
+        num_font[4'ha][6] = 4'b0101
+
+        num_font[4'hb][0] = 4'b1000
+        num_font[4'hb][1] = 4'b1000
+        num_font[4'hb][2] = 4'b1110
+        num_font[4'hb][3] = 4'b1001
+        num_font[4'hb][4] = 4'b1001
+        num_font[4'hb][5] = 4'b1001
+        num_font[4'hb][6] = 4'b1110
+
+        num_font[4'hc][0] = 4'b0000
+        num_font[4'hc][1] = 4'b0000
+        num_font[4'hc][2] = 4'b0110
+        num_font[4'hc][3] = 4'b1001
+        num_font[4'hc][4] = 4'b1000
+        num_font[4'hc][5] = 4'b1000
+        num_font[4'hc][6] = 4'b0111
+
+        num_font[4'hd][0] = 4'b0001
+        num_font[4'hd][1] = 4'b0001
+        num_font[4'hd][2] = 4'b0111
+        num_font[4'hd][3] = 4'b1001
+        num_font[4'hd][4] = 4'b1001
+        num_font[4'hd][5] = 4'b1001
+        num_font[4'hd][6] = 4'b0111
+
+        num_font[4'he][0] = 4'b0000
+        num_font[4'he][1] = 4'b0000
+        num_font[4'he][2] = 4'b1110
+        num_font[4'he][3] = 4'b1001
+        num_font[4'he][4] = 4'b1110
+        num_font[4'he][5] = 4'b1000
+        num_font[4'he][6] = 4'b0111
+
+        num_font[4'hf][0] = 4'b0011
+        num_font[4'hf][1] = 4'b0100
+        num_font[4'hf][2] = 4'b1111
+        num_font[4'hf][3] = 4'b0100
+        num_font[4'hf][4] = 4'b0100
+        num_font[4'hf][5] = 4'b0100
+        num_font[4'hf][6] = 4'b0100
+    end
+    always @(btns) begin
+        for (i = 0; i < 16; i = i + 1) begin
+            if (btns[i]) begin
+                var[i * 4 + 3: i * 4] = var[i * 4 + 3: i * 4] + 4'b1;
+            end
+        end
+    end
+    always @(posedge vga_clk or posedge vga_rst) begin
+        if (vga_rst) begin
+            pixel_data <= 0;
+        end
+        else begin
+            pixel_data <= 12'hfff;
+            if (10 <= y_pos and y_pos <= 90) begin
+                if (10 <= x_pos and x_pos <= 90) begin
+                    pixel_data <= 12'hf00;
+                end else if (100 <= x_pos and x_pos <= 180) begin
+                    pixel_data <= 12'h0f0;
+                end else if (190 <= x_pos and x_pos <= 270) begin
+                    pixel_data <= 12'h00f;
+                end else if (280 <= x_pos and x_pos <= 360) begin
+                    pixel_data <= 12'hff0;
+                end else if (370 <= x_pos and x_pos <= 450) begin
+                    pixel_data <= 12'hf0f;
+                end else if (460 <= x_pos and x_pos <= 520) begin
+                    pixel_data <= 12'h0ff;
+                end else if (430 <= x_pos and x_pos <= 610) begin
+                    pixel_data <= 12'h000;
+                end else begin
+                    pixel_data <= 12'haaa;
+                end
+            end else if (120 <= y_pos and y_pos < 120 + 8 * 7) begin
+                    for(i = 0; i < 16; i = i + 1) begin
+                        if (i * 40 + 4 <= x_pos and x_pos < i * 40 + 36) begin
+                            if (num_font[var[i * 4 + 3: i * 4]][(y_pos - 120) >> 3][(x_pos - i * 40 - 4) >> 3]) begin
+                                pixel_data <= 12'h2cf;
+                            end else begin
+                                pixel_data <= 12'hfff;
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+endmodule
