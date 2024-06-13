@@ -1,8 +1,3 @@
-parameter A =2'00;/*开始界面*/
-parameter B =2'01;//游戏说明
-parameter C =2'10;//选择个数
-parameter D =2'11;//游戏界面
-
 module top(
     input clk,
     input S1,
@@ -11,9 +6,12 @@ module top(
     input [3:0] col,
     output [3:0] row,
     output wire buzzer_pin,//蜂鸣器
-    output reg [39:0] status,
+    output reg [39:0] status
 );
-
+parameter A =2'b00;/*开始界面*/
+parameter B =2'b01;//游戏说明
+parameter C =2'b10;//选择个数
+parameter D =2'b11;//游戏界面
 
 initial status=40'h1111111111; //初始状态
 //
