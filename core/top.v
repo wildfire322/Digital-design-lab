@@ -3,11 +3,8 @@ module top(
     input S1,
     input S2,
     input S3,
-    input S4,
-    input S5,
-    input [9:0] btn,//最多操控十个对象
-    input  btn2,//控制个数的开关
-    output [2:0]btnx,//我设想这是矩形键盘的信号
+    input [3:0] col,
+    output [3:0] row
     output wire buzzer_pin,//蜂鸣器
     output reg [39:0] status,
     output SEGDT,
@@ -15,41 +12,70 @@ module top(
     output SEGCLR,
     output SEGEN//剩下的输入输出，包括LED，VGA待添加
 );
+initial status=40'b0001000100010001000100010001000100010001;//初始状态
+parameter A =2'00;//开始界面
+parameter B =2'01;//游戏说明
+parameter C =2'10;//选择个数
+parameter D =2'11;//游戏界面
+wire [1:0] state;
 wire [63:0] segnum;
-assign btnx=0;//矩形键盘的信号
-wire [31:0] clkdiv;
+wire [15:0] btn;//btn[2]上移，btn[6]下移，btn[7]左移，btn[5]右移,btn[10]确认，btn[12]退出游戏，btn[11]选择个数
+reg [31:0] cnt = 0;
+    reg scan_clk = 0;
+    always@(posedge clk) begin
+        if(cnt == 2499) begin
+            cnt <= 0;
+            scan_clk <= ~scan_clk;
+        end
+        else
+            cnt <= cnt + 1;
+    end
+    wire sync_clk;
+    mat_key mat_key1(.BTNY(col),.scan_clk(scan_clk),.BTNX(row),.btn(btn),.sync_clk(sync_clk));
+always@(posedge clk)begin
+    case(state)
+        A:begin
+            if(btn[15])begin
+                status<=B;
+            end
+            if(btn[14])begin
+                status<=C;
+            end
+        end
+        B:begin
+            if(btn[13])begin
+                state<=A;
+            end
+            if(btn[14])begin
+                state<=C;
+            end
+        end
+        C:begin
+            if(btn[14])begin
+                state<=D;
+            end
+            if(btn[12])begin
+                state<=A;
+            end
+        end
+        D:begin
+            if(btn[12])begin
+                state<=A;
+            end
+        end
+    endcase
+end
+wire [2:0] num;
+numberchoose numberchoose1(.S2(S2),
+    .btn(btn[10]),
+    .numberchoose(num)
+); 
+wire[31:0]clkdiv;
 clkdiv clkdiv_inst(
     .clk(clk),
     .rst(1'b0),
     .div_res(clkdiv)
 );
-wire [3:0] values_wire;
-wire [3:0] index;//用index存储status中改变了哪一位的值（即哪一个对象）
-wire btn2x;
-wire [2:0] number;
-integer i;
-always @(posedge clk) begin
-    if (S4) begin
-        for (i = 0; i < 10; i = i + 1) begin
-            status[i*4 +: 4] <= 4'b0001;
-        end
-    end
-    else if(!S1)begin
-        status[4*index +: 4] <= values_wire;
-    end
-end//我想用这个来储存对象的值，因为VGA显示的原理还不清楚，所以显示模块我没有写
-wire [9:0] mybuzzer;
-pbdebounce pbdebounce_inst(
-    .clk(clk),
-    .button(btn2),
-    .pbreg(btn2x)
-);//防抖动
-numberchoose numberchoose_inst(
-    .S2(S2),
-    .btn(btn2x),
-    .numberchoose(number)
-);//如果正确的话，应该能设置要操控的对象的个数
-//我有一个设想，可以把这个number显示到七段数码管或者LED上，这样就可以知道要操控的对象的个数
 wire finish;
 assign segnum={number,61'b0};
 SEGDRV SEGDRV_inst(
@@ -62,56 +88,13 @@ SEGDRV SEGDRV_inst(
 assign SEGCLK=clk|finish;
 assign SEGCLR=1'b1;
 assign SEGEN=1'b1;
-chooseadder #(.N(2)) chooseadder_inst_001 (
+chooseadder chooseadder_inst(
     .clk(clk),
-    .clkdiv(clkdiv[17]),
-    .buttons(btn[1:0]),
-    .values(values_wire),
-    .status(status[7:0]),
-    .enable(S1&&number==1),
-    .selected_index(index)
+    .btn(btn[10]),
+    .num(num),
+    .buttons({btn[5],btn[7],btn[6],btn[2]}),
+    .status(status)
 );
-
-chooseadder #(.N(4)) chooseadder_inst_010 (
-    .clk(clk),
-    .clkdiv(clkdiv[17]),
-    .buttons(btn[3:0]),
-    .values(values_wire[15:0]),
-    .status(status[15:0]),
-    .enable(S1&&number==2),
-    .selected_index(index)
-);
-
-chooseadder #(.N(6)) chooseadder_inst_011 (
-    .clk(clk),
-    .clkdiv(clkdiv[17]),
-    .buttons(btn[5:0]),
-    .values(values_wire[23:0]),
-    .status(status[23:0]),
-    .enable(S1&&number==3),
-    .selected_index(index)
-);
-
-chooseadder #(.N(8)) chooseadder_inst_100 (
-    .clk(clk),
-    .clkdiv(clkdiv[17]),
-    .buttons(btn[7:0]),
-    .values(values_wire[31:0]),
-    .status(status[31:0]),
-    .enable(S1&&number==4),
-    .selected_index(index)
-);
-
-chooseadder #(.N(10)) chooseadder_inst_101 (
-    .clk(clk),
-    .clkdiv(clkdiv[17]),
-    .buttons(btn),
-    .values(values_wire),
-    .status(status),
-    .enable(S1&&number==5),
-    .selected_index(index)
-);
-
 genvar l;
 generate
     for(l=0;l<10;l=l+1)begin:gen6
