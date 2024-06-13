@@ -29,35 +29,35 @@ reg [31:0] cnt = 0;
     end
     wire sync_clk;
     mat_key mat_key1(.BTNY(col),.scan_clk(scan_clk),.BTNX(row),.btn(btn),.sync_clk(sync_clk));
-always@(posedge clk)begin
+always @(posedge clk) begin
     case(state)
-        A:begin
-            always @(posedge btn[15]) begin
+        A: begin
+            if (btn[15]) begin
                 status <= B;
             end
-            always@(posedge btn[14])begin
-                status<=C;
+            if (btn[14]) begin
+                status <= C;
             end
         end
-        B:begin
-            always@(posedge btn[13])begin
-                state<=A;
+        B: begin
+            if (btn[13]) begin
+                state <= A;
             end
-            always@(posedge btn[14])begin
-                state<=C;
-            end
-        end
-        C:begin
-            always@(posedge btn[14])begin
-                state<=D;
-            end
-            always @(posedge btn[12])begin
-                state<=A;
+            if (btn[14]) begin
+                state <= C;
             end
         end
-        D:begin
-            always @(posedge btn[12])begin
-                state<=A;
+        C: begin
+            if (btn[14]) begin
+                state <= D;
+            end
+            if (btn[12]) begin
+                state <= A;
+            end
+        end
+        D: begin
+            if (btn[12]) begin
+                state <= A;
             end
         end
     endcase
