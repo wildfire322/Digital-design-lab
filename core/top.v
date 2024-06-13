@@ -1,3 +1,8 @@
+parameter A =2'00;/*开始界面*/
+parameter B =2'01;//游戏说明
+parameter C =2'10;//选择个数
+parameter D =2'11;//游戏界面
+
 module top(
     input clk,
     input S1,
@@ -12,11 +17,10 @@ module top(
     output SEGCLR,
     output SEGEN//剩下的输入输出，包括LED，VGA待添加
 );
-initial status=40'b0001000100010001000100010001000100010001;//初始状态
-parameter A =2'00;//开始界面
-parameter B =2'01;//游戏说明
-parameter C =2'10;//选择个数
-parameter D =2'11;//游戏界面
+
+
+initial status=40'h1111111111; //初始状态
+//
 wire [1:0] state;
 wire [63:0] segnum;
 wire [15:0] btn;//btn[2]上移，btn[6]下移，btn[7]左移，btn[5]右移,btn[10]确认，btn[12]退出游戏，btn[11]选择个数

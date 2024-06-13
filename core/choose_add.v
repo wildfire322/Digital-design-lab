@@ -1,12 +1,12 @@
 module chooseadder (
     input clk,
     input btn,//确认按键
-    input [2:0] num;
+    input [2:0] num,
     input [39:0] status, // 10个对象的状态
     input [3:0] buttons //  0-3,上下左右
 );
-    reg [3:0] values, 
-    reg [3:0] selected_index // 新增变量，用于保存第一次按下按钮时的i值,以此确定status[i]的位置
+    reg [3:0] values;
+    reg [3:0] selected_index; // 新增变量，用于保存第一次按下按钮时的i值,以此确定status[i]的位置
     reg [3:0] selected;
     reg [3:0] to_add;
     wire [3:0] adder_result;
