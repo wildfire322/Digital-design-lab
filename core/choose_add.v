@@ -4,7 +4,7 @@ module chooseadder (
     input [2:0] num,
     input [39:0] status, // 10个对象的状态
     input [3:0] buttons, //  0-3,上下左右
-    output reg [3:0] selected_index, // 新增变量，用于保存第一次按下按钮时的i值,以此确定status[i]的位置
+    output reg [4:0] selected_index, // 新增变量，用于保存第一次按下按钮时的i值,以此确定status[i]的位置
     output reg [3:0] values
 );
     reg [3:0] selected;
@@ -13,7 +13,7 @@ module chooseadder (
             values <= 4'b0;
             selected <= 4'b0000;
             to_add <= 4'b0000;
-            selected_index<=4'b1111;
+            selected_index<=5'b11111;
     end      
     integer i;
     initial i=0;
