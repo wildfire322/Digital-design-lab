@@ -12,10 +12,6 @@ module top(
     output [3:0] row,
     output wire buzzer_pin,//蜂鸣器
     output reg [39:0] status,
-    output SEGDT,
-    output SEGCLK,
-    output SEGCLR,
-    output SEGEN//剩下的输入输出，包括LED，VGA待添加
 );
 
 
@@ -74,24 +70,6 @@ numberchoose numberchoose1(.S2(S2),
     .btn(btn[10]),
     .numberchoose(num)
 ); 
-wire[31:0]clkdiv;
-clkdiv clkdiv_inst(
-    .clk(clk),
-    .rst(1'b0),
-    .div_res(clkdiv)
-);
-wire finish;
-assign segnum={number,61'b0};
-SEGDRV SEGDRV_inst(
-        .load(clkdiv[7]),
-        .clk(clk),
-        .in(segnum),
-        .dout(SEGDT),
-        .finish(finish)
-        );
-assign SEGCLK=clk|finish;
-assign SEGCLR=1'b1;
-assign SEGEN=1'b1;
 chooseadder chooseadder_inst(
     .clk(clk),
     .btn(btn[10]),
