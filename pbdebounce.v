@@ -25,7 +25,6 @@ module pbdebounce(
     input wire button, 
     output reg pbreg
     );
-
     reg [7:0] pbshift;
 
     always@(posedge clk) begin
