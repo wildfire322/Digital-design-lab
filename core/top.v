@@ -70,7 +70,7 @@ numberchoose numberchoose1(.S2(S2),
     .btn(btn[10]),
     .numberchoose(num)
 ); 
-wire [3:0] index;
+wire [4:0] index;
 wire [3:0] values;
 chooseadder chooseadder_inst(
     .clk(clk),
