@@ -1,10 +1,10 @@
 module top(
     input clk,
-    input S1,
     input S2,
     input S3,
     input [3:0] col,
     output [3:0] row,
+    // input [15:0] btn,这句是我仿真的时候添加的，不用管
     output wire buzzer_pin,//蜂鸣器
     output reg [39:0] status
 );
@@ -12,11 +12,10 @@ parameter A =2'b00;/*开始界面*/
 parameter B =2'b01;//游戏说明
 parameter C =2'b10;//选择个数
 parameter D =2'b11;//游戏界面
-
+wire [9:0] mybuzzer;
 initial status=40'h1111111111; //初始状态
-//
+
 wire [1:0] state;
-wire [63:0] segnum;
 wire [15:0] btn;//btn[2]上移，btn[6]下移，btn[7]左移，btn[5]右移,btn[10]确认，btn[12]退出游戏，btn[11]选择个数
 reg [31:0] cnt = 0;
     reg scan_clk = 0;
@@ -65,9 +64,12 @@ always@(posedge clk)begin
 end
 wire [2:0] num;
 numberchoose numberchoose1(.S2(S2),
-    .btn(btn[10]),
+    .btn(btn[11]),
     .numberchoose(num)
 ); 
+// initial begin
+//     $monitor("At time %t, num = %d", $time, num);
+// end
 wire [4:0] index;
 wire [3:0] values;
 chooseadder chooseadder_inst(
@@ -81,7 +83,7 @@ chooseadder chooseadder_inst(
 );
 always@(posedge clk)begin
     if(btn[3])begin
-        status[selected_index+:4]<=values;
+        status[index+:4]<=values;
     end
 end
 genvar l;
@@ -95,5 +97,11 @@ generate
         );
     end
 endgenerate
+// initial begin
+//     $monitor("At time %t, index = %d", $time, index);
+// end
+// initial begin
+//     $monitor("At time %t, values = %d", $time, values);
+// end
 assign buzzer_pin=|mybuzzer;//只要有对象的值达到0（也就是到达10，然后归零），蜂鸣器就会响
 endmodule

@@ -27,7 +27,7 @@ module chooseadder (
             end
         end
         if(buttons[1] == 1) begin//下移
-            if(i>=20+4*(num-1))begin//在第二行，溢出
+            if(i>=20)begin//在第二行，溢出
                 i=i-20;//移到第一行
             end
             else begin
@@ -38,6 +38,9 @@ module chooseadder (
             if(i==0)begin//在第一个，溢出
                 i=20+4*(num-1);//移到最后一个
             end
+            else if(i==20)begin//在第二行第一个，溢出
+                i=4*(num-1);//移到最后一个
+            end
             else begin
                 i=i-4;
             end
@@ -45,6 +48,9 @@ module chooseadder (
         if(buttons[3] == 1) begin//右移
             if(i==20+4*(num-1))begin//在最后一个，溢出
                 i=0;//移到第一个
+            end
+            else if(i==4*(num-1))begin//在最后一个，溢出
+                i=20;//移到第二行第一个
             end
             else begin
                 i=i+4;
@@ -59,9 +65,13 @@ module chooseadder (
                 to_add=status[i+:4];
                 values=4'b0000 + (($signed(selected) + $signed(to_add)) % 10);
                 selected<=4'b0000;
+                i<=0;
             end
         end
     end
+//     initial begin
+//     $monitor("At time %t, i = %d", $time,i);
+// end
 endmodule
 /*0 4 8 12 16 
 20 24 28 32 36每一个对象下标初值*/
