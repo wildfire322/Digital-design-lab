@@ -32,31 +32,31 @@ reg [31:0] cnt = 0;
 always@(posedge clk)begin
     case(state)
         A:begin
-            if(btn[15])begin
-                status<=B;
+            always @(posedge btn[15]) begin
+                status <= B;
             end
-            if(btn[14])begin
+            always@(posedge btn[14])begin
                 status<=C;
             end
         end
         B:begin
-            if(btn[13])begin
+            always@(posedge btn[13])begin
                 state<=A;
             end
-            if(btn[14])begin
+            always@(posedge btn[14])begin
                 state<=C;
             end
         end
         C:begin
-            if(btn[14])begin
+            always@(posedge btn[14])begin
                 state<=D;
             end
-            if(btn[12])begin
+            always @(posedge btn[12])begin
                 state<=A;
             end
         end
         D:begin
-            if(btn[12])begin
+            always @(posedge btn[12])begin
                 state<=A;
             end
         end
