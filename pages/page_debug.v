@@ -2,7 +2,7 @@ module page_debug(input vga_clk,
                   input vga_rst,
                   input [9:0] x_pos,
                   input [9:0] y_pos,
-                  input btns [15:0],
+                  input [15:0] btns,
                   output reg [11:0] pixel_data); // 蓝蓝蓝蓝绿绿绿绿红红红红
     // x_pos in (0, 639), y_pos in (0, 479)
     reg [63:0] var = 63'h1234;
@@ -140,7 +140,7 @@ module page_debug(input vga_clk,
     always @(btns) begin
         for (i = 0; i < 16; i = i + 1) begin
             if (btns[i]) begin
-                var[i * 4 + 3: i * 4] = var[i * 4 + 3: i * 4] + 4'b1;
+                var[i * 4 + 3 -: 4] = var[i * 4 + 3 -: 4] + 4'b1;
             end
         end
     end
@@ -171,7 +171,7 @@ module page_debug(input vga_clk,
                 end else if (120 <= y_pos && y_pos < 120 + 8 * 7) begin
                 for(i = 0; i < 16; i = i + 1) begin
                     if (i * 40 + 4 <= x_pos && x_pos < i * 40 + 36) begin
-                        if (num_font[var[i * 4 + 3: i * 4]][(y_pos - 120) >> 3][(x_pos - i * 40 - 4) >> 3]) begin
+                        if (num_font[var[i * 4 + 3 -: 4]][(y_pos - 120) >> 3][(x_pos - i * 40 - 4) >> 3]) begin
                             pixel_data <= 12'h2cf;
                             end else begin
                             pixel_data <= 12'hfff;

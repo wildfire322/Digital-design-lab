@@ -275,7 +275,7 @@
         </FileInfo>
       </File>
       <Config>
-        <Option Name="TargetConstrsFile" Val="$PPRDIR/VGA/vga_test_top.xdc"/>
+        <Option Name="TargetConstrsFile" Val="$PPRDIR/pages/page_debug_top.xdc"/>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>

@@ -1,10 +1,10 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date                      : Wed Jun 12 20:27:41 2024
+| Date                      : Fri Jun 14 11:32:53 2024
 | Host                      : NP running 64-bit major release  (build 9200)
-| Command                   : report_io -file vga_test_top_io_placed.rpt
-| Design                    : vga_test_top
+| Command                   : report_io -file page_debug_top_io_placed.rpt
+| Design                    : page_debug_top
 | Device                    : xc7k160t
 | Speed File                : -2L
 | Package                   : ffg676
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            16 |
+|            24 |
 +---------------+
 
 
@@ -646,12 +646,12 @@ Table of Contents
 | V11        |                | High Performance | IO_L1P_T0_33                 | User IO       |             |      33 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
 | V12        |                | High Performance | IO_25_VRP_33                 | User IO       |             |      33 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
 | V13        |                | High Performance | IO_0_VRN_32                  | User IO       |             |      32 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
-| V14        |                | High Performance | IO_L24P_T3_32                | User IO       |             |      32 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
+| V14        | BTNY[1]        | High Performance | IO_L24P_T3_32                | INPUT         | LVCMOS18    |      32 |            |      |                     |                 NONE |           | FIXED      |           |          |      | NONE             |              |                   |              |
 | V15        |                |                  | GND                          | GND           |             |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |              |                   |              |
 | V16        |                | High Performance | IO_L20P_T3_32                | User IO       |             |      32 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
 | V17        |                | High Performance | IO_L20N_T3_32                | User IO       |             |      32 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
-| V18        |                | High Performance | IO_L23P_T3_32                | User IO       |             |      32 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
-| V19        |                | High Performance | IO_L23N_T3_32                | User IO       |             |      32 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
+| V18        | BTNY[3]        | High Performance | IO_L23P_T3_32                | INPUT         | LVCMOS18    |      32 |            |      |                     |                 NONE |           | FIXED      |           |          |      | NONE             |              |                   |              |
+| V19        | BTNY[2]        | High Performance | IO_L23N_T3_32                | INPUT         | LVCMOS18    |      32 |            |      |                     |                 NONE |           | FIXED      |           |          |      | NONE             |              |                   |              |
 | V20        |                | High Range       | VCCO_12                      | VCCO          |             |      12 |            |      |                     |                      |     any** |            |           |          |      |                  |              |                   |              |
 | V21        |                | High Range       | IO_L6P_T0_12                 | User IO       |             |      12 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
 | V22        |                | High Range       | IO_L1N_T0_12                 | User IO       |             |      12 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
@@ -672,12 +672,12 @@ Table of Contents
 | W11        |                | High Performance | IO_L1N_T0_33                 | User IO       |             |      33 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
 | W12        |                |                  | GND                          | GND           |             |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |              |                   |              |
 | W13        |                | High Performance | IO_25_VRP_32                 | User IO       |             |      32 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
-| W14        |                | High Performance | IO_L24N_T3_32                | User IO       |             |      32 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
-| W15        |                | High Performance | IO_L22P_T3_32                | User IO       |             |      32 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
-| W16        |                | High Performance | IO_L22N_T3_32                | User IO       |             |      32 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
+| W14        | BTNY[0]        | High Performance | IO_L24N_T3_32                | INPUT         | LVCMOS18    |      32 |            |      |                     |                 NONE |           | FIXED      |           |          |      | NONE             |              |                   |              |
+| W15        | BTNX[1]        | High Performance | IO_L22P_T3_32                | OUTPUT        | LVCMOS18    |      32 |         12 | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
+| W16        | BTNX[0]        | High Performance | IO_L22N_T3_32                | OUTPUT        | LVCMOS18    |      32 |         12 | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
 | W17        |                | High Performance | VCCO_32                      | VCCO          |             |      32 |            |      |                     |                      |      1.80 |            |           |          |      |                  |              |                   |              |
-| W18        |                | High Performance | IO_L21P_T3_DQS_32            | User IO       |             |      32 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
-| W19        |                | High Performance | IO_L21N_T3_DQS_32            | User IO       |             |      32 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
+| W18        | BTNX[3]        | High Performance | IO_L21P_T3_DQS_32            | OUTPUT        | LVCMOS18    |      32 |         12 | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
+| W19        | BTNX[2]        | High Performance | IO_L21N_T3_DQS_32            | OUTPUT        | LVCMOS18    |      32 |         12 | SLOW |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
 | W20        |                | High Range       | IO_L15P_T2_DQS_12            | User IO       |             |      12 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
 | W21        |                | High Range       | IO_L6N_T0_VREF_12            | User IO       |             |      12 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
 | W22        |                |                  | GND                          | GND           |             |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |              |                   |              |
