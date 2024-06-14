@@ -49,10 +49,27 @@
     #v(1fr)
     #image(width: 70%, "zju.png")
     #v(1fr)
-    #text(size: 18pt, [= 数字逻辑设计期末课程设计报告 \
+    #text(size: 18pt, [#text(size: 1.2em, strong([数字逻辑设计期末课程设计报告])) \
     题目：双人交互的数字游戏])
     #v(1fr)
-    小组成员：程宇轩 戴绍琦 庞星磊 王利威
+    #table(
+      columns: (1fr, 2fr,) * 2,
+      align: (row, col) => {
+        (if calc.rem(row, 2) == 0 {right} else {center})
+      },
+      stroke: (row, col) => {
+        (if calc.rem(row, 2) == 1 {(bottom: 1pt)} else {none})
+      },
+      [小组成员：], [程宇轩], [小组成员：], [戴绍琦],
+      [学号：], [], [学号：], [],
+      [专业：], [计算机科学与技术], [专业：], [计算机科学与技术],
+      [学院：], [竺可桢学院],[学院：], [竺可桢学院],
+      table.cell(colspan: 4, [#v(1em)]),
+      [小组成员：], [庞兴磊], [小组成员：], [王利威],
+      [学号：], [], [学号：], [],
+      [专业：], [计算机科学与技术], [专业：], [计算机科学与技术],
+      [学院：], [竺可桢学院],[学院：], [竺可桢学院],
+    )
 
     指导教师：杨莹春
 
@@ -65,13 +82,8 @@
   set align(left)
   
   set page(header: [数字逻辑设计 #h(1fr) 浙江大学课程设计报告 \ #v(-1em) #line(length: 100%)])
-  set heading(numbering: (..args) => {
-  let arr = args.pos()
-  if arr.len() == 1{
-    numbering("一", arr.at(0))
-  } else {
-    arr.slice(1).map((i) => str(i)).join(".")
-  }
-})
+  set heading(numbering: "1.")
+  text(18pt, align(center, strong([目录])))
+  text(14pt, outline(indent: (level) => level * 1em, title: none))
   doc
 }
