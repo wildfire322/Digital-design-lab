@@ -22,9 +22,7 @@
     
     block(
       inset: 0.5em,
-      radius: 1em,
-      fill:luma(196),
-      align(center, " " + it.lang + " ") + v(-1em) + grid(
+      grid(
         columns: (100%, 100%),
         column-gutter: -100%,
         block(
@@ -33,18 +31,13 @@
           for (i, line) in it.lines.enumerate() {
             box(
               width: 0pt,
-              align(right, str(i + 1) + h(2em))
+              align(right, str(i + 1) + h(1em))
             )
-            box(fill: rgb("aaffee").lighten(-10% * calc.rem(i, 2)), 
+            box(fill: luma(95% + 5% * calc.rem(i, 2)), 
               inset: 0pt, 
               outset: 0.35em, 
               width: 100%,
               height: auto,
-              radius: {
-                if i == 0 {(top: 3pt)}
-                else if i == it.lines.len() - 1 {(bottom: 3pt)}
-                else {0pt}
-              },
               line + " ")
               linebreak()
           }
@@ -70,33 +63,15 @@
   set text(size: 12pt)
   set text(font: "Noto Sans SC")
   set align(left)
+  
+  set page(header: [数字逻辑设计 #h(1fr) 浙江大学课程设计报告 \ #v(-1em) #line(length: 100%)])
+  set heading(numbering: (..args) => {
+  let arr = args.pos()
+  if arr.len() == 1{
+    numbering("一", arr.at(0))
+  } else {
+    arr.slice(1).map((i) => str(i)).join(".")
+  }
+})
   doc
-}
-
-#let cn_lorem(count) = {
-  let random_number = datetime.today().day()
-  let start = 0x4E00
-  let end = 0x4FFF
-  let decimal_part(number) = {
-    return number - int(number)
-  }
-  let new_number(number) = {
-    return decimal_part(number * 1.145142233421 + 1.232451233919810)
-  }
-  for i in range(count){
-    str.from-unicode(int((end - start) * random_number) + start)
-    random_number = new_number(random_number)
-  }
-}
-
-#let TODO = {
-  text(
-    size: 5em,
-    box(
-      stroke: 2pt, 
-      fill: luma(192), 
-      inset: 1em,
-      [TODO]
-    )
-  )
 }

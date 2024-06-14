@@ -5,15 +5,6 @@
   doc,
 )
 
-#set heading(numbering: (..args) => {
-  let arr = args.pos()
-  if arr.len() == 1{
-    numbering("一", arr.at(0))
-  } else {
-    arr.slice(1).map((i) => str(i)).join(".")
-  }
-})
-
 = 标题
 
 #lorem(100)
