@@ -15,7 +15,7 @@ parameter D =2'b11;//游戏界面
 wire [9:0] mybuzzer;
 initial status=40'h1111111111; //初始状态
 
-wire [1:0] state;
+reg [1:0] state=A;
 wire [15:0] btn;//btn[2]上移，btn[6]下移，btn[7]左移，btn[5]右移,btn[10]确认，btn[12]退出游戏，btn[11]选择个数
 reg [31:0] cnt = 0;
     reg scan_clk = 0;
