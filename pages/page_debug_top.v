@@ -1,8 +1,10 @@
 
 
-module vga_test_top(
+module page_debug_top(
     input sys_clk,
-    input sys_rst, // 高电平有效
+    input sys_rst, // 现在是高电平有效
+    input [3:0] BTNY,
+    output [3:0] BTNX,
     output h_sync,
     output v_sync,
     output [11:0] pixel_data
@@ -13,13 +15,21 @@ wire [9:0] x_pos;
 wire [9:0] y_pos;
 wire [11:0] tmp_pixel_data;
 wire [31:0] counter;
+wire btns [0:15];
 assign vga_clk = counter[1];
-vga_test test_pic_inst(
+page_debug page_debug_inst(
     .vga_clk(vga_clk),
     .vga_rst(rst),
     .x_pos(x_pos),
     .y_pos(y_pos),
+    .btns(btns),
     .pixel_data(tmp_pixel_data)
+);
+mat_key mat_key_inst(
+    .scan_clk(counter),
+    .BTNY(BTNY),
+    .BTNX(BTNX),
+    .btns(btns),
 );
 
 assign rst = sys_rst;
