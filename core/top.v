@@ -8,6 +8,7 @@ module top(
     output wire buzzer_pin,//蜂鸣器
     output reg [39:0] status
 );
+
 parameter A =2'b00;/*开始界面*/
 parameter B =2'b01;//游戏说明
 parameter C =2'b10;//选择个数
@@ -15,7 +16,7 @@ parameter D =2'b11;//游戏界面
 wire [9:0] mybuzzer;
 initial status=40'h1111111111; //初始状态
 
-wire [1:0] state;
+reg [1:0] state=A;
 wire [15:0] btn;//btn[2]上移，btn[6]下移，btn[7]左移，btn[5]右移,btn[10]确认，btn[12]退出游戏，btn[11]选择个数
 reg [31:0] cnt = 0;
     reg scan_clk = 0;
@@ -86,22 +87,10 @@ always@(posedge clk)begin
         status[index+:4]<=values;
     end
 end
-genvar l;
-generate
-    for(l=0;l<10;l=l+1)begin:gen6
-        buzzer buzzer_inst(
-            .clk(clk),
-            .rst(S3),
-            .counter(status[l*4 +: 4]),
-            .buzzer_pin(mybuzzer[l])
-        );
-    end
-endgenerate
 // initial begin
 //     $monitor("At time %t, index = %d", $time, index);
 // end
 // initial begin
 //     $monitor("At time %t, values = %d", $time, values);
 // end
-assign buzzer_pin=|mybuzzer;//只要有对象的值达到0（也就是到达10，然后归零），蜂鸣器就会响
 endmodule
