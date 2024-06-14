@@ -5,20 +5,22 @@ module page_debug(input vga_clk,
                   input [15:0] btns,
                   output reg [11:0] pixel_data); // 蓝蓝蓝蓝绿绿绿绿红红红红
     // x_pos in (0, 639), y_pos in (0, 479)
-    reg [63:0] var = 63'h1234;
+    reg [63:0] var = 63'h1145141919810893;
     reg [4:0] num_font [15:0][6:0];
     integer i;
+    genvar j;
     initial begin // 简易字体
+
         num_font[4'h0][0] = 4'b1111;
         num_font[4'h0][1] = 4'b1001;
         num_font[4'h0][2] = 4'b1001;
-        num_font[4'h0][3] = 4'b1111;
+        num_font[4'h0][3] = 4'b1001;
         num_font[4'h0][4] = 4'b1001;
         num_font[4'h0][5] = 4'b1001;
         num_font[4'h0][6] = 4'b1111;
         
         num_font[4'h1][0] = 4'b0001;
-        num_font[4'h1][1] = 4'b0001;
+        num_font[4'h1][1] = 4'b0011;
         num_font[4'h1][2] = 4'b0001;
         num_font[4'h1][3] = 4'b0001;
         num_font[4'h1][4] = 4'b0001;
@@ -137,19 +139,27 @@ module page_debug(input vga_clk,
         num_font[4'hf][5] = 4'b0100;
         num_font[4'hf][6] = 4'b0100;
     end
-    always @(btns) begin
-        for (i = 0; i < 16; i = i + 1) begin
-            if (btns[i]) begin
-                var[i * 4 + 3 -: 4] = var[i * 4 + 3 -: 4] + 4'b1;
-            end
+    generate
+    for(j = 0; j < 16; j = j + 1) begin
+        always @(negedge btns[j]) begin
+            var[j * 4 + 3 -: 4] = var[j * 4 + 3-: 4] + 4'b1;
         end
     end
+    endgenerate
+    // always @(btns) begin
+    //     prev_btns = cur_btns; // 必须使用阻塞赋值
+    //     cur_btns = btns;
+    //     for (i = 0; i < 16; i = i + 1) begin
+    //         if (prev_btns[i] && ~cur_btns[i]) begin // 必须使用两个&，&&
+    //             var[i * 4 + 3 -: 4] = var[i * 4 + 3 -: 4] + 4'b1;
+    //         end
+    //     end
+    // end
     always @(posedge vga_clk or posedge vga_rst) begin
         if (vga_rst) begin
             pixel_data <= 0;
         end
         else begin
-            pixel_data <= 12'hfff;
             if (10 <= y_pos && y_pos < 90) begin
                 if (10 <= x_pos && x_pos <= 90) begin
                     pixel_data <= 12'hf00;
@@ -163,21 +173,24 @@ module page_debug(input vga_clk,
                     pixel_data <= 12'hf0f;
                     end else if (460 <= x_pos && x_pos <= 520) begin
                     pixel_data <= 12'h0ff;
-                    end else if (430 <= x_pos && x_pos <= 610) begin
+                    end else if (530 <= x_pos && x_pos <= 610) begin
                     pixel_data <= 12'h000;
                     end else begin
                     pixel_data <= 12'haaa;
-                end
-                end else if (120 <= y_pos && y_pos < 120 + 8 * 7) begin
-                for(i = 0; i < 16; i = i + 1) begin
-                    if (i * 40 + 4 <= x_pos && x_pos < i * 40 + 36) begin
-                        if (num_font[var[i * 4 + 3 -: 4]][(y_pos - 120) >> 3][(x_pos - i * 40 - 4) >> 3]) begin
-                            pixel_data <= 12'h2cf;
-                            end else begin
-                            pixel_data <= 12'hfff;
+                    end 
+            end else if (120 <= y_pos && y_pos < 120 + 8 * 7) begin
+                i = x_pos / 40;
+                if (4 <= x_pos - i * 40 && x_pos - i * 40 < 36) begin
+                    if (num_font[var[63 - i * 4 -: 4]][(y_pos - 120) >> 3][3 -((x_pos - i * 40 - 4) >> 3)]) begin
+                        pixel_data <= 12'h00f;
+                        end else begin
+                        pixel_data <= 12'hfff;
                         end
-                    end
+                end else begin
+                    pixel_data <= 12'hfff;
                 end
+            end else begin
+                pixel_data <= 12'hfff;
             end
         end
     end

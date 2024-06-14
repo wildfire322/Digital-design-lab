@@ -71,6 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 2
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7k160tffg676-2L
 
@@ -89,6 +90,7 @@ read_verilog -library xil_defaultlib {
   F:/LDFEXP/2024Final/clkdiv.v
   F:/LDFEXP/2024Final/keybroad/mat_key.v
   F:/LDFEXP/2024Final/pages/page_debug.v
+  F:/LDFEXP/2024Final/VGA/test_pic.v
   F:/LDFEXP/2024Final/VGA/vga.v
   F:/LDFEXP/2024Final/pages/page_debug_top.v
 }

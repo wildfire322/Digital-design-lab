@@ -9,16 +9,6 @@ module VGA(
     output reg h_sync, v_sync 
 );
 // 行扫描
-initial begin
-    h_count = 0;
-    v_count = 0;
-    row = 0;
-    col = 0;
-    read_pixel = 1;
-    pixel_data [11:0] = 12'b0;
-    h_sync = 0;
-    v_sync = 0;
-end
 reg [9:0] h_count;
 always @(posedge clk) begin
     if (rst) h_count <= 0;
@@ -40,7 +30,17 @@ wire v_s = (v_count > 1);
 wire rd = (h_count > 142) 
             && (h_count < 783) 
             && (v_count > 34) 
-            && (v_count < 515);
+            && (v_count < 515); 
+initial begin
+    h_count = 0;
+    v_count = 0;
+    row = 0;
+    col = 0;
+    read_pixel = 1;
+    pixel_data [11:0] = 12'b0;
+    h_sync = 0;
+    v_sync = 0;
+end
 always @(posedge clk) begin
     row <= row_addr[8:0];
     col <= col_addr;

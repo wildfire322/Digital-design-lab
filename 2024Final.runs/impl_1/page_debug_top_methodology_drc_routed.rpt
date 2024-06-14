@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Fri Jun 14 11:33:26 2024
+| Date         : Fri Jun 14 16:54:40 2024
 | Host         : NP running 64-bit major release  (build 9200)
 | Command      : report_methodology -file page_debug_top_methodology_drc_routed.rpt -pb page_debug_top_methodology_drc_routed.pb -rpx page_debug_top_methodology_drc_routed.rpx
 | Design       : page_debug_top
@@ -23,16 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 278
+             Violations found: 287
 +-----------+------------------+------------------------------------------------------+------------+
 | Rule      | Severity         | Description                                          | Violations |
 +-----------+------------------+------------------------------------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell                          | 210        |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell                          | 284        |
 | TIMING-18 | Warning          | Missing input or output delay                        | 1          |
-| TIMING-20 | Warning          | Non-clocked latch                                    | 64         |
 | XDCC-4    | Warning          | User Clock constraint overwritten with the same name | 1          |
 | XDCC-8    | Warning          | User Clock constraint overwritten on the same source | 1          |
-| LATCH-1   | Advisory         | Existing latches in the design                       | 1          |
 +-----------+------------------+------------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -779,310 +777,680 @@ Related violations: <none>
 
 TIMING-17#149 Critical Warning
 Non-clocked sequential cell  
-The clock pin page_debug_inst/pixel_data_reg[10]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[0].var_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#150 Critical Warning
 Non-clocked sequential cell  
-The clock pin page_debug_inst/pixel_data_reg[11]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[0].var_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#151 Critical Warning
 Non-clocked sequential cell  
-The clock pin page_debug_inst/pixel_data_reg[2]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[0].var_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#152 Critical Warning
 Non-clocked sequential cell  
-The clock pin page_debug_inst/pixel_data_reg[3]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[0].var_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#153 Critical Warning
 Non-clocked sequential cell  
-The clock pin page_debug_inst/pixel_data_reg[4]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[10].var_reg[40]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#154 Critical Warning
 Non-clocked sequential cell  
-The clock pin page_debug_inst/pixel_data_reg[5]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[10].var_reg[41]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#155 Critical Warning
 Non-clocked sequential cell  
-The clock pin page_debug_inst/pixel_data_reg[6]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[10].var_reg[42]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#156 Critical Warning
 Non-clocked sequential cell  
-The clock pin page_debug_inst/pixel_data_reg[7]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[10].var_reg[43]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#157 Critical Warning
 Non-clocked sequential cell  
-The clock pin page_debug_inst/pixel_data_reg[9]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[11].var_reg[44]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#158 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/col_reg[0]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[11].var_reg[45]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#159 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/col_reg[1]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[11].var_reg[46]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#160 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/col_reg[2]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[11].var_reg[47]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#161 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/col_reg[3]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[12].var_reg[48]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#162 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/col_reg[4]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[12].var_reg[49]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#163 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/col_reg[5]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[12].var_reg[50]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#164 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/col_reg[6]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[12].var_reg[51]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#165 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/col_reg[7]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[13].var_reg[52]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#166 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/col_reg[8]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[13].var_reg[53]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#167 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/col_reg[9]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[13].var_reg[54]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#168 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/h_count_reg[0]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[13].var_reg[55]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#169 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/h_count_reg[1]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[14].var_reg[56]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#170 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/h_count_reg[2]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[14].var_reg[57]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#171 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/h_count_reg[3]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[14].var_reg[58]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#172 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/h_count_reg[4]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[14].var_reg[59]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#173 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/h_count_reg[5]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[15].var_reg[60]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#174 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/h_count_reg[6]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[15].var_reg[61]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#175 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/h_count_reg[7]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[15].var_reg[62]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#176 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/h_count_reg[8]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[15].var_reg[63]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#177 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/h_count_reg[9]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[1].var_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#178 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/h_sync_reg/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[1].var_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#179 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/pixel_data_reg[10]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[1].var_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#180 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/pixel_data_reg[10]_lopt_replica/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[1].var_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#181 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/pixel_data_reg[11]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[2].var_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#182 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/pixel_data_reg[2]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[2].var_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#183 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/pixel_data_reg[2]_lopt_replica/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[2].var_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#184 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/pixel_data_reg[3]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[2].var_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#185 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/pixel_data_reg[3]_lopt_replica/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[3].var_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#186 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/pixel_data_reg[4]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[3].var_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#187 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/pixel_data_reg[5]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[3].var_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#188 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/pixel_data_reg[6]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[3].var_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#189 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/pixel_data_reg[7]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[4].var_reg[16]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#190 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/pixel_data_reg[9]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[4].var_reg[17]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#191 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/read_pixel_reg/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[4].var_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#192 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/row_reg[1]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[4].var_reg[19]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#193 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/row_reg[2]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[5].var_reg[20]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#194 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/row_reg[3]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[5].var_reg[21]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#195 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/row_reg[4]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[5].var_reg[22]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#196 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/row_reg[5]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[5].var_reg[23]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#197 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/row_reg[6]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[6].var_reg[24]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#198 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/row_reg[7]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[6].var_reg[25]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#199 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/row_reg[8]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[6].var_reg[26]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#200 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/v_count_reg[0]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[6].var_reg[27]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#201 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/v_count_reg[1]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[7].var_reg[28]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#202 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/v_count_reg[2]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[7].var_reg[29]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#203 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/v_count_reg[3]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[7].var_reg[30]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#204 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/v_count_reg[4]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[7].var_reg[31]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#205 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/v_count_reg[5]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[8].var_reg[32]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#206 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/v_count_reg[6]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[8].var_reg[33]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#207 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/v_count_reg[7]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[8].var_reg[34]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#208 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/v_count_reg[8]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[8].var_reg[35]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#209 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga_inst/v_count_reg[9]/C is not reached by a timing clock
+The clock pin page_debug_inst1/genblk1[9].var_reg[36]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#210 Critical Warning
+Non-clocked sequential cell  
+The clock pin page_debug_inst1/genblk1[9].var_reg[37]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#211 Critical Warning
+Non-clocked sequential cell  
+The clock pin page_debug_inst1/genblk1[9].var_reg[38]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#212 Critical Warning
+Non-clocked sequential cell  
+The clock pin page_debug_inst1/genblk1[9].var_reg[39]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#213 Critical Warning
+Non-clocked sequential cell  
+The clock pin page_debug_inst1/pixel_data_reg[10]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#214 Critical Warning
+Non-clocked sequential cell  
+The clock pin page_debug_inst1/pixel_data_reg[11]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#215 Critical Warning
+Non-clocked sequential cell  
+The clock pin page_debug_inst1/pixel_data_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#216 Critical Warning
+Non-clocked sequential cell  
+The clock pin page_debug_inst1/pixel_data_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#217 Critical Warning
+Non-clocked sequential cell  
+The clock pin page_debug_inst1/pixel_data_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#218 Critical Warning
+Non-clocked sequential cell  
+The clock pin page_debug_inst1/pixel_data_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#219 Critical Warning
+Non-clocked sequential cell  
+The clock pin page_status_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#220 Critical Warning
+Non-clocked sequential cell  
+The clock pin test_pic_inst/pixel_data_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#221 Critical Warning
+Non-clocked sequential cell  
+The clock pin test_pic_inst/pixel_data_reg[10]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#222 Critical Warning
+Non-clocked sequential cell  
+The clock pin test_pic_inst/pixel_data_reg[11]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#223 Critical Warning
+Non-clocked sequential cell  
+The clock pin test_pic_inst/pixel_data_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#224 Critical Warning
+Non-clocked sequential cell  
+The clock pin test_pic_inst/pixel_data_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#225 Critical Warning
+Non-clocked sequential cell  
+The clock pin test_pic_inst/pixel_data_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#226 Critical Warning
+Non-clocked sequential cell  
+The clock pin test_pic_inst/pixel_data_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#227 Critical Warning
+Non-clocked sequential cell  
+The clock pin test_pic_inst/pixel_data_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#228 Critical Warning
+Non-clocked sequential cell  
+The clock pin test_pic_inst/pixel_data_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#229 Critical Warning
+Non-clocked sequential cell  
+The clock pin test_pic_inst/pixel_data_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#230 Critical Warning
+Non-clocked sequential cell  
+The clock pin test_pic_inst/pixel_data_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#231 Critical Warning
+Non-clocked sequential cell  
+The clock pin test_pic_inst/pixel_data_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#232 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/col_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#233 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/col_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#234 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/col_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#235 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/col_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#236 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/col_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#237 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/col_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#238 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/col_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#239 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/col_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#240 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/col_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#241 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/col_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#242 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/h_count_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#243 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/h_count_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#244 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/h_count_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#245 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/h_count_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#246 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/h_count_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#247 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/h_count_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#248 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/h_count_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#249 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/h_count_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#250 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/h_count_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#251 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/h_count_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#252 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/h_sync_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#253 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/pixel_data_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#254 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/pixel_data_reg[10]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#255 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/pixel_data_reg[11]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#256 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/pixel_data_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#257 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/pixel_data_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#258 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/pixel_data_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#259 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/pixel_data_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#260 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/pixel_data_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#261 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/pixel_data_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#262 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/pixel_data_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#263 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/pixel_data_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#264 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/pixel_data_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#265 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/read_pixel_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#266 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/row_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#267 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/row_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#268 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/row_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#269 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/row_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#270 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/row_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#271 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/row_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#272 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/row_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#273 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/row_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#274 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/v_count_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#275 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/v_count_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#276 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/v_count_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#277 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/v_count_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#278 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/v_count_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#279 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/v_count_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#280 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/v_count_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#281 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/v_count_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#282 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/v_count_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#283 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga_inst/v_count_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#284 Critical Warning
 Non-clocked sequential cell  
 The clock pin vga_inst/v_sync_reg/C is not reached by a timing clock
 Related violations: <none>
@@ -1090,326 +1458,6 @@ Related violations: <none>
 TIMING-18#1 Warning
 Missing input or output delay  
 An input delay is missing on sys_rst relative to the rising and/or falling clock edge(s) of sys_clk.
-Related violations: <none>
-
-TIMING-20#1 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[0] cannot be properly analyzed as its control pin page_debug_inst/var_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#2 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[10] cannot be properly analyzed as its control pin page_debug_inst/var_reg[10]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#3 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[11] cannot be properly analyzed as its control pin page_debug_inst/var_reg[11]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#4 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[12] cannot be properly analyzed as its control pin page_debug_inst/var_reg[12]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#5 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[13] cannot be properly analyzed as its control pin page_debug_inst/var_reg[13]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#6 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[14] cannot be properly analyzed as its control pin page_debug_inst/var_reg[14]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#7 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[15] cannot be properly analyzed as its control pin page_debug_inst/var_reg[15]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#8 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[16] cannot be properly analyzed as its control pin page_debug_inst/var_reg[16]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#9 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[17] cannot be properly analyzed as its control pin page_debug_inst/var_reg[17]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#10 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[18] cannot be properly analyzed as its control pin page_debug_inst/var_reg[18]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#11 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[19] cannot be properly analyzed as its control pin page_debug_inst/var_reg[19]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#12 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[1] cannot be properly analyzed as its control pin page_debug_inst/var_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#13 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[20] cannot be properly analyzed as its control pin page_debug_inst/var_reg[20]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#14 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[21] cannot be properly analyzed as its control pin page_debug_inst/var_reg[21]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#15 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[22] cannot be properly analyzed as its control pin page_debug_inst/var_reg[22]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#16 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[23] cannot be properly analyzed as its control pin page_debug_inst/var_reg[23]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#17 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[24] cannot be properly analyzed as its control pin page_debug_inst/var_reg[24]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#18 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[25] cannot be properly analyzed as its control pin page_debug_inst/var_reg[25]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#19 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[26] cannot be properly analyzed as its control pin page_debug_inst/var_reg[26]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#20 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[27] cannot be properly analyzed as its control pin page_debug_inst/var_reg[27]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#21 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[28] cannot be properly analyzed as its control pin page_debug_inst/var_reg[28]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#22 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[29] cannot be properly analyzed as its control pin page_debug_inst/var_reg[29]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#23 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[2] cannot be properly analyzed as its control pin page_debug_inst/var_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#24 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[30] cannot be properly analyzed as its control pin page_debug_inst/var_reg[30]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#25 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[31] cannot be properly analyzed as its control pin page_debug_inst/var_reg[31]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#26 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[32] cannot be properly analyzed as its control pin page_debug_inst/var_reg[32]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#27 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[33] cannot be properly analyzed as its control pin page_debug_inst/var_reg[33]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#28 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[34] cannot be properly analyzed as its control pin page_debug_inst/var_reg[34]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#29 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[35] cannot be properly analyzed as its control pin page_debug_inst/var_reg[35]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#30 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[36] cannot be properly analyzed as its control pin page_debug_inst/var_reg[36]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#31 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[37] cannot be properly analyzed as its control pin page_debug_inst/var_reg[37]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#32 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[38] cannot be properly analyzed as its control pin page_debug_inst/var_reg[38]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#33 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[39] cannot be properly analyzed as its control pin page_debug_inst/var_reg[39]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#34 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[3] cannot be properly analyzed as its control pin page_debug_inst/var_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#35 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[40] cannot be properly analyzed as its control pin page_debug_inst/var_reg[40]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#36 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[41] cannot be properly analyzed as its control pin page_debug_inst/var_reg[41]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#37 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[42] cannot be properly analyzed as its control pin page_debug_inst/var_reg[42]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#38 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[43] cannot be properly analyzed as its control pin page_debug_inst/var_reg[43]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#39 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[44] cannot be properly analyzed as its control pin page_debug_inst/var_reg[44]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#40 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[45] cannot be properly analyzed as its control pin page_debug_inst/var_reg[45]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#41 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[46] cannot be properly analyzed as its control pin page_debug_inst/var_reg[46]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#42 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[47] cannot be properly analyzed as its control pin page_debug_inst/var_reg[47]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#43 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[48] cannot be properly analyzed as its control pin page_debug_inst/var_reg[48]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#44 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[49] cannot be properly analyzed as its control pin page_debug_inst/var_reg[49]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#45 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[4] cannot be properly analyzed as its control pin page_debug_inst/var_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#46 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[50] cannot be properly analyzed as its control pin page_debug_inst/var_reg[50]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#47 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[51] cannot be properly analyzed as its control pin page_debug_inst/var_reg[51]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#48 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[52] cannot be properly analyzed as its control pin page_debug_inst/var_reg[52]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#49 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[53] cannot be properly analyzed as its control pin page_debug_inst/var_reg[53]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#50 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[54] cannot be properly analyzed as its control pin page_debug_inst/var_reg[54]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#51 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[55] cannot be properly analyzed as its control pin page_debug_inst/var_reg[55]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#52 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[56] cannot be properly analyzed as its control pin page_debug_inst/var_reg[56]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#53 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[57] cannot be properly analyzed as its control pin page_debug_inst/var_reg[57]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#54 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[58] cannot be properly analyzed as its control pin page_debug_inst/var_reg[58]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#55 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[59] cannot be properly analyzed as its control pin page_debug_inst/var_reg[59]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#56 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[5] cannot be properly analyzed as its control pin page_debug_inst/var_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#57 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[60] cannot be properly analyzed as its control pin page_debug_inst/var_reg[60]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#58 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[61] cannot be properly analyzed as its control pin page_debug_inst/var_reg[61]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#59 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[62] cannot be properly analyzed as its control pin page_debug_inst/var_reg[62]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#60 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[63] cannot be properly analyzed as its control pin page_debug_inst/var_reg[63]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#61 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[6] cannot be properly analyzed as its control pin page_debug_inst/var_reg[6]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#62 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[7] cannot be properly analyzed as its control pin page_debug_inst/var_reg[7]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#63 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[8] cannot be properly analyzed as its control pin page_debug_inst/var_reg[8]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#64 Warning
-Non-clocked latch  
-The latch page_debug_inst/var_reg[9] cannot be properly analyzed as its control pin page_debug_inst/var_reg[9]/G is not reached by a timing clock
 Related violations: <none>
 
 XDCC-4#1 Warning
@@ -1424,11 +1472,6 @@ User Clock constraint overwritten on the same source
 A new clock constraint create_clock overrides a previous user clock constraint defined on the same source.
 New: create_clock -period 10.000 [get_ports sys_clk] (Source: F:/LDFEXP/2024Final/pages/page_debug_top.xdc (Line: 1))
 Previous: create_clock -period 10.000 [get_ports sys_clk] (Source: F:/LDFEXP/2024Final/VGA/vga_test_top.xdc (Line: 1))
-Related violations: <none>
-
-LATCH-1#1 Advisory
-Existing latches in the design  
-There are 64 latches found in the design. Inferred latches are often the result of HDL coding mistakes, such as incomplete if or case statements.
 Related violations: <none>
 
 

@@ -14,19 +14,48 @@ wire rst;
 wire [9:0] x_pos;
 wire [9:0] y_pos;
 wire [11:0] tmp_pixel_data;
+wire [11:0] pixel_data_pending [0:3];
+wire [15:0] btns_pending [0:3];
 wire [31:0] counter;
 wire [0:15] btns;
+reg [1:0] page_status = 2'h0;
 assign vga_clk = counter[1];
-page_debug page_debug_inst(
+ctrl_transfer ctrl_transfer_inst1 #(.WIDTH(16))(.enable(page_status == 1'n0), .data_in(btns), .data_out(btns_pending[0]));
+ctrl_transfer ctrl_transfer_inst2 #(.WIDTH(16))(.enable(page_status == 1'n1), .data_in(btns), .data_out(btns_pending[2]));
+page_debug page_debug_inst1(
     .vga_clk(vga_clk),
     .vga_rst(rst),
     .x_pos(x_pos),
     .y_pos(y_pos),
-    .btns(btns),
-    .pixel_data(tmp_pixel_data)
+    .btns(btns_pending[0]),
+    .pixel_data(pixel_data_pending[0])
 );
+vga_test test_pic_inst(
+    .vga_clk(vga_clk),
+    .vga_rst(rst),
+    .x_pos(x_pos),
+    .y_pos(y_pos),
+    .pixel_data(pixel_data_pending[1])
+);
+page_debug page_debug_inst2(
+    .vga_clk(vga_clk),
+    .vga_rst(rst),
+    .x_pos(x_pos),
+    .y_pos(y_pos),
+    .btns(btns_pending[2]),
+    .pixel_data(pixel_data_pending[2])
+);
+assign tmp_pixel_data = pixel_data_pending[page_status];
+
+always @(posedge btns[0]) begin
+    page_status = page_status + 2'b1;
+    if (page_status == 2'h3) begin
+        page_status = 2'h0;
+    end
+end
+
 mat_key mat_key_inst(
-    .scan_clk(counter),
+    .scan_clk(counter[10]),
     .BTNY(BTNY),
     .BTNX(BTNX),
     .btn(btns)

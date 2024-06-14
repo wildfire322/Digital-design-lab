@@ -32,9 +32,9 @@ module mat_key(input wire [3:0] BTNY, // 输入列
                 for (j = 0; j < 4; j = j + 1) begin
                     buffer[i][j] = {buffer[i][j][6:0], status[i][j]};
                     if (buffer[i][j] == 8'hff) begin
-                        btn[i * 4 + j] <= 1'b1;
-                    end else if (buffer[i][j] == 8'h00) begin
                         btn[i * 4 + j] <= 1'b0;
+                    end else if (buffer[i][j] == 8'h00) begin
+                        btn[i * 4 + j] <= 1'b1;
                     end
                 end
             end

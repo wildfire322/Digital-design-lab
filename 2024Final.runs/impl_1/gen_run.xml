@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7k160tffg676-2L" LaunchTime="1718335831">
+<GenRun Id="impl_1" LaunchPart="xc7k160tffg676-2L" LaunchTime="1718355179">
   <File Type="ROUTE-PWR" Name="page_debug_top_power_routed.rpt"/>
   <File Type="PA-TCL" Name="page_debug_top.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="page_debug_top_power_summary_routed.pb"/>
@@ -56,13 +56,13 @@
   <File Type="ROUTE-BUS-SKEW-RPX" Name="page_debug_top_bus_skew_routed.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="page_debug_top_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="page_debug_top_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="vga_test_top_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="vga_test_top_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="vga_test_top_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="vga_test_top_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="page_debug_top_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="page_debug_top_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="page_debug_top_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="page_debug_top_bus_skew_postroute_physopted.rpt"/>
   <File Type="BG-BIT" Name="page_debug_top.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="vga_test_top_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="vga_test_top_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="page_debug_top_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="page_debug_top_bus_skew_postroute_physopted.rpx"/>
   <File Type="BITSTR-NKY" Name="page_debug_top.nky"/>
   <File Type="BITSTR-BMM" Name="page_debug_top_bd.bmm"/>
   <File Type="PDI-FILE" Name="page_debug_top.pdi"/>
@@ -107,6 +107,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/VGA/test_pic.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/VGA/vga.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -116,14 +123,6 @@
     </File>
     <File Path="$PPRDIR/pages/page_debug_top.v">
       <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/VGA/test_pic.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
