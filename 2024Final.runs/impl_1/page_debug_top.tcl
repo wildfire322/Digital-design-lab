@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "F:/LDFEXP/2024Final/2024Final.runs/impl_1/page_debug_top.tcl"
+  variable script "C:/Users/unfet/Desktop/Digital-design-lab/2024Final.runs/impl_1/page_debug_top.tcl"
   variable category "vivado_impl"
 }
 
@@ -122,24 +122,25 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 2
-  set_param runs.launchOptions { -jobs 4  }
+  set_param chipscope.maxJobs 4
+  set_param xicom.use_bs_reader 1
+  set_param runs.launchOptions { -jobs 8  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7k160tffg676-2L
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir F:/LDFEXP/2024Final/2024Final.cache/wt [current_project]
-  set_property parent.project_path F:/LDFEXP/2024Final/2024Final.xpr [current_project]
-  set_property ip_output_repo F:/LDFEXP/2024Final/2024Final.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/unfet/Desktop/Digital-design-lab/2024Final.cache/wt [current_project]
+  set_property parent.project_path C:/Users/unfet/Desktop/Digital-design-lab/2024Final.xpr [current_project]
+  set_property ip_output_repo C:/Users/unfet/Desktop/Digital-design-lab/2024Final.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet F:/LDFEXP/2024Final/2024Final.runs/synth_1/page_debug_top.dcp
+  add_files -quiet C:/Users/unfet/Desktop/Digital-design-lab/2024Final.runs/synth_1/page_debug_top.dcp
 OPTRACE "read constraints: implementation" START { }
-  read_xdc F:/LDFEXP/2024Final/VGA/vga_test_top.xdc
-  read_xdc F:/LDFEXP/2024Final/pages/page_debug_top.xdc
+  read_xdc C:/Users/unfet/Desktop/Digital-design-lab/VGA/vga_test_top.xdc
+  read_xdc C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug_top.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }

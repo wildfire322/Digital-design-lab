@@ -3,17 +3,18 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Fri Jun 14 17:12:28 2024
-# Process ID: 18520
-# Current directory: F:/LDFEXP/2024Final/2024Final.runs/synth_1
+# Start of session at: Sat Jun 15 19:34:55 2024
+# Process ID: 16176
+# Current directory: C:/Users/unfet/Desktop/Digital-design-lab/2024Final.runs/synth_1
 # Command line: vivado.exe -log page_debug_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source page_debug_top.tcl
-# Log file: F:/LDFEXP/2024Final/2024Final.runs/synth_1/page_debug_top.vds
-# Journal file: F:/LDFEXP/2024Final/2024Final.runs/synth_1\vivado.jou
-# Running On: NP, OS: Windows, CPU Frequency: 3187 MHz, CPU Physical cores: 4, Host memory: 16952 MB
+# Log file: C:/Users/unfet/Desktop/Digital-design-lab/2024Final.runs/synth_1/page_debug_top.vds
+# Journal file: C:/Users/unfet/Desktop/Digital-design-lab/2024Final.runs/synth_1\vivado.jou
+# Running On: Vinci, OS: Windows, CPU Frequency: 2688 MHz, CPU Physical cores: 10, Host memory: 16898 MB
 #-----------------------------------------------------------
 source page_debug_top.tcl -notrace
-Command: read_checkpoint -auto_incremental -incremental F:/LDFEXP/2024Final/2024Final.srcs/utils_1/imports/synth_1/vga_test_top.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from F:/LDFEXP/2024Final/2024Final.srcs/utils_1/imports/synth_1/vga_test_top.dcp for incremental synthesis
+create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 485.688 ; gain = 179.699
+Command: read_checkpoint -auto_incremental -incremental C:/Users/unfet/Desktop/Digital-design-lab/2024Final.srcs/utils_1/imports/synth_1/vga_test_top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/unfet/Desktop/Digital-design-lab/2024Final.srcs/utils_1/imports/synth_1/vga_test_top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top page_debug_top -part xc7k160tffg676-2L
 Starting synth_design
@@ -24,33 +25,41 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 38624
+INFO: [Synth 8-7075] Helper process launched with PID 3228
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1341.164 ; gain = 440.723
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 1349.707 ; gain = 439.324
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'page_debug_top' [F:/LDFEXP/2024Final/pages/page_debug_top.v:1]
-INFO: [Synth 8-6157] synthesizing module 'ctrl_transfer' [F:/LDFEXP/2024Final/pages/ctrl_transfer.v:1]
+INFO: [Synth 8-6157] synthesizing module 'page_debug_top' [C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug_top.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ctrl_transfer' [C:/Users/unfet/Desktop/Digital-design-lab/pages/ctrl_transfer.v:1]
 	Parameter WIDTH bound to: 16 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'ctrl_transfer' (0#1) [F:/LDFEXP/2024Final/pages/ctrl_transfer.v:1]
-INFO: [Synth 8-6157] synthesizing module 'page_debug' [F:/LDFEXP/2024Final/pages/page_debug.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'page_debug' (0#1) [F:/LDFEXP/2024Final/pages/page_debug.v:1]
-INFO: [Synth 8-6157] synthesizing module 'vga_test' [F:/LDFEXP/2024Final/VGA/test_pic.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'vga_test' (0#1) [F:/LDFEXP/2024Final/VGA/test_pic.v:1]
-INFO: [Synth 8-6157] synthesizing module 'mat_key' [F:/LDFEXP/2024Final/keybroad/mat_key.v:3]
-INFO: [Synth 8-155] case statement is not full and has no default [F:/LDFEXP/2024Final/keybroad/mat_key.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'mat_key' (0#1) [F:/LDFEXP/2024Final/keybroad/mat_key.v:3]
-WARNING: [Synth 8-7071] port 'sync_clk' of module 'mat_key' is unconnected for instance 'mat_key_inst' [F:/LDFEXP/2024Final/pages/page_debug_top.v:54]
-WARNING: [Synth 8-7023] instance 'mat_key_inst' of module 'mat_key' has 5 connections declared, but only 4 given [F:/LDFEXP/2024Final/pages/page_debug_top.v:54]
-INFO: [Synth 8-6157] synthesizing module 'clkdiv' [F:/LDFEXP/2024Final/clkdiv.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'clkdiv' (0#1) [F:/LDFEXP/2024Final/clkdiv.v:1]
-INFO: [Synth 8-6157] synthesizing module 'VGA' [F:/LDFEXP/2024Final/VGA/vga.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'VGA' (0#1) [F:/LDFEXP/2024Final/VGA/vga.v:1]
-WARNING: [Synth 8-689] width (10) of port connection 'row' does not match port width (9) of module 'VGA' [F:/LDFEXP/2024Final/pages/page_debug_top.v:72]
-WARNING: [Synth 8-7071] port 'read_pixel' of module 'VGA' is unconnected for instance 'vga_inst' [F:/LDFEXP/2024Final/pages/page_debug_top.v:68]
-WARNING: [Synth 8-7023] instance 'vga_inst' of module 'VGA' has 9 connections declared, but only 8 given [F:/LDFEXP/2024Final/pages/page_debug_top.v:68]
-INFO: [Synth 8-6155] done synthesizing module 'page_debug_top' (0#1) [F:/LDFEXP/2024Final/pages/page_debug_top.v:1]
-WARNING: [Synth 8-6014] Unused sequential element i_reg was removed.  [F:/LDFEXP/2024Final/pages/page_debug.v:182]
-WARNING: [Synth 8-3848] Net pixel_data_pending[3] in module/entity page_debug_top does not have driver. [F:/LDFEXP/2024Final/pages/page_debug_top.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'ctrl_transfer' (0#1) [C:/Users/unfet/Desktop/Digital-design-lab/pages/ctrl_transfer.v:1]
+INFO: [Synth 8-6157] synthesizing module 'PS2' [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/PS2.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/PS2.v:91]
+INFO: [Synth 8-6155] done synthesizing module 'PS2' (0#1) [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/PS2.v:1]
+WARNING: [Synth 8-7071] port 'enter' of module 'PS2' is unconnected for instance 'PS2_inst' [C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug_top.v:25]
+WARNING: [Synth 8-7023] instance 'PS2_inst' of module 'PS2' has 10 connections declared, but only 9 given [C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug_top.v:25]
+INFO: [Synth 8-6157] synthesizing module 'page_PS2_debug' [C:/Users/unfet/Desktop/Digital-design-lab/pages/page_PS2_debug .v:1]
+INFO: [Synth 8-6155] done synthesizing module 'page_PS2_debug' (0#1) [C:/Users/unfet/Desktop/Digital-design-lab/pages/page_PS2_debug .v:1]
+INFO: [Synth 8-6157] synthesizing module 'vga_test' [C:/Users/unfet/Desktop/Digital-design-lab/VGA/test_pic.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'vga_test' (0#1) [C:/Users/unfet/Desktop/Digital-design-lab/VGA/test_pic.v:1]
+INFO: [Synth 8-6157] synthesizing module 'page_debug' [C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'page_debug' (0#1) [C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mat_key' [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/mat_key.v:3]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/mat_key.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'mat_key' (0#1) [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/mat_key.v:3]
+WARNING: [Synth 8-7071] port 'sync_clk' of module 'mat_key' is unconnected for instance 'mat_key_inst' [C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug_top.v:69]
+WARNING: [Synth 8-7023] instance 'mat_key_inst' of module 'mat_key' has 5 connections declared, but only 4 given [C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug_top.v:69]
+INFO: [Synth 8-6157] synthesizing module 'clkdiv' [C:/Users/unfet/Desktop/Digital-design-lab/clkdiv.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'clkdiv' (0#1) [C:/Users/unfet/Desktop/Digital-design-lab/clkdiv.v:1]
+INFO: [Synth 8-6157] synthesizing module 'VGA' [C:/Users/unfet/Desktop/Digital-design-lab/VGA/vga.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'VGA' (0#1) [C:/Users/unfet/Desktop/Digital-design-lab/VGA/vga.v:1]
+WARNING: [Synth 8-689] width (10) of port connection 'row' does not match port width (9) of module 'VGA' [C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug_top.v:87]
+WARNING: [Synth 8-7071] port 'read_pixel' of module 'VGA' is unconnected for instance 'vga_inst' [C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug_top.v:83]
+WARNING: [Synth 8-7023] instance 'vga_inst' of module 'VGA' has 9 connections declared, but only 8 given [C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug_top.v:83]
+INFO: [Synth 8-6155] done synthesizing module 'page_debug_top' (0#1) [C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug_top.v:1]
+WARNING: [Synth 8-6014] Unused sequential element data_done_reg was removed.  [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/PS2.v:65]
+WARNING: [Synth 8-6014] Unused sequential element i_reg was removed.  [C:/Users/unfet/Desktop/Digital-design-lab/pages/page_PS2_debug .v:186]
+WARNING: [Synth 8-6014] Unused sequential element i_reg was removed.  [C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug.v:182]
 WARNING: [Synth 8-7129] Port x_pos[9] in module vga_test is either unconnected or has no load
 WARNING: [Synth 8-7129] Port x_pos[2] in module vga_test is either unconnected or has no load
 WARNING: [Synth 8-7129] Port x_pos[1] in module vga_test is either unconnected or has no load
@@ -59,75 +68,77 @@ WARNING: [Synth 8-7129] Port y_pos[9] in module vga_test is either unconnected o
 WARNING: [Synth 8-7129] Port y_pos[2] in module vga_test is either unconnected or has no load
 WARNING: [Synth 8-7129] Port y_pos[1] in module vga_test is either unconnected or has no load
 WARNING: [Synth 8-7129] Port y_pos[0] in module vga_test is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btns[15] in module page_PS2_debug is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btns[14] in module page_PS2_debug is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1455.375 ; gain = 554.934
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1467.441 ; gain = 557.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1455.375 ; gain = 554.934
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1467.441 ; gain = 557.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1455.375 ; gain = 554.934
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1467.441 ; gain = 557.059
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1455.375 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1467.441 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [F:/LDFEXP/2024Final/VGA/vga_test_top.xdc]
-Finished Parsing XDC File [F:/LDFEXP/2024Final/VGA/vga_test_top.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [F:/LDFEXP/2024Final/VGA/vga_test_top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/page_debug_top_propImpl.xdc].
+Parsing XDC File [C:/Users/unfet/Desktop/Digital-design-lab/VGA/vga_test_top.xdc]
+Finished Parsing XDC File [C:/Users/unfet/Desktop/Digital-design-lab/VGA/vga_test_top.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/unfet/Desktop/Digital-design-lab/VGA/vga_test_top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/page_debug_top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/page_debug_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [F:/LDFEXP/2024Final/pages/page_debug_top.xdc]
-WARNING: [Constraints 18-619] A clock with name 'sys_clk' already exists, overwriting the previous clock with the same name. [F:/LDFEXP/2024Final/pages/page_debug_top.xdc:1]
-Finished Parsing XDC File [F:/LDFEXP/2024Final/pages/page_debug_top.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [F:/LDFEXP/2024Final/pages/page_debug_top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/page_debug_top_propImpl.xdc].
+Parsing XDC File [C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug_top.xdc]
+WARNING: [Constraints 18-619] A clock with name 'sys_clk' already exists, overwriting the previous clock with the same name. [C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug_top.xdc:1]
+Finished Parsing XDC File [C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug_top.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug_top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/page_debug_top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/page_debug_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1558.324 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1570.082 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1558.324 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1570.082 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1558.324 ; gain = 657.883
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 1570.082 ; gain = 659.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k160tffg676-2L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1558.324 ; gain = 657.883
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 1570.082 ; gain = 659.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1558.324 ; gain = 657.883
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:03 ; elapsed = 00:00:13 . Memory (MB): peak = 1570.082 ; gain = 659.699
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[0][0]' and it is trimmed from '8' to '7' bits. [F:/LDFEXP/2024Final/keybroad/mat_key.v:33]
-WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[0][1]' and it is trimmed from '8' to '7' bits. [F:/LDFEXP/2024Final/keybroad/mat_key.v:33]
-WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[0][2]' and it is trimmed from '8' to '7' bits. [F:/LDFEXP/2024Final/keybroad/mat_key.v:33]
-WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[0][3]' and it is trimmed from '8' to '7' bits. [F:/LDFEXP/2024Final/keybroad/mat_key.v:33]
-WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[1][0]' and it is trimmed from '8' to '7' bits. [F:/LDFEXP/2024Final/keybroad/mat_key.v:33]
-WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[1][1]' and it is trimmed from '8' to '7' bits. [F:/LDFEXP/2024Final/keybroad/mat_key.v:33]
-WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[1][2]' and it is trimmed from '8' to '7' bits. [F:/LDFEXP/2024Final/keybroad/mat_key.v:33]
-WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[1][3]' and it is trimmed from '8' to '7' bits. [F:/LDFEXP/2024Final/keybroad/mat_key.v:33]
-WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[2][0]' and it is trimmed from '8' to '7' bits. [F:/LDFEXP/2024Final/keybroad/mat_key.v:33]
-WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[2][1]' and it is trimmed from '8' to '7' bits. [F:/LDFEXP/2024Final/keybroad/mat_key.v:33]
-WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[2][2]' and it is trimmed from '8' to '7' bits. [F:/LDFEXP/2024Final/keybroad/mat_key.v:33]
-WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[2][3]' and it is trimmed from '8' to '7' bits. [F:/LDFEXP/2024Final/keybroad/mat_key.v:33]
-WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[3][0]' and it is trimmed from '8' to '7' bits. [F:/LDFEXP/2024Final/keybroad/mat_key.v:33]
-WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[3][1]' and it is trimmed from '8' to '7' bits. [F:/LDFEXP/2024Final/keybroad/mat_key.v:33]
-WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[3][2]' and it is trimmed from '8' to '7' bits. [F:/LDFEXP/2024Final/keybroad/mat_key.v:33]
-WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[3][3]' and it is trimmed from '8' to '7' bits. [F:/LDFEXP/2024Final/keybroad/mat_key.v:33]
+WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[0][0]' and it is trimmed from '8' to '7' bits. [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/mat_key.v:33]
+WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[0][1]' and it is trimmed from '8' to '7' bits. [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/mat_key.v:33]
+WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[0][2]' and it is trimmed from '8' to '7' bits. [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/mat_key.v:33]
+WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[0][3]' and it is trimmed from '8' to '7' bits. [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/mat_key.v:33]
+WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[1][0]' and it is trimmed from '8' to '7' bits. [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/mat_key.v:33]
+WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[1][1]' and it is trimmed from '8' to '7' bits. [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/mat_key.v:33]
+WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[1][2]' and it is trimmed from '8' to '7' bits. [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/mat_key.v:33]
+WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[1][3]' and it is trimmed from '8' to '7' bits. [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/mat_key.v:33]
+WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[2][0]' and it is trimmed from '8' to '7' bits. [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/mat_key.v:33]
+WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[2][1]' and it is trimmed from '8' to '7' bits. [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/mat_key.v:33]
+WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[2][2]' and it is trimmed from '8' to '7' bits. [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/mat_key.v:33]
+WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[2][3]' and it is trimmed from '8' to '7' bits. [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/mat_key.v:33]
+WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[3][0]' and it is trimmed from '8' to '7' bits. [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/mat_key.v:33]
+WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[3][1]' and it is trimmed from '8' to '7' bits. [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/mat_key.v:33]
+WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[3][2]' and it is trimmed from '8' to '7' bits. [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/mat_key.v:33]
+WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[3][3]' and it is trimmed from '8' to '7' bits. [C:/Users/unfet/Desktop/Digital-design-lab/keybroad/mat_key.v:33]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 1558.324 ; gain = 657.883
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:13 . Memory (MB): peak = 1570.082 ; gain = 659.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -137,24 +148,26 @@ Detailed RTL Component Info :
 	   2 Input   32 Bit       Adders := 4     
 	   2 Input   10 Bit       Adders := 3     
 	   2 Input    9 Bit       Adders := 1     
-	   2 Input    4 Bit       Adders := 32    
+	   2 Input    4 Bit       Adders := 31    
 	   2 Input    3 Bit       Adders := 2     
-	   2 Input    2 Bit       Adders := 1     
 +---Registers : 
 	               16 Bit    Registers := 1     
 	               12 Bit    Registers := 4     
-	               10 Bit    Registers := 3     
+	               10 Bit    Registers := 4     
 	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
 	                7 Bit    Registers := 16    
-	                4 Bit    Registers := 37    
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 3     
+	                4 Bit    Registers := 36    
+	                1 Bit    Registers := 15    
 +---Muxes : 
 	   2 Input   16 Bit        Muxes := 3     
-	   4 Input   12 Bit        Muxes := 3     
+	   4 Input   12 Bit        Muxes := 2     
 	   9 Input   12 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
 	  16 Input    4 Bit        Muxes := 14    
-	   2 Input    1 Bit        Muxes := 17    
+	   2 Input    1 Bit        Muxes := 33    
+	  13 Input    1 Bit        Muxes := 6     
 	   5 Input    1 Bit        Muxes := 4     
 	   3 Input    1 Bit        Muxes := 15    
 ---------------------------------------------------------------------------------
@@ -173,27 +186,29 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port btns[15] in module page_PS2_debug is either unconnected or has no load
+WARNING: [Synth 8-7129] Port btns[14] in module page_PS2_debug is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 1558.324 ; gain = 657.883
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:04 ; elapsed = 00:00:17 . Memory (MB): peak = 1570.082 ; gain = 659.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-565] redefining clock 'sys_clk'
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1558.324 ; gain = 657.883
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:21 . Memory (MB): peak = 1570.082 ; gain = 659.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1558.324 ; gain = 657.883
+Finished Timing Optimization : Time (s): cpu = 00:00:04 ; elapsed = 00:00:21 . Memory (MB): peak = 1570.082 ; gain = 659.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 1558.324 ; gain = 657.883
+Finished Technology Mapping : Time (s): cpu = 00:00:04 ; elapsed = 00:00:21 . Memory (MB): peak = 1570.082 ; gain = 659.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -211,37 +226,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:29 . Memory (MB): peak = 1558.324 ; gain = 657.883
+Finished IO Insertion : Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 1570.082 ; gain = 659.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:29 . Memory (MB): peak = 1558.324 ; gain = 657.883
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 1570.082 ; gain = 659.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:29 . Memory (MB): peak = 1558.324 ; gain = 657.883
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:05 ; elapsed = 00:00:25 . Memory (MB): peak = 1570.082 ; gain = 659.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:29 . Memory (MB): peak = 1558.324 ; gain = 657.883
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:05 ; elapsed = 00:00:25 . Memory (MB): peak = 1570.082 ; gain = 659.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:29 . Memory (MB): peak = 1558.324 ; gain = 657.883
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:25 . Memory (MB): peak = 1570.082 ; gain = 659.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:29 . Memory (MB): peak = 1558.324 ; gain = 657.883
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:05 ; elapsed = 00:00:25 . Memory (MB): peak = 1570.082 ; gain = 659.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -258,40 +273,40 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     3|
-|2     |CARRY4 |    33|
-|3     |LUT1   |    42|
-|4     |LUT2   |    71|
-|5     |LUT3   |    95|
-|6     |LUT4   |   140|
-|7     |LUT5   |    66|
-|8     |LUT6   |   200|
-|9     |FDCE   |    43|
-|10    |FDRE   |   321|
-|11    |IBUF   |     6|
+|2     |CARRY4 |    18|
+|3     |LUT1   |    21|
+|4     |LUT2   |    47|
+|5     |LUT3   |    36|
+|6     |LUT4   |   106|
+|7     |LUT5   |    53|
+|8     |LUT6   |   129|
+|9     |FDCE   |    27|
+|10    |FDRE   |   256|
+|11    |IBUF   |     8|
 |12    |OBUF   |    18|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:29 . Memory (MB): peak = 1558.324 ; gain = 657.883
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:05 ; elapsed = 00:00:25 . Memory (MB): peak = 1570.082 ; gain = 659.699
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 18 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:28 . Memory (MB): peak = 1558.324 ; gain = 554.934
-Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:30 . Memory (MB): peak = 1558.324 ; gain = 657.883
+Synthesis finished with 0 errors, 0 critical warnings and 20 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:03 ; elapsed = 00:00:23 . Memory (MB): peak = 1570.082 ; gain = 557.059
+Synthesis Optimization Complete : Time (s): cpu = 00:00:05 ; elapsed = 00:00:25 . Memory (MB): peak = 1570.082 ; gain = 659.699
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1558.324 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 33 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1570.082 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 18 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1558.324 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1570.082 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: e1e67ea3
+Synth Design complete | Checksum: e6f73802
 INFO: [Common 17-83] Releasing license: Synthesis
-37 Infos, 34 Warnings, 0 Critical Warnings and 0 Errors encountered.
+42 Infos, 41 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:34 . Memory (MB): peak = 1558.324 ; gain = 1079.004
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1558.324 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'F:/LDFEXP/2024Final/2024Final.runs/synth_1/page_debug_top.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:29 . Memory (MB): peak = 1570.082 ; gain = 1081.379
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1570.082 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/unfet/Desktop/Digital-design-lab/2024Final.runs/synth_1/page_debug_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file page_debug_top_utilization_synth.rpt -pb page_debug_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jun 14 17:13:09 2024...
+INFO: [Common 17-206] Exiting Vivado at Sat Jun 15 19:35:30 2024...

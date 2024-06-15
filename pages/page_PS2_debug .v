@@ -1,5 +1,5 @@
-module page_debug(input vga_clk,
-                  input [4:0] keys;
+module page_PS2_debug(input vga_clk,
+                  input [4:0] keys,
                   input vga_rst,
                   input [9:0] x_pos,
                   input [9:0] y_pos,
@@ -10,7 +10,7 @@ module page_debug(input vga_clk,
     reg [4:0] num_font [15:0][6:0];
     integer i;
     genvar j;
-    initial begin // 简易字体
+    initial begin // �?易字�?
 
         num_font[4'h0][0] = 4'b1111;
         num_font[4'h0][1] = 4'b1001;
@@ -141,17 +141,17 @@ module page_debug(input vga_clk,
         num_font[4'hf][6] = 4'b0100;
     end
     generate
-    for(j = 0; j < 16; j = j + 1) begin
+    for(j = 0; j < 14; j = j + 1) begin
         always @(negedge btns[j]) begin
             var[j * 4 + 3 -: 4] = var[j * 4 + 3-: 4] + 4'b1;
         end
     end
     endgenerate
     // always @(btns) begin
-    //     prev_btns = cur_btns; // 必须使用阻塞赋值
+    //     prev_btns = cur_btns; // 必须使用阻塞赋�??
     //     cur_btns = btns;
     //     for (i = 0; i < 16; i = i + 1) begin
-    //         if (prev_btns[i] && ~cur_btns[i]) begin // 必须使用两个&，&&
+    //         if (prev_btns[i] && ~cur_btns[i]) begin // 必须使用两个&�?&&
     //             var[i * 4 + 3 -: 4] = var[i * 4 + 3 -: 4] + 4'b1;
     //         end
     //     end
