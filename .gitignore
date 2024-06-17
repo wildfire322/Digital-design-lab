@@ -88,4 +88,5 @@
 #Typst files
 #########
 !*.typ
-!zju.png
+!*.png
+!*.py
