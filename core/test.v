@@ -1,5 +1,5 @@
 module numberchoose(
-input A,D;
+input A,D,
 output reg [2:0] numberchoose
 );
 initial begin

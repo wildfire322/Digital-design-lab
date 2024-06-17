@@ -1,87 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7k160tffg676-2L" LaunchTime="1718608892">
-  <File Type="ROUTE-PWR" Name="page_debug_top_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="page_debug_top.tcl"/>
-  <File Type="ROUTE-PWR-SUM" Name="page_debug_top_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="page_debug_top_reports.tcl"/>
-  <File Type="OPT-RQA-PB" Name="page_debug_top_rqa_opted.pb"/>
-  <File Type="BITSTR-MMI" Name="page_debug_top.mmi"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="page_debug_top_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="page_debug_top_timing_summary_init.rpt"/>
-  <File Type="OPT-TIMING" Name="page_debug_top_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="page_debug_top_opt.dcp"/>
-  <File Type="OPT-DRC" Name="page_debug_top_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="page_debug_top.hwdef"/>
-  <File Type="PWROPT-DCP" Name="page_debug_top_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="page_debug_top_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="page_debug_top_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="page_debug_top_placed.dcp"/>
-  <File Type="PLACE-IO" Name="page_debug_top_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="page_debug_top_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="page_debug_top_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="page_debug_top_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="page_debug_top_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="page_debug_top_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="page_debug_top_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BIN" Name="page_debug_top.bin"/>
-  <File Type="PLACE-TIMING" Name="page_debug_top_timing_summary_placed.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="page_debug_top_power_routed.rpx"/>
-  <File Type="PLACE-RQA-PB" Name="page_debug_top_rqa_placed.pb"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="page_debug_top_postplace_pwropt.dcp"/>
-  <File Type="BITSTR-MSK" Name="page_debug_top.msk"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="page_debug_top_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="page_debug_top_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="page_debug_top_drc_physopted.rpt"/>
-  <File Type="BITSTR-RBT" Name="page_debug_top.rbt"/>
-  <File Type="PHYSOPT-TIMING" Name="page_debug_top_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="page_debug_top_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="page_debug_top_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="page_debug_top_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="page_debug_top_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="page_debug_top_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="page_debug_top_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="page_debug_top_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="page_debug_top_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="page_debug_top_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-RQS-PB" Name="page_debug_top_rqs_routed.pb"/>
-  <File Type="ROUTE-STATUS" Name="page_debug_top_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="page_debug_top_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="page_debug_top_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="page_debug_top_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="page_debug_top_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="page_debug_top_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="page_debug_top_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="page_debug_top_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="page_debug_top_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="page_debug_top_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="page_debug_top_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="page_debug_top_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="page_debug_top_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="page_debug_top_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="page_debug_top_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="page_debug_top_bus_skew_postroute_physopted.rpt"/>
-  <File Type="BG-BIT" Name="page_debug_top.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="page_debug_top_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="page_debug_top_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-NKY" Name="page_debug_top.nky"/>
-  <File Type="BITSTR-BMM" Name="page_debug_top_bd.bmm"/>
-  <File Type="PDI-FILE" Name="page_debug_top.pdi"/>
-  <File Type="BOOT-PDI-FILE" Name="page_debug_top_boot.pdi"/>
-  <File Type="PL-PDI-FILE" Name="page_debug_top_pld.pdi"/>
-  <File Type="RCFI_FILE" Name="page_debug_top.rcfi"/>
-  <File Type="CFI_FILE" Name="page_debug_top.cfi"/>
-  <File Type="RNPI_FILE" Name="page_debug_top.rnpi"/>
-  <File Type="NPI_FILE" Name="page_debug_top.npi"/>
-  <File Type="RBD_FILE" Name="page_debug_top.rbd"/>
+<GenRun Id="impl_1" LaunchPart="xc7k160tffg676-2L" LaunchTime="1718612172">
+  <File Type="ROUTE-PWR" Name="final_top_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="final_top.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="final_top_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="final_top_reports.tcl"/>
+  <File Type="OPT-RQA-PB" Name="final_top_rqa_opted.pb"/>
+  <File Type="BITSTR-MMI" Name="final_top.mmi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="final_top_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="final_top_timing_summary_init.rpt"/>
+  <File Type="OPT-TIMING" Name="final_top_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="final_top_opt.dcp"/>
+  <File Type="OPT-DRC" Name="final_top_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="final_top.hwdef"/>
+  <File Type="PWROPT-DCP" Name="final_top_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="final_top_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="final_top_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="final_top_placed.dcp"/>
+  <File Type="PLACE-IO" Name="final_top_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="final_top_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="final_top_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="final_top_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="final_top_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="final_top_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="final_top_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="final_top.bin"/>
+  <File Type="PLACE-TIMING" Name="final_top_timing_summary_placed.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="final_top_power_routed.rpx"/>
+  <File Type="PLACE-RQA-PB" Name="final_top_rqa_placed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="final_top_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="final_top.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="final_top_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="final_top_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="final_top_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="final_top.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="final_top_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="final_top_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="final_top_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="final_top_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="final_top_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="final_top_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="final_top_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="final_top_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="final_top_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="final_top_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-RQS-PB" Name="final_top_rqs_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="final_top_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="final_top_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="final_top_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="final_top_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="final_top_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="final_top_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="final_top_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="final_top_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="final_top_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="final_top_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="final_top_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="final_top_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="final_top_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="final_top_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="final_top_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="final_top_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="final_top.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="final_top_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="final_top_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="final_top.nky"/>
+  <File Type="BITSTR-BMM" Name="final_top_bd.bmm"/>
+  <File Type="PDI-FILE" Name="final_top.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="final_top_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="final_top_pld.pdi"/>
+  <File Type="RCFI_FILE" Name="final_top.rcfi"/>
+  <File Type="CFI_FILE" Name="final_top.cfi"/>
+  <File Type="RNPI_FILE" Name="final_top.rnpi"/>
+  <File Type="NPI_FILE" Name="final_top.npi"/>
+  <File Type="RBD_FILE" Name="final_top.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="page_debug_top.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="page_debug_top.sysdef"/>
-  <File Type="BG-BGN" Name="page_debug_top.bgn"/>
-  <File Type="BG-DRC" Name="page_debug_top.drc"/>
-  <File Type="RDI-RDI" Name="page_debug_top.vdi"/>
+  <File Type="BITSTR-LTX" Name="final_top.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="final_top.sysdef"/>
+  <File Type="BG-BGN" Name="final_top.bgn"/>
+  <File Type="BG-DRC" Name="final_top.drc"/>
+  <File Type="RDI-RDI" Name="final_top.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="ROUTE-RQS" Name="page_debug_top_routed.rqs"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS" Name="page_debug_top_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS" Name="final_top_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="final_top_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
@@ -100,13 +100,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/pages/ctrl_transfer.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/keybroad/mat_key.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -114,14 +107,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/pages/page_PS2_debug .v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/pages/page_debug.v">
+    <File Path="$PPRDIR/pages/page_help.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -149,8 +135,40 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/pages/final_top.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/pages/ctrl_transfer.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/pages/page_PS2_debug .v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/pages/page_debug.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/pages/page_debug_top.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -270,9 +288,15 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/img/help_menu_2.png_data.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="page_debug_top"/>
+      <Option Name="TopModule" Val="final_top"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
@@ -320,6 +344,6 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="blk_mem_num_font"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_help_menu"/>
   <BlockFileSet Type="BlockSrcs" Name="blk_mem_main_menu"/>
 </GenRun>

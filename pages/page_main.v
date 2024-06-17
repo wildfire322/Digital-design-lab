@@ -2,7 +2,6 @@ module page_main(input vga_clk,
                   input vga_rst,
                   input [9:0] x_pos,
                   input [9:0] y_pos,
-                  input [3:0] keys,
                   output reg [11:0] pixel_data); // 蓝蓝蓝蓝绿绿绿绿红红红红
 
     // reg [4:0] num_font [15:0][6:0];

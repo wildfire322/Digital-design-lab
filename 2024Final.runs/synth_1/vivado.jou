@@ -3,12 +3,12 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Mon Jun 17 15:21:36 2024
-# Process ID: 7668
+# Start of session at: Mon Jun 17 16:16:14 2024
+# Process ID: 25572
 # Current directory: F:/LDFEXP/2024Final/2024Final.runs/synth_1
-# Command line: vivado.exe -log page_debug_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source page_debug_top.tcl
-# Log file: F:/LDFEXP/2024Final/2024Final.runs/synth_1/page_debug_top.vds
+# Command line: vivado.exe -log final_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source final_top.tcl
+# Log file: F:/LDFEXP/2024Final/2024Final.runs/synth_1/final_top.vds
 # Journal file: F:/LDFEXP/2024Final/2024Final.runs/synth_1\vivado.jou
 # Running On: NP, OS: Windows, CPU Frequency: 3187 MHz, CPU Physical cores: 4, Host memory: 16952 MB
 #-----------------------------------------------------------
-source page_debug_top.tcl -notrace
+source final_top.tcl -notrace
