@@ -10,6 +10,8 @@ module top(
     output reg [39:0] status
 );
 reg player=1'b0;
+integer win1=0;
+integer win2=0;
 parameter A =2'b00;/*开始界面*/
 parameter B =2'b01;//游戏说明
 parameter C =2'b10;//选择个数
@@ -98,7 +100,23 @@ chooseadder chooseadder_inst(
 always@(posedge clk)begin
     if(space)begin
         status[index+:4]<=values;
-        player<=~player;
+        if(status[index+:4]==0)begin
+            if(player)begin
+                win1=win1+1;
+            end
+            else begin
+                win2=win2+1;
+            end        
+            player<=~player;
+        end
+    end
+end
+always@(posedge clk)begin
+    if(win1==num)begin
+        state<=A;
+    end
+    if(win2==num)begin
+        state<=A;
     end
 end
 // initial begin
