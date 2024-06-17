@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7k160tffg676-2L" LaunchTime="1718603548" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/vga_test_top.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7k160tffg676-2L" LaunchTime="1718608180" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/vga_test_top.dcp">
   <File Type="PA-TCL" Name="page_debug_top.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="page_debug_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="page_debug_top_reports.tcl"/>
@@ -47,6 +47,13 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/pages/page_debug.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/pages/page_main.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -182,6 +189,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/img/main_menu.png_data.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="page_debug_top"/>
@@ -225,4 +238,5 @@
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="blk_mem_num_font"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_main_menu"/>
 </GenRun>

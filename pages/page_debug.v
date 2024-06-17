@@ -189,7 +189,7 @@ module page_debug(input vga_clk,
                     end 
             end else if (120 <= y_pos && y_pos < 120 + 64) begin
                 i = x_pos / 40;
-                if (0 < x_pos && 4 <= x_pos - i * 40 && x_pos - i * 40 < 36) begin
+                if (var[63 - i * 4- : 4] < 10 && 0 < x_pos && 4 <= x_pos - i * 40 && x_pos - i * 40 < 36) begin
                     if (binary_pixel) begin
                         pixel_data <= 12'h00f;
                     end else begin

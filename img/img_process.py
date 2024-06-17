@@ -36,8 +36,7 @@ def convert_rgb_to_4bit_coe(image_path):
                     f.write(hex_value)
 
                     # 每8个字符（即32位数据，每个通道4位）后换行
-                if (x == width - 1) or ((x + 1) % 8 == 0):
-                        f.write("\n")
+                f.write("\n")
             f.write("\n")
 
     print(f"转换完成，已生成文件: {output_file}")

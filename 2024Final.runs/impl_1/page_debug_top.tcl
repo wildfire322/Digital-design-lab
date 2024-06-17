@@ -115,7 +115,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -140,7 +139,8 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet F:/LDFEXP/2024Final/2024Final.runs/synth_1/page_debug_top.dcp
-  read_ip -quiet f:/LDFEXP/2024Final/2024Final.srcs/sources_1/ip/blk_mem_num_font/blk_mem_num_font.xci
+  read_ip -quiet F:/LDFEXP/2024Final/2024Final.srcs/sources_1/ip/blk_mem_num_font/blk_mem_num_font.xci
+  read_ip -quiet F:/LDFEXP/2024Final/2024Final.srcs/sources_1/ip/blk_mem_main_menu/blk_mem_main_menu.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc F:/LDFEXP/2024Final/VGA/vga_test_top.xdc
   read_xdc F:/LDFEXP/2024Final/pages/page_debug_top.xdc

@@ -72,7 +72,6 @@ proc create_report { reportName command } {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 2
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7k160tffg676-2L
 
@@ -89,7 +88,8 @@ set_property ip_output_repo f:/LDFEXP/2024Final/2024Final.cache/ip [current_proj
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files f:/LDFEXP/2024Final/img/num_font.png_data.coe
+add_files F:/LDFEXP/2024Final/img/num_font.png_data.coe
+add_files F:/LDFEXP/2024Final/img/main_menu.png_data.coe
 read_verilog -library xil_defaultlib {
   F:/LDFEXP/2024Final/keybroad/PS2.v
   F:/LDFEXP/2024Final/clkdiv.v
@@ -97,12 +97,16 @@ read_verilog -library xil_defaultlib {
   F:/LDFEXP/2024Final/keybroad/mat_key.v
   {F:/LDFEXP/2024Final/pages/page_PS2_debug .v}
   F:/LDFEXP/2024Final/pages/page_debug.v
+  F:/LDFEXP/2024Final/pages/page_main.v
   F:/LDFEXP/2024Final/VGA/test_pic.v
   F:/LDFEXP/2024Final/VGA/vga.v
   F:/LDFEXP/2024Final/pages/page_debug_top.v
 }
-read_ip -quiet f:/LDFEXP/2024Final/2024Final.srcs/sources_1/ip/blk_mem_num_font/blk_mem_num_font.xci
+read_ip -quiet F:/LDFEXP/2024Final/2024Final.srcs/sources_1/ip/blk_mem_num_font/blk_mem_num_font.xci
 set_property used_in_implementation false [get_files -all f:/LDFEXP/2024Final/2024Final.gen/sources_1/ip/blk_mem_num_font/blk_mem_num_font_ooc.xdc]
+
+read_ip -quiet F:/LDFEXP/2024Final/2024Final.srcs/sources_1/ip/blk_mem_main_menu/blk_mem_main_menu.xci
+set_property used_in_implementation false [get_files -all f:/LDFEXP/2024Final/2024Final.gen/sources_1/ip/blk_mem_main_menu/blk_mem_main_menu_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

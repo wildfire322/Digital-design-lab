@@ -59,12 +59,16 @@ module page_debug_top(input sys_clk,
     );
     assign tmp_pixel_data = pixel_data_pending[page_status];
     
-   always @(posedge btns[0]) begin
-       page_status = page_status + 2'b1;
-       if (page_status == 2'h3) begin
-           page_status = 2'h0;
-       end
-   end
+    page_main page_main_inst(
+        .vga_clk(vga_clk),
+        .vga_rst(vga_rst),
+        .x_pos(x_pos),
+        .y_pos(y_pos),
+        .pixel_data(pixel_data_pending[3])
+    );
+    always @(posedge btns[0]) begin
+        page_status = page_status + 2'b1;
+    end
     
     mat_key mat_key_inst(
     .scan_clk(counter[10]),
