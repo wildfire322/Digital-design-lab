@@ -11,6 +11,8 @@ module top(
 reg player=1'b0;
 integer win1=0;
 integer win2=0;
+integer player1draw_score;//记录玩家1的连续加零次数
+integer player2draw_socre;//记录玩家2的连续加零次数
 parameter A =2'b00;/*开始界面*/
 parameter B =2'b01;//游戏说明
 parameter C =2'b10;//选择个数
@@ -95,11 +97,15 @@ chooseadder chooseadder_inst(
     .buttons({right,left,down,up}),
     .status(status),
     .selected_index(index),
-    .values(values)
+    .values(values),
+    .player1draw(player1draw),
+    .player2draw(player2draw)
 );
 always@(posedge clk)begin
     if(space)begin
         status[index+:4]<=values;
+        play1draw_score<=play1draw_score*play1draw+play1draw;
+        play2draw_score<=play2draw_score*play2draw+play2draw;
         if(status[index+:4]==0)begin
             if(player)begin
                 win1=win1+1;
