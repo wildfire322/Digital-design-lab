@@ -90,6 +90,7 @@ wire [4:0] index;
 wire [3:0] values;
 chooseadder chooseadder_inst(
     .clk(clk),
+    .player(player),
     .btn(enter),
     .num(num), 
     .buttons({right,left,down,up}),
