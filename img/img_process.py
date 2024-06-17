@@ -48,3 +48,5 @@ image_path = "help_menu.png"
 convert_rgb_to_4bit_coe(image_path)
 image_path = "help_menu_2.png"
 convert_rgb_to_4bit_coe(image_path)
+image_path = "config_menu.png"
+convert_rgb_to_4bit_coe(image_path)
