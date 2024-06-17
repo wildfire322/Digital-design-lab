@@ -6,7 +6,6 @@ module top(
     // input [3:0] col,
     // output [3:0] row,
     // input [15:0] btn,这句是我仿真的时候添加的，不用管
-    output wire buzzer_pin,//蜂鸣器
     output reg [39:0] status
 );
 reg player=1'b0;
