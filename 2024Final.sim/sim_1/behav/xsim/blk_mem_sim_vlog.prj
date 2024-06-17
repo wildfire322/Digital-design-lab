@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../2024Final.gen/sources_1/ip/blk_mem_num_font/sim/blk_mem_num_font.v" \
+"../../../../img/blk_mem_sim.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

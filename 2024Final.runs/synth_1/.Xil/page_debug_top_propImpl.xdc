@@ -1,5 +1,5 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/unfet/Desktop/Digital-design-lab/VGA/vga_test_top.xdc rfile:../../../VGA/vga_test_top.xdc id:1} [current_design]
-set_property SRC_FILE_INFO {cfile:C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug_top.xdc rfile:../../../pages/page_debug_top.xdc id:2} [current_design]
+set_property SRC_FILE_INFO {cfile:F:/LDFEXP/2024Final/VGA/vga_test_top.xdc rfile:../../../VGA/vga_test_top.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:F:/LDFEXP/2024Final/pages/page_debug_top.xdc rfile:../../../pages/page_debug_top.xdc id:2} [current_design]
 set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN AC18 [get_ports "sys_clk"]
 set_property src_info {type:XDC file:1 line:5 export:INPUT save:INPUT read:READ} [current_design]

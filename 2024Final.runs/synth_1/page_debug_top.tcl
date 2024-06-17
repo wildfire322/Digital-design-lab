@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/unfet/Desktop/Digital-design-lab/2024Final.runs/synth_1/page_debug_top.tcl"
+  variable script "F:/LDFEXP/2024Final/2024Final.runs/synth_1/page_debug_top.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,33 +70,40 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 4
+set_param chipscope.maxJobs 2
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7k160tffg676-2L
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/unfet/Desktop/Digital-design-lab/2024Final.cache/wt [current_project]
-set_property parent.project_path C:/Users/unfet/Desktop/Digital-design-lab/2024Final.xpr [current_project]
+set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
+set_property webtalk.parent_dir F:/LDFEXP/2024Final/2024Final.cache/wt [current_project]
+set_property parent.project_path F:/LDFEXP/2024Final/2024Final.xpr [current_project]
+set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/unfet/Desktop/Digital-design-lab/2024Final.cache/ip [current_project]
+set_property ip_output_repo f:/LDFEXP/2024Final/2024Final.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
+add_files f:/LDFEXP/2024Final/img/num_font.png_data.coe
 read_verilog -library xil_defaultlib {
-  C:/Users/unfet/Desktop/Digital-design-lab/keybroad/PS2.v
-  C:/Users/unfet/Desktop/Digital-design-lab/clkdiv.v
-  C:/Users/unfet/Desktop/Digital-design-lab/pages/ctrl_transfer.v
-  C:/Users/unfet/Desktop/Digital-design-lab/keybroad/mat_key.v
-  {C:/Users/unfet/Desktop/Digital-design-lab/pages/page_PS2_debug .v}
-  C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug.v
-  C:/Users/unfet/Desktop/Digital-design-lab/VGA/test_pic.v
-  C:/Users/unfet/Desktop/Digital-design-lab/VGA/vga.v
-  C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug_top.v
+  F:/LDFEXP/2024Final/keybroad/PS2.v
+  F:/LDFEXP/2024Final/clkdiv.v
+  F:/LDFEXP/2024Final/pages/ctrl_transfer.v
+  F:/LDFEXP/2024Final/keybroad/mat_key.v
+  {F:/LDFEXP/2024Final/pages/page_PS2_debug .v}
+  F:/LDFEXP/2024Final/pages/page_debug.v
+  F:/LDFEXP/2024Final/VGA/test_pic.v
+  F:/LDFEXP/2024Final/VGA/vga.v
+  F:/LDFEXP/2024Final/pages/page_debug_top.v
 }
+read_ip -quiet f:/LDFEXP/2024Final/2024Final.srcs/sources_1/ip/blk_mem_num_font/blk_mem_num_font.xci
+set_property used_in_implementation false [get_files -all f:/LDFEXP/2024Final/2024Final.gen/sources_1/ip/blk_mem_num_font/blk_mem_num_font_ooc.xdc]
+
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -106,15 +113,15 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/unfet/Desktop/Digital-design-lab/VGA/vga_test_top.xdc
-set_property used_in_implementation false [get_files C:/Users/unfet/Desktop/Digital-design-lab/VGA/vga_test_top.xdc]
+read_xdc F:/LDFEXP/2024Final/VGA/vga_test_top.xdc
+set_property used_in_implementation false [get_files F:/LDFEXP/2024Final/VGA/vga_test_top.xdc]
 
-read_xdc C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug_top.xdc
-set_property used_in_implementation false [get_files C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug_top.xdc]
+read_xdc F:/LDFEXP/2024Final/pages/page_debug_top.xdc
+set_property used_in_implementation false [get_files F:/LDFEXP/2024Final/pages/page_debug_top.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental C:/Users/unfet/Desktop/Digital-design-lab/2024Final.srcs/utils_1/imports/synth_1/vga_test_top.dcp
+read_checkpoint -auto_incremental -incremental F:/LDFEXP/2024Final/2024Final.srcs/utils_1/imports/synth_1/vga_test_top.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

@@ -59,12 +59,12 @@ module page_debug_top(input sys_clk,
     );
     assign tmp_pixel_data = pixel_data_pending[page_status];
     
-//    always @(posedge btns[0]) begin
-//        page_status = page_status + 2'b1;
-//        if (page_status == 2'h3) begin
-//            page_status = 2'h0;
-//        end
-//    end
+   always @(posedge btns[0]) begin
+       page_status = page_status + 2'b1;
+       if (page_status == 2'h3) begin
+           page_status = 2'h0;
+       end
+   end
     
     mat_key mat_key_inst(
     .scan_clk(counter[10]),
