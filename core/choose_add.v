@@ -6,7 +6,9 @@ module chooseadder (
     input [39:0] status, // 10个对象的状态
     input [3:0] buttons, //  0-3,上下左右
     output reg [4:0] selected_index, // 新增变量，用于保存第一次按下按钮时的i值,以此确定status[i]的位置
-    output reg [3:0] values
+    output reg [3:0] values,
+    output reg player1draw, //本轮操作玩家1是否加零
+    output reg player2draw  //本轮操作玩家2是否加零
 );
     reg [3:0] selected;
     reg [3:0] to_add;
@@ -74,6 +76,14 @@ module chooseadder (
                 else begin
                     to_add=status[i+:4];
                     values=4'b0000 + (($signed(selected) + $signed(to_add)) % 10);
+                    if(selected==0||to_add==0)begin
+                        if(player==0)begin
+                            player1draw=1;
+                        end
+                        else begin
+                            player2draw=1;
+                        end
+                    end
                     if(player==1)begin
                         selected_index=i;
                     end
