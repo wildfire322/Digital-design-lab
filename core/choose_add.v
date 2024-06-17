@@ -17,6 +17,8 @@ module chooseadder (
             selected <= 4'b0000;
             to_add <= 4'b0000;
             selected_index<=5'b11111;
+            player1draw<=0;
+            player2draw<=0;
     end      
     integer i;
     initial i=0;
