@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date                      : Fri Jun 14 17:13:43 2024
-| Host                      : NP running 64-bit major release  (build 9200)
+| Date                      : Sat Jun 15 19:36:02 2024
+| Host                      : Vinci running 64-bit major release  (build 9200)
 | Command                   : report_io -file page_debug_top_io_placed.rpt
 | Design                    : page_debug_top
 | Device                    : xc7k160t
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            24 |
+|            26 |
 +---------------+
 
 
@@ -495,7 +495,7 @@ Table of Contents
 | M16        |                | High Range       | IO_25_15                     | User IO       |             |      15 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
 | M17        |                | High Range       | IO_L23P_T3_FOE_B_15          | User IO       |             |      15 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
 | M18        |                | High Range       | VCCO_15                      | VCCO          |             |      15 |            |      |                     |                      |     any** |            |           |          |      |                  |              |                   |              |
-| M19        |                | High Range       | IO_L22N_T3_13                | User IO       |             |      13 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
+| M19        | PS2_data       | High Range       | IO_L22N_T3_13                | INPUT         | LVCMOS33    |      13 |            |      |                     |                 NONE |           | FIXED      |           |          |      | NONE             |              |                   |              |
 | M20        |                | High Range       | IO_L7N_T1_13                 | User IO       |             |      13 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
 | M21        | v_sync         | High Range       | IO_L10P_T1_13                | OUTPUT        | LVCMOS33    |      13 |         12 | FAST |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
 | M22        | h_sync         | High Range       | IO_L10N_T1_13                | OUTPUT        | LVCMOS33    |      13 |         12 | FAST |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
@@ -520,7 +520,7 @@ Table of Contents
 | N15        |                |                  | VCCINT                       | VCCINT        |             |         |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
 | N16        |                | High Range       | IO_0_13                      | User IO       |             |      13 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
 | N17        |                | High Range       | IO_L20N_T3_13                | User IO       |             |      13 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
-| N18        |                | High Range       | IO_L22P_T3_13                | User IO       |             |      13 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
+| N18        | PS2_clk        | High Range       | IO_L22P_T3_13                | INPUT         | LVCMOS33    |      13 |            |      |                     |                 NONE |           | FIXED      |           |          |      | NONE             |              |                   |              |
 | N19        |                | High Range       | IO_L7P_T1_13                 | User IO       |             |      13 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
 | N20        |                |                  | GND                          | GND           |             |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |              |                   |              |
 | N21        | pixel_data[8]  | High Range       | IO_L12P_T1_MRCC_13           | OUTPUT        | LVCMOS33    |      13 |         12 | FAST |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |

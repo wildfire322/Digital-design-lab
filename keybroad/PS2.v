@@ -1,7 +1,7 @@
 module PS2(
 	input clk, rst,
 	input ps2_clk, ps2_data,
-	output reg up, left, right, enter,down,space//我这里设置了五个键，分别是上下左右和回车，请验证正确后将top里的代码也修改了，如果还需要别的按键请看我上传的图片
+	output reg up, left, right, enter,down,space//我这里设置了五个键，分别是上下左右和回车，请验证正确后将top里的代码也修改了，如果还�?要别的按键请看我上传的图�?
 	);
 
 reg ps2_clk_falg0, ps2_clk_falg1, ps2_clk_falg2;
@@ -69,7 +69,7 @@ always@(posedge clk or posedge rst)begin
 		if(temp_data==8'hE0)begin//如果是E0说明是扩展码
 			data_expand<=1'b1;
 		end
-		else if(temp_data==8'hF0)begin//如果是F0说明是断码
+		else if(temp_data==8'hF0)begin//如果是F0说明是断�?
 			data_break<=1'b1;
 		end
 		else begin
@@ -89,18 +89,18 @@ end
 
 always @(posedge clk) begin
 	case (data)
-        10'h05A:enter <= 1;
-        10'h15A:enter <= 0;
-        10'h01D:up <= 1;//上下左右箭头的按键都有扩展码，按下的时候前面两位是E0，后面两位是对应的键值
-        10'h11D:up <= 0;//断开时加上F0,WASD的键值分别是1D,1C,1B,23
-        10'h01C:left <= 1;
-		10'h11C:left <= 0;
-		10'h01B:down <= 1;
-		10'h11B:down <= 0;
-		10'h023:right <= 1;
-		10'h123:right <= 0;
-		10'h029:space <= 1;
-		10'h129:space <= 0;
+        10'h05A:enter = 1;
+        10'h15A:enter = 0;
+        10'h01D:up = 1;//上下左右箭头的按键都有扩展码，按下的时�?�前面两位是E0，后面两位是对应的键�?
+        10'h11D:up = 0;//断开时加上F0,WASD的键值分别是1D,1C,1B,23
+        10'h01C:left = 1;
+		10'h11C:left = 0;
+		10'h01B:down = 1;
+		10'h11B:down = 0;
+		10'h023:right = 1;
+		10'h123:right = 0;
+		10'h029:space = 1;
+		10'h129:space = 0;
     endcase
 end
 

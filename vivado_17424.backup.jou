@@ -1,0 +1,67 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Sat Jun 15 19:05:38 2024
+# Process ID: 17424
+# Current directory: C:/Users/unfet/Desktop/Digital-design-lab
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10200 C:\Users\unfet\Desktop\Digital-design-lab\2024Final.xpr
+# Log file: C:/Users/unfet/Desktop/Digital-design-lab/vivado.log
+# Journal file: C:/Users/unfet/Desktop/Digital-design-lab\vivado.jou
+# Running On: Vinci, OS: Windows, CPU Frequency: 2688 MHz, CPU Physical cores: 10, Host memory: 16898 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/unfet/Desktop/Digital-design-lab/2024Final.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+reset_run synth_1
+add_files {C:/Users/unfet/Desktop/Digital-design-lab/keybroad/testkeybroad.v C:/Users/unfet/Desktop/Digital-design-lab/keybroad/mat_key.v C:/Users/unfet/Desktop/Digital-design-lab/keybroad/PS2.v}
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+add_files {C:/Users/unfet/Desktop/Digital-design-lab/pages/ctrl_transfer.v C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug_top.v C:/Users/unfet/Desktop/Digital-design-lab/pages/page_debug.v {C:/Users/unfet/Desktop/Digital-design-lab/pages/page_PS2_debug .v}}
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+add_files -norecurse {{C:/Users/unfet/Desktop/Digital-design-lab/pages/page_PS2_debug .v}}
+add_files -norecurse {{C:/Users/unfet/Desktop/Digital-design-lab/pages/page_PS2_debug .v}}
+update_compile_order -fileset sources_1
+open_hw_manager
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property PROGRAM.FILE {C:/Users/unfet/Desktop/Digital-design-lab/2024Final.runs/impl_1/page_debug_top.bit} [get_hw_devices xc7k160t_0]
+program_hw_devices [get_hw_devices xc7k160t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7k160t_0]
+set_property PROGRAM.FILE {C:/Users/unfet/Desktop/Digital-design-lab/2024Final.runs/impl_1/page_debug_top.bit} [get_hw_devices xc7k160t_0]
+program_hw_devices [get_hw_devices xc7k160t_0]
+refresh_hw_device [lindex [get_hw_devices xc7k160t_0] 0]

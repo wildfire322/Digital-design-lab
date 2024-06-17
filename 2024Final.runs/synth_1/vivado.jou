@@ -3,12 +3,12 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Fri Jun 14 17:12:28 2024
-# Process ID: 18520
-# Current directory: F:/LDFEXP/2024Final/2024Final.runs/synth_1
+# Start of session at: Sat Jun 15 19:34:55 2024
+# Process ID: 16176
+# Current directory: C:/Users/unfet/Desktop/Digital-design-lab/2024Final.runs/synth_1
 # Command line: vivado.exe -log page_debug_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source page_debug_top.tcl
-# Log file: F:/LDFEXP/2024Final/2024Final.runs/synth_1/page_debug_top.vds
-# Journal file: F:/LDFEXP/2024Final/2024Final.runs/synth_1\vivado.jou
-# Running On: NP, OS: Windows, CPU Frequency: 3187 MHz, CPU Physical cores: 4, Host memory: 16952 MB
+# Log file: C:/Users/unfet/Desktop/Digital-design-lab/2024Final.runs/synth_1/page_debug_top.vds
+# Journal file: C:/Users/unfet/Desktop/Digital-design-lab/2024Final.runs/synth_1\vivado.jou
+# Running On: Vinci, OS: Windows, CPU Frequency: 2688 MHz, CPU Physical cores: 10, Host memory: 16898 MB
 #-----------------------------------------------------------
 source page_debug_top.tcl -notrace
