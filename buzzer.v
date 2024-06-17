@@ -1,6 +1,6 @@
 module buzzer (
     input wire clk,        // 时钟输入     
-    input S1,              // 开关输入
+    input S1,              // 开关输入 下降沿触发
     output reg buzzer_pin  // 蜂鸣器输出引脚
 );
 
@@ -190,6 +190,6 @@ module buzzer (
         end
     end
 endmodule
-//引脚约束可以这么写：set_property PACKAGE_PIN AF25 [get_ports buzzer]
-//。set_property IOSTANDARD LVCMOS33 [get_ports buzzer]
+//set_property PACKAGE_PIN AF25 [get_ports buzzer]
+//set_property IOSTANDARD LVCMOS33 [get_ports buzzer]
 
