@@ -1,7 +1,5 @@
 module numberchoose(
-    input S2,//开关控制当前增大还是减小
-// 这个模块是让用户选择有几个东西（操作的那玩意的个数）
-input btn,//调大小
+input A,D;
 output reg [2:0] numberchoose
 );
 initial begin
@@ -9,9 +7,10 @@ initial begin
 end
 reg [2:0] number=3'b000;
 always @(posedge btn) begin
-        if (S2) begin
+        if (A) begin
             number <= number + 3'b001;
-        end else begin
+        end 
+        if(D) begin
             number <= number - 3'b001;
         end
     end
