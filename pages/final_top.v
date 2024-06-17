@@ -20,6 +20,7 @@ module final_top(input sys_clk,
     wire [15:0] btns;
     reg [1:0] page_status = 2'h0;
     assign vga_clk        = counter[1];
+    integer total_number = 2;
     
     // ctrl_transfer #(.WIDTH(16)) ctrl_transfer_inst1(.enable(page_status == 2'b0), .data_in(btns), .data_out(btns_pending[0]));
     // ctrl_transfer #(.WIDTH(16)) ctrl_transfer_inst2(.enable(page_status == 2'h2), .data_in(btns), .data_out(btns_pending[2]));
@@ -43,13 +44,13 @@ module final_top(input sys_clk,
     // .btns(btns_pending[0]),
     // .pixel_data(pixel_data_pending[0])
     // );
-    vga_test test_pic_inst(
-    .vga_clk(vga_clk),
-    .vga_rst(rst),
-    .x_pos(x_pos),
-    .y_pos(y_pos),
-    .pixel_data(pixel_data_pending[2])
-    );
+    // vga_test test_pic_inst(
+    // .vga_clk(vga_clk),
+    // .vga_rst(rst),
+    // .x_pos(x_pos),
+    // .y_pos(y_pos),
+    // .pixel_data(pixel_data_pending[2])
+    // );
     page_main page_main_inst(
     .vga_clk(vga_clk),
     .vga_rst(vga_rst),
@@ -65,6 +66,15 @@ module final_top(input sys_clk,
     .y_pos(y_pos),
     .pixel_data(pixel_data_pending[1])
     );
+    page_config page_config_inst(
+    .vga_clk(vga_clk),
+    .vga_rst(vga_rst),
+    .x_pos(x_pos),
+    .y_pos(y_pos),
+    .disp_num(total_number),
+    .pixel_data(pixel_data_pending[2])
+    );
+
     // always @(posedge btns[0]) begin  
     //     page_status = page_status + 2'b1;
     // end
@@ -74,7 +84,23 @@ module final_top(input sys_clk,
                 2'h0: page_status <= 2'h2;
             endcase
         end else if (~prev_keys[1] & keys[1]) begin
+            case (page_status)
+                2'h2: begin
+                    total_number = total_number - 1;
+                    if (total_number <= 2) begin
+                        total_number = 2;
+                    end
+                end
+            endcase
         end else if (~prev_keys[2] & keys[2]) begin
+            case (page_status)
+                2'h2: begin
+                    total_number = total_number + 1;
+                    if (total_number >= 5) begin
+                        total_number = 5;
+                    end
+                end
+            endcase
         end else if (~prev_keys[3] & keys[3]) begin
             case (page_status)
                 2'h0: page_status <= 2'h1;

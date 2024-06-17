@@ -70,8 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "blk_mem_help_menu_synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 2
-set_param xicom.use_bs_reader 1
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
@@ -90,7 +88,7 @@ set_property ip_output_repo f:/LDFEXP/2024Final/2024Final.cache/ip [current_proj
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet f:/LDFEXP/2024Final/2024Final.srcs/sources_1/ip/blk_mem_help_menu/blk_mem_help_menu.xci
+read_ip -quiet F:/LDFEXP/2024Final/2024Final.srcs/sources_1/ip/blk_mem_help_menu/blk_mem_help_menu.xci
 set_property used_in_implementation false [get_files -all f:/LDFEXP/2024Final/2024Final.gen/sources_1/ip/blk_mem_help_menu/blk_mem_help_menu_ooc.xdc]
 
 OPTRACE "Adding files" END { }

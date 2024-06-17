@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date             : Mon Jun 17 16:18:26 2024
+| Date             : Mon Jun 17 17:26:14 2024
 | Host             : NP running 64-bit major release  (build 9200)
 | Command          : report_power -file final_top_power_routed.rpt -pb final_top_power_summary_routed.pb -rpx final_top_power_routed.rpx
 | Design           : final_top
@@ -30,11 +30,11 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.141        |
+| Total On-Chip Power (W)  | 0.151        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.018        |
-| Device Static (W)        | 0.123        |
+| Dynamic (W)              | 0.024        |
+| Device Static (W)        | 0.127        |
 | Effective TJA (C/W)      | 1.9          |
 | Max Ambient (C)          | 99.7         |
 | Junction Temperature (C) | 25.3         |
@@ -52,20 +52,20 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1548 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      608 |    101400 |            0.60 |
-|   Register     |    <0.001 |      196 |    202800 |            0.10 |
-|   BUFG         |    <0.001 |        1 |        32 |            3.13 |
-|   F7/F8 Muxes  |    <0.001 |      258 |    101400 |            0.25 |
-|   CARRY4       |    <0.001 |        3 |     25350 |            0.01 |
-|   Others       |     0.000 |      404 |       --- |             --- |
-| Signals        |     0.004 |     2017 |       --- |             --- |
-| Block RAM      |     0.003 |      207 |       325 |           63.69 |
-| DSPs           |    <0.001 |        1 |       600 |            0.17 |
+| Clocks         |     0.002 |        3 |       --- |             --- |
+| Slice Logic    |    <0.001 |     2428 |       --- |             --- |
+|   LUT as Logic |    <0.001 |     1014 |    101400 |            1.00 |
+|   CARRY4       |    <0.001 |       31 |     25350 |            0.12 |
+|   Register     |    <0.001 |      265 |    202800 |            0.13 |
+|   BUFG         |    <0.001 |        2 |        32 |            6.25 |
+|   F7/F8 Muxes  |    <0.001 |      387 |    101400 |            0.38 |
+|   Others       |     0.000 |      604 |       --- |             --- |
+| Signals        |     0.007 |     3097 |       --- |             --- |
+| Block RAM      |     0.005 |    311.5 |       325 |           95.85 |
+| DSPs           |    <0.001 |        2 |       600 |            0.33 |
 | I/O            |     0.009 |       22 |       400 |            5.50 |
-| Static Power   |     0.123 |          |           |                 |
-| Total          |     0.141 |          |           |                 |
+| Static Power   |     0.127 |          |           |                 |
+| Total          |     0.151 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.052 |       0.009 |      0.044 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.060 |       0.014 |      0.045 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.019 |       0.000 |      0.018 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -84,7 +84,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.006 |       0.000 |      0.006 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.008 |       0.000 |      0.008 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -142,16 +142,20 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+--------------------+-----------+
-| Name               | Power (W) |
-+--------------------+-----------+
-| final_top          |     0.018 |
-|   page_help_inst   |     0.002 |
-|     help_menu_data |     0.002 |
-|       U0           |     0.002 |
-|   page_main_inst   |     0.004 |
-|     main_menu_data |     0.002 |
-|       U0           |     0.002 |
-+--------------------+-----------+
++----------------------+-----------+
+| Name                 | Power (W) |
++----------------------+-----------+
+| final_top            |     0.024 |
+|   PS2_inst           |     0.002 |
+|   page_config_inst   |     0.002 |
+|     config_menu_data |     0.002 |
+|       U0             |     0.002 |
+|   page_help_inst     |     0.002 |
+|     help_menu_data   |     0.002 |
+|       U0             |     0.002 |
+|   page_main_inst     |     0.006 |
+|     main_menu_data   |     0.002 |
+|       U0             |     0.002 |
++----------------------+-----------+
 
 

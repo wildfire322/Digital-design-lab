@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7k160tffg676-2L" LaunchTime="1718612171" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/vga_test_top.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7k160tffg676-2L" LaunchTime="1718616192" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/vga_test_top.dcp">
   <File Type="PA-TCL" Name="final_top.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="final_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="final_top_reports.tcl"/>
@@ -32,6 +32,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/pages/page_config.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/pages/page_help.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -40,13 +47,6 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/pages/page_main.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/VGA/test_pic.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -62,6 +62,14 @@
     </File>
     <File Path="$PPRDIR/pages/final_top.v">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/VGA/test_pic.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -219,6 +227,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/img/config_menu.png_data.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="final_top"/>
@@ -261,6 +275,8 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_num_font"/>
   <BlockFileSet Type="BlockSrcs" Name="blk_mem_help_menu"/>
   <BlockFileSet Type="BlockSrcs" Name="blk_mem_main_menu"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_config_menu"/>
 </GenRun>

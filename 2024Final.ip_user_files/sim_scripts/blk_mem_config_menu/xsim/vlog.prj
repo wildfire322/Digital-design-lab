@@ -1,0 +1,7 @@
+verilog xil_defaultlib  \
+"../../../../2024Final.gen/sources_1/ip/blk_mem_config_menu/sim/blk_mem_config_menu.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

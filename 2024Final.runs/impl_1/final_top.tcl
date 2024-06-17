@@ -139,8 +139,10 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet F:/LDFEXP/2024Final/2024Final.runs/synth_1/final_top.dcp
+  read_ip -quiet F:/LDFEXP/2024Final/2024Final.srcs/sources_1/ip/blk_mem_num_font/blk_mem_num_font.xci
   read_ip -quiet F:/LDFEXP/2024Final/2024Final.srcs/sources_1/ip/blk_mem_main_menu/blk_mem_main_menu.xci
   read_ip -quiet F:/LDFEXP/2024Final/2024Final.srcs/sources_1/ip/blk_mem_help_menu/blk_mem_help_menu.xci
+  read_ip -quiet f:/LDFEXP/2024Final/2024Final.srcs/sources_1/ip/blk_mem_config_menu/blk_mem_config_menu.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc F:/LDFEXP/2024Final/VGA/vga_test_top.xdc
   read_xdc F:/LDFEXP/2024Final/pages/page_debug_top.xdc

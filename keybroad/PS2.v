@@ -69,7 +69,7 @@ always@(posedge clk or posedge rst)begin
 		if(temp_data==8'hE0)begin//如果是E0说明是扩展码
 			data_expand<=1'b1;
 		end
-		else if(temp_data==8'hF0)begin//如果是F0说明是断�?
+		else if(temp_data==8'hF0)begin//如果是F0说明是断码
 			data_break<=1'b1;
 		end
 		else begin
