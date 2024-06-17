@@ -57,7 +57,9 @@ module chooseadder (
                 i=i+4;
             end
         end
-        else if(btn) begin
+ else if(btn) begin
+        // 检查当前玩家是否正在操作一个已经是0的对象，并且这个对象属于当前玩家
+        if(!(status[i+:4] == 4'b0000 && ((player == 0 && i < 20) || (player == 1 && i >= 20)))) begin
             if(selected==4'b0000)begin
                 selected_index<=i;
                 selected<=status[i+:4];
@@ -67,7 +69,7 @@ module chooseadder (
                     to_add=0;
                     values=selected;
                     selected=4'b0000;
-                    i=0;
+                    i=0;//玩家想把自己的元素加到自己的元素上，总之就是两个在同一行的元素是不能加的。
                 end
                 else begin
                     to_add=status[i+:4];
@@ -80,6 +82,7 @@ module chooseadder (
                 end
             end
         end
+ end
     end
 //     initial begin
 //     $monitor("At time %t, i = %d", $time,i);
