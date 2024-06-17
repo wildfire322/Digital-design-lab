@@ -6,10 +6,11 @@ module top(
     // input [3:0] col,
     // output [3:0] row,
     // input [15:0] btn,这句是我仿真的时候添加的，不用管
-    output wire buzzer_pin,//蜂鸣器
     output reg [39:0] status
 );
-
+reg player=1'b0;
+integer win1=0;
+integer win2=0;
 parameter A =2'b00;/*开始界面*/
 parameter B =2'b01;//游戏说明
 parameter C =2'b10;//选择个数
@@ -88,6 +89,7 @@ wire [4:0] index;
 wire [3:0] values;
 chooseadder chooseadder_inst(
     .clk(clk),
+    .player(player),
     .btn(enter),
     .num(num), 
     .buttons({right,left,down,up}),
@@ -98,6 +100,23 @@ chooseadder chooseadder_inst(
 always@(posedge clk)begin
     if(space)begin
         status[index+:4]<=values;
+        if(status[index+:4]==0)begin
+            if(player)begin
+                win1=win1+1;
+            end
+            else begin
+                win2=win2+1;
+            end        
+            player<=~player;
+        end
+    end
+end
+always@(posedge clk)begin
+    if(win1==num)begin
+        state<=A;
+    end
+    if(win2==num)begin
+        state<=A;
     end
 end
 // initial begin
