@@ -47,8 +47,8 @@
   }
   page()[
     #v(1fr)
-    #image(width: 70%, "zju.png")
-    #v(1fr)
+    // #image(width: 70%, "zju.png")
+    // #v(1fr)
     #text(size: 18pt, [#text(size: 1.2em, strong([数字逻辑设计期末课程设计报告])) \
     题目：双人交互的数字游戏])
     #v(1fr)
@@ -74,6 +74,8 @@
     指导教师：杨莹春
 
     日期: #{str(date.year()) + "年" + str(date.month()) + "月" + str(date.day()) + "日"}
+    #v(1fr)
+    #image(width: 50%, "t_0.png")
     #v(1fr)
   ]
   
