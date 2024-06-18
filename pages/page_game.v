@@ -34,7 +34,7 @@ module page_game(input vga_clk,
             if (left_boundry <= x_pos && right_boundry > x_pos && 150 - 64 <= y_pos && 150 + 64 > y_pos) begin
                 i = (x_pos - left_boundry) / 80;
                 dx = x_pos - left_boundry - 80 * i;
-                addra = status[i * 4 + 3 -: 4] * 32 + (72 - dx) / 2 + (y_pos - 86) / 2 * 320;
+                addra = status[i * 4 + 3 -: 4] * 32 + (70 - dx) / 2 + (y_pos - 86) / 2 * 320;
                 if (8 <= dx && dx <=72) begin
                     if (binary_pixel) begin
                         if (selected / 4 == i && selecting && game_end == 2'h0) begin
@@ -56,7 +56,7 @@ module page_game(input vga_clk,
             end else if (left_boundry <= x_pos && right_boundry > x_pos && 330 - 64 <= y_pos && 330 + 64 > y_pos) begin
                 i = (x_pos - left_boundry) / 80;
                 dx = x_pos - left_boundry - 80 * i;
-                addra = status[20 + i * 4 + 3 -: 4] * 32 + (72 - dx) / 2 + (y_pos - 266) / 2 * 320;
+                addra = status[20 + i * 4 + 3 -: 4] * 32 + (70 - dx) / 2 + (y_pos - 266) / 2 * 320;
                 if (8 <= dx && dx <=72) begin
                     if (binary_pixel) begin
                         if (selected / 4 == i + 5 && selecting && game_end == 2'h0) begin

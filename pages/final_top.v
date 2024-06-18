@@ -30,7 +30,8 @@ module final_top(input sys_clk,
     integer zero2;
     integer selected = 0;
     integer cur_select = 0;
-    wire [3:0] predict_value = ($signed(status[cur_select +3-:4]) + $signed(status[selected +3-:4])) % 10;
+    wire [4:0] tmp_add = {1'b0, status[cur_select +3-:4]} + {1'b0, status[selected +3-:4]};
+    wire [3:0] predict_value = tmp_add > 5'd9 ? tmp_add - 5'd10 : tmp_add;
     // ctrl_transfer #(.WIDTH(16)) ctrl_transfer_inst1(.enable(page_status == 2'b0), .data_in(btns), .data_out(btns_pending[0]));
     // ctrl_transfer #(.WIDTH(16)) ctrl_transfer_inst2(.enable(page_status == 2'h2), .data_in(btns), .data_out(btns_pending[2]));
     PS2 PS2_inst(
@@ -199,7 +200,7 @@ module final_top(input sys_clk,
                             if (status[cur_select+3-:4] == 4'h0) begin
                                 
                             end else begin
-                                status [cur_select + 3-:4] = predict_value;
+                                status [cur_select+3-:4] = predict_value;
                                 if (status[selected + 3-:4] == 4'h0) begin
                                     add_zero = {add_zero[0], 1'b1};
                                 end else begin
