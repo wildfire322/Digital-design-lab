@@ -92,7 +92,8 @@ module final_top(input sys_clk,
     .selecting(selecting),
     .cur_select(cur_select),
     .selected(selected),
-    )
+    .pixel_data(pixel_data_pending[3])
+    );
     // always @(posedge btns[0]) begin  
     //     page_status = page_status + 2'b1;
     // end
