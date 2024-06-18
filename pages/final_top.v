@@ -28,7 +28,7 @@ module final_top(input sys_clk,
     reg [1:0]game_end = 2'h0;
     integer selected = 0;
     integer cur_select = 0;
-    wire [3:0] predict_value = ($signed(status[cur_select +4-:4]) + $signed(status[selected +4-:4])) % 10;
+    wire [3:0] predict_value = ($signed(status[cur_select +3-:4]) + $signed(status[selected +3-:4])) % 10;
     // ctrl_transfer #(.WIDTH(16)) ctrl_transfer_inst1(.enable(page_status == 2'b0), .data_in(btns), .data_out(btns_pending[0]));
     // ctrl_transfer #(.WIDTH(16)) ctrl_transfer_inst2(.enable(page_status == 2'h2), .data_in(btns), .data_out(btns_pending[2]));
     PS2 PS2_inst(
@@ -81,7 +81,18 @@ module final_top(input sys_clk,
     .disp_num(total_number),
     .pixel_data(pixel_data_pending[2])
     );
-
+    page_game page_game_inst(
+    .vga_clk(vga_clk),
+    .vga_rst(vga_rst),
+    .x_pos(x_pos),
+    .y_pos(y_pos),
+    .total_number(total_number),
+    .status(status),
+    .predict(predict_value),
+    .selecting(selecting),
+    .cur_select(cur_select),
+    .selected(selected),
+    )
     // always @(posedge btns[0]) begin  
     //     page_status = page_status + 2'b1;
     // end
@@ -98,7 +109,7 @@ module final_top(input sys_clk,
                     game_end = 2'h0;
                 end
                 2'h3: begin
-                    if(cur_select<=4*(num-1))begin //在第一行，溢出
+                    if(cur_select<=4*(total_number-1))begin //在第一行，溢出
                         cur_select=cur_select+20; //移到第二行
                     end
                     else begin
@@ -116,10 +127,10 @@ module final_top(input sys_clk,
                 end
                 2'h3: begin
                     if(cur_select == 0)begin 
-                        cur_select=(num - 1) * 4; 
+                        cur_select=(total_number - 1) * 4; 
                     end
                     else if (cur_select == 20) begin
-                        cur_select=20 + (num - 1) * 4;
+                        cur_select=20 + (total_number - 1) * 4;
                     end else begin
                         cur_select = cur_select - 4;
                     end
@@ -134,10 +145,10 @@ module final_top(input sys_clk,
                     end
                 end
                 2'h3: begin
-                    if(cur_select==20 + 4 * (num - 1))begin //溢出
+                    if(cur_select==20 + 4 * (total_number - 1))begin //溢出
                         cur_select=20; //移动到第一个
                     end
-                    else if(cur_select == 4 * (num - 1)) begin
+                    else if(cur_select == 4 * (total_number - 1)) begin
                         cur_select=0;
                     end else begin
                         cur_select=cur_select+4;
@@ -175,24 +186,24 @@ module final_top(input sys_clk,
                                 cur_select = selected ^ cur_select;
                                 // 异或交换大法，cur_select为操纵玩家的当前的值，selected为计划增加的值
                             end
-                            if (status[cur_select+4-:4] == 4'h0) begin
+                            if (status[cur_select+3-:4] == 4'h0) begin
                                 
                             end else begin
-                                status [cur_select + 4-:4] = predict_value;
-                                if (status[selected + 4-:4] == 4'h0) begin
+                                status [cur_select + 3-:4] = predict_value;
+                                if (status[selected + 3-:4] == 4'h0) begin
                                     add_zero = {add_zero[0], 1'b1};
                                 end else begin
                                     add_zero = {add_zero[0], 1'b0};
                                 end
+                                cur_player = ~cur_player;
                             end
                         end
-                        cur_player = ~cur_player;
-                        if (&status[0+:num * 4] == 1'b0) begin
+                        if (&status[0+:total_number * 4] == 1'b0) begin
                             game_end = 2'h1; // 玩家1获胜
-                        end else if (&status[20+:num * 4] == 1'b0)begin
+                        end else if (&status[20+:total_number * 4] == 1'b0)begin
                             game_end = 2'h2; // 玩家2获胜
                         end else if (&add_zero == 1'b1) begin
-                            game_end = 2'h3; // 玩家3获胜
+                            game_end = 2'h3; // 平局
                         end
                     end
                     selecting = ~selecting;
