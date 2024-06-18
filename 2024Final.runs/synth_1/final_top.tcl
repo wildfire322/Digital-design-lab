@@ -94,6 +94,7 @@ add_files F:/LDFEXP/2024Final/img/help_menu_2.png_data.coe
 add_files F:/LDFEXP/2024Final/img/config_menu.png_data.coe
 read_verilog -library xil_defaultlib {
   F:/LDFEXP/2024Final/keybroad/PS2.v
+  F:/LDFEXP/2024Final/buzzer.v
   F:/LDFEXP/2024Final/clkdiv.v
   F:/LDFEXP/2024Final/keybroad/mat_key.v
   F:/LDFEXP/2024Final/pages/page_config.v

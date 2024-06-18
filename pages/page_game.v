@@ -15,6 +15,7 @@ module page_game(input vga_clk,
                  output reg [11:0] pixel_data); // 蓝蓝蓝蓝绿绿绿绿红红红红
     // x_pos in (0, 639), y_pos in (0, 479)
     reg [14:0] addra;
+    wire [11:0] pixel;
     wire binary_pixel;
     blk_mem_num_font font_data(
         .clka(~vga_clk),
@@ -43,11 +44,29 @@ module page_game(input vga_clk,
                             pixel_data <= 12'h000;
                         end
                     end else begin
-                        if (~cur_player) begin
+                        if (game_end != 2'h0) begin
+                            if (game_end == 2'h1) begin
+                                pixel_data <= 12'hff0;
+                            end else begin
+                                pixel_data <= 12'hfff;
+                            end
+                        end else if (~cur_player) begin
                             pixel_data <= 12'haaa;
                         end else begin
                             pixel_data <= 12'hfff;
                         end
+                    end
+                end else begin
+                    if (game_end != 2'h0) begin
+                        if (game_end == 2'h1) begin
+                            pixel_data <= 12'hff0;
+                        end else begin
+                            pixel_data <= 12'hfff;
+                        end
+                    end else if (~cur_player) begin
+                        pixel_data <= 12'haaa;
+                    end else begin
+                        pixel_data <= 12'hfff;
                     end
                 end
                 if (((dx < 4 || dx >= 76) || (y_pos < 90 || y_pos >= 210)) && cur_select / 4 == i && game_end == 2'h0)begin
@@ -65,11 +84,29 @@ module page_game(input vga_clk,
                             pixel_data <= 12'h000;
                         end
                     end else begin
-                        if (cur_player) begin
+                        if (game_end != 2'h0) begin
+                            if (game_end == 2'h2) begin
+                                pixel_data <= 12'hff0;
+                            end else begin
+                                pixel_data <= 12'hfff;
+                            end
+                        end else if (cur_player) begin
                             pixel_data <= 12'haaa;
                         end else begin
                             pixel_data <= 12'hfff;
                         end
+                    end
+                end else begin
+                    if (game_end != 2'h0) begin
+                        if (game_end == 2'h2) begin
+                            pixel_data <= 12'hff0;
+                        end else begin
+                            pixel_data <= 12'hfff;
+                        end
+                    end else if (cur_player) begin
+                        pixel_data <= 12'haaa;
+                    end else begin
+                        pixel_data <= 12'hfff;
                     end
                 end
                 if (((dx < 4 || dx >= 76) || (y_pos < 270 || y_pos >= 390)) && cur_select / 4 == i + 5 && game_end == 2'h0)begin

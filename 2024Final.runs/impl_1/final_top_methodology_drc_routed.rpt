@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Tue Jun 18 14:15:23 2024
+| Date         : Tue Jun 18 15:17:50 2024
 | Host         : NP running 64-bit major release  (build 9200)
 | Command      : report_methodology -file final_top_methodology_drc_routed.rpt -pb final_top_methodology_drc_routed.pb -rpx final_top_methodology_drc_routed.rpx
 | Design       : final_top
@@ -23,13 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 741
+             Violations found: 742
 +-----------+------------------+------------------------------------------------------+------------+
 | Rule      | Severity         | Description                                          | Violations |
 +-----------+------------------+------------------------------------------------------+------------+
 | TIMING-17 | Critical Warning | Non-clocked sequential cell                          | 735        |
 | SYNTH-14  | Warning          | DSP cannot absorb non-zero init register             | 1          |
-| TIMING-18 | Warning          | Missing input or output delay                        | 3          |
+| TIMING-18 | Warning          | Missing input or output delay                        | 4          |
 | XDCC-4    | Warning          | User Clock constraint overwritten with the same name | 1          |
 | XDCC-8    | Warning          | User Clock constraint overwritten on the same source | 1          |
 +-----------+------------------+------------------------------------------------------+------------+
@@ -3729,6 +3729,11 @@ Related violations: <none>
 TIMING-18#3 Warning
 Missing input or output delay  
 An input delay is missing on sys_rst relative to the rising and/or falling clock edge(s) of sys_clk.
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An output delay is missing on buzzer_pin relative to the rising and/or falling clock edge(s) of sys_clk.
 Related violations: <none>
 
 XDCC-4#1 Warning

@@ -7,18 +7,18 @@
   set page(numbering: "第1页/共1页")
   set align(center)
   set text(14pt)
-  set text(font: "Noto Sans SC") // 需要下载思源黑体，可以在github上找到免费下载
+  set text(font: "Noto Serif SC") // 需要下载思源黑体，可以在github上找到免费下载
   set text(lang: "zh")
   show figure: set block(breakable: true)
   show figure.where(kind: raw): set figure.caption(position: top)
   show raw: it =>{
-    set text(font: ("Fira Code", "Noto Sans SC"))
+    set text(font: ("Fira Code", "Noto Serif SC"))
     it
   }
   show raw.where(block: false): box.with(fill: luma(224), inset: (x: 0.3em),outset: (y: 0.3em), radius: 0.3em)
   show raw.where(block: true): it => {
     set par(justify: false); 
-    set text(font: ("Fira Code", "Noto Sans SC"))
+    set text(font: ("Fira Code", "Noto Serif SC"))
     
     block(
       inset: 0.5em,
@@ -78,10 +78,10 @@
   ]
   
   set text(size: 12pt)
-  set text(font: "Noto Sans SC")
+  set text(font: "Noto Serif SC")
   set align(left)
   
-  set page(header: [数字逻辑设计 #h(1fr) 浙江大学课程设计报告 \ #v(-1em) #line(length: 100%)])
+  set page(header: [#line(length: 100%) #v(-1em) 数字逻辑设计 #h(1fr) 浙江大学课程设计报告 \ #v(-1em) #line(length: 100%)])
   set heading(numbering: "1.")
   text(18pt, align(center, strong([目录])))
   text(14pt, outline(indent: (level) => level * 1em, title: none))

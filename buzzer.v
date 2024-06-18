@@ -183,7 +183,7 @@ module buzzer (
                             tone_counter <= tone_counter + 1;
                         end
                     end else begin
-                        buzzer_pin <= 0;  期间关闭蜂鸣器
+                        buzzer_pin <= 0;
                     end
                 end
             end

@@ -6,7 +6,9 @@ module final_top(input sys_clk,
                  output [3:0] BTNX,
                  output h_sync,
                  output v_sync,
-                 output [11:0] pixel_data);
+                 output [11:0] pixel_data,
+                 output buzzer_pin);
+
     wire vga_clk;
     wire rst;
     reg [4:0] prev_keys;
@@ -255,6 +257,11 @@ module final_top(input sys_clk,
     .pixel_data(pixel_data),
     .h_sync(h_sync),
     .v_sync(v_sync)
+    );
+    buzzer buzzer_inst(
+        .clk(sys_clk),
+        .S1(game_end == 2'h0 || game_end == 2'h3),
+        .buzzer_pin(buzzer_pin)
     );
     
 endmodule

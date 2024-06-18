@@ -84,3 +84,5 @@ set_property src_info {type:XDC file:2 line:68 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN V14 [get_ports BTNY[1]]
 set_property src_info {type:XDC file:2 line:70 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN W14 [get_ports BTNY[0]]
+set_property src_info {type:XDC file:2 line:73 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN AF25 [get_ports buzzer_pin]

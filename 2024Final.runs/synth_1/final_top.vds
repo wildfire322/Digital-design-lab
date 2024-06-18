@@ -3,8 +3,8 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Tue Jun 18 14:11:57 2024
-# Process ID: 9340
+# Start of session at: Tue Jun 18 15:14:40 2024
+# Process ID: 38796
 # Current directory: F:/LDFEXP/2024Final/2024Final.runs/synth_1
 # Command line: vivado.exe -log final_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source final_top.tcl
 # Log file: F:/LDFEXP/2024Final/2024Final.runs/synth_1/final_top.vds
@@ -12,7 +12,7 @@
 # Running On: NP, OS: Windows, CPU Frequency: 3187 MHz, CPU Physical cores: 4, Host memory: 16952 MB
 #-----------------------------------------------------------
 source final_top.tcl -notrace
-create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 473.293 ; gain = 178.945
+create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 474.031 ; gain = 178.477
 Command: read_checkpoint -auto_incremental -incremental F:/LDFEXP/2024Final/2024Final.srcs/utils_1/imports/synth_1/vga_test_top.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from F:/LDFEXP/2024Final/2024Final.srcs/utils_1/imports/synth_1/vga_test_top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -25,58 +25,62 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 24016
+INFO: [Synth 8-7075] Helper process launched with PID 26024
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1349.309 ; gain = 441.051
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1349.605 ; gain = 439.957
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-11241] undeclared symbol 'vga_rst', assumed default net type 'wire' [F:/LDFEXP/2024Final/pages/final_top.v:66]
+INFO: [Synth 8-11241] undeclared symbol 'vga_rst', assumed default net type 'wire' [F:/LDFEXP/2024Final/pages/final_top.v:68]
 INFO: [Synth 8-6157] synthesizing module 'final_top' [F:/LDFEXP/2024Final/pages/final_top.v:1]
 INFO: [Synth 8-6157] synthesizing module 'PS2' [F:/LDFEXP/2024Final/keybroad/PS2.v:1]
 INFO: [Synth 8-155] case statement is not full and has no default [F:/LDFEXP/2024Final/keybroad/PS2.v:91]
 INFO: [Synth 8-6155] done synthesizing module 'PS2' (0#1) [F:/LDFEXP/2024Final/keybroad/PS2.v:1]
-WARNING: [Synth 8-7071] port 'enter' of module 'PS2' is unconnected for instance 'PS2_inst' [F:/LDFEXP/2024Final/pages/final_top.v:37]
-WARNING: [Synth 8-7023] instance 'PS2_inst' of module 'PS2' has 10 connections declared, but only 9 given [F:/LDFEXP/2024Final/pages/final_top.v:37]
+WARNING: [Synth 8-7071] port 'enter' of module 'PS2' is unconnected for instance 'PS2_inst' [F:/LDFEXP/2024Final/pages/final_top.v:39]
+WARNING: [Synth 8-7023] instance 'PS2_inst' of module 'PS2' has 10 connections declared, but only 9 given [F:/LDFEXP/2024Final/pages/final_top.v:39]
 INFO: [Synth 8-6157] synthesizing module 'page_main' [F:/LDFEXP/2024Final/pages/page_main.v:1]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_main_menu' [F:/LDFEXP/2024Final/2024Final.runs/synth_1/.Xil/Vivado-9340-NP/realtime/blk_mem_main_menu_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_main_menu' (0#1) [F:/LDFEXP/2024Final/2024Final.runs/synth_1/.Xil/Vivado-9340-NP/realtime/blk_mem_main_menu_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_main_menu' [F:/LDFEXP/2024Final/2024Final.runs/synth_1/.Xil/Vivado-38796-NP/realtime/blk_mem_main_menu_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_main_menu' (0#1) [F:/LDFEXP/2024Final/2024Final.runs/synth_1/.Xil/Vivado-38796-NP/realtime/blk_mem_main_menu_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'page_main' (0#1) [F:/LDFEXP/2024Final/pages/page_main.v:1]
 INFO: [Synth 8-6157] synthesizing module 'page_help' [F:/LDFEXP/2024Final/pages/page_help.v:1]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_help_menu' [F:/LDFEXP/2024Final/2024Final.runs/synth_1/.Xil/Vivado-9340-NP/realtime/blk_mem_help_menu_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_help_menu' (0#1) [F:/LDFEXP/2024Final/2024Final.runs/synth_1/.Xil/Vivado-9340-NP/realtime/blk_mem_help_menu_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_help_menu' [F:/LDFEXP/2024Final/2024Final.runs/synth_1/.Xil/Vivado-38796-NP/realtime/blk_mem_help_menu_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_help_menu' (0#1) [F:/LDFEXP/2024Final/2024Final.runs/synth_1/.Xil/Vivado-38796-NP/realtime/blk_mem_help_menu_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'page_help' (0#1) [F:/LDFEXP/2024Final/pages/page_help.v:1]
 INFO: [Synth 8-6157] synthesizing module 'page_config' [F:/LDFEXP/2024Final/pages/page_config.v:1]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_config_menu' [F:/LDFEXP/2024Final/2024Final.runs/synth_1/.Xil/Vivado-9340-NP/realtime/blk_mem_config_menu_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_config_menu' (0#1) [F:/LDFEXP/2024Final/2024Final.runs/synth_1/.Xil/Vivado-9340-NP/realtime/blk_mem_config_menu_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_num_font' [F:/LDFEXP/2024Final/2024Final.runs/synth_1/.Xil/Vivado-9340-NP/realtime/blk_mem_num_font_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_num_font' (0#1) [F:/LDFEXP/2024Final/2024Final.runs/synth_1/.Xil/Vivado-9340-NP/realtime/blk_mem_num_font_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_config_menu' [F:/LDFEXP/2024Final/2024Final.runs/synth_1/.Xil/Vivado-38796-NP/realtime/blk_mem_config_menu_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_config_menu' (0#1) [F:/LDFEXP/2024Final/2024Final.runs/synth_1/.Xil/Vivado-38796-NP/realtime/blk_mem_config_menu_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_num_font' [F:/LDFEXP/2024Final/2024Final.runs/synth_1/.Xil/Vivado-38796-NP/realtime/blk_mem_num_font_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_num_font' (0#1) [F:/LDFEXP/2024Final/2024Final.runs/synth_1/.Xil/Vivado-38796-NP/realtime/blk_mem_num_font_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'page_config' (0#1) [F:/LDFEXP/2024Final/pages/page_config.v:1]
-WARNING: [Synth 8-7071] port 'keys' of module 'page_config' is unconnected for instance 'page_config_inst' [F:/LDFEXP/2024Final/pages/final_top.v:79]
-WARNING: [Synth 8-7071] port 'btns' of module 'page_config' is unconnected for instance 'page_config_inst' [F:/LDFEXP/2024Final/pages/final_top.v:79]
-WARNING: [Synth 8-7023] instance 'page_config_inst' of module 'page_config' has 8 connections declared, but only 6 given [F:/LDFEXP/2024Final/pages/final_top.v:79]
+WARNING: [Synth 8-7071] port 'keys' of module 'page_config' is unconnected for instance 'page_config_inst' [F:/LDFEXP/2024Final/pages/final_top.v:81]
+WARNING: [Synth 8-7071] port 'btns' of module 'page_config' is unconnected for instance 'page_config_inst' [F:/LDFEXP/2024Final/pages/final_top.v:81]
+WARNING: [Synth 8-7023] instance 'page_config_inst' of module 'page_config' has 8 connections declared, but only 6 given [F:/LDFEXP/2024Final/pages/final_top.v:81]
 INFO: [Synth 8-6157] synthesizing module 'page_game' [F:/LDFEXP/2024Final/pages/page_game.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'page_game' (0#1) [F:/LDFEXP/2024Final/pages/page_game.v:1]
-INFO: [Synth 8-155] case statement is not full and has no default [F:/LDFEXP/2024Final/pages/final_top.v:107]
-INFO: [Synth 8-155] case statement is not full and has no default [F:/LDFEXP/2024Final/pages/final_top.v:129]
-INFO: [Synth 8-155] case statement is not full and has no default [F:/LDFEXP/2024Final/pages/final_top.v:148]
-INFO: [Synth 8-155] case statement is not full and has no default [F:/LDFEXP/2024Final/pages/final_top.v:184]
+INFO: [Synth 8-155] case statement is not full and has no default [F:/LDFEXP/2024Final/pages/final_top.v:109]
+INFO: [Synth 8-155] case statement is not full and has no default [F:/LDFEXP/2024Final/pages/final_top.v:131]
+INFO: [Synth 8-155] case statement is not full and has no default [F:/LDFEXP/2024Final/pages/final_top.v:150]
+INFO: [Synth 8-155] case statement is not full and has no default [F:/LDFEXP/2024Final/pages/final_top.v:186]
 INFO: [Synth 8-6157] synthesizing module 'mat_key' [F:/LDFEXP/2024Final/keybroad/mat_key.v:3]
 INFO: [Synth 8-155] case statement is not full and has no default [F:/LDFEXP/2024Final/keybroad/mat_key.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'mat_key' (0#1) [F:/LDFEXP/2024Final/keybroad/mat_key.v:3]
-WARNING: [Synth 8-7071] port 'sync_clk' of module 'mat_key' is unconnected for instance 'mat_key_inst' [F:/LDFEXP/2024Final/pages/final_top.v:234]
-WARNING: [Synth 8-7023] instance 'mat_key_inst' of module 'mat_key' has 5 connections declared, but only 4 given [F:/LDFEXP/2024Final/pages/final_top.v:234]
+WARNING: [Synth 8-7071] port 'sync_clk' of module 'mat_key' is unconnected for instance 'mat_key_inst' [F:/LDFEXP/2024Final/pages/final_top.v:236]
+WARNING: [Synth 8-7023] instance 'mat_key_inst' of module 'mat_key' has 5 connections declared, but only 4 given [F:/LDFEXP/2024Final/pages/final_top.v:236]
 INFO: [Synth 8-6157] synthesizing module 'clkdiv' [F:/LDFEXP/2024Final/clkdiv.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'clkdiv' (0#1) [F:/LDFEXP/2024Final/clkdiv.v:1]
 INFO: [Synth 8-6157] synthesizing module 'VGA' [F:/LDFEXP/2024Final/VGA/vga.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'VGA' (0#1) [F:/LDFEXP/2024Final/VGA/vga.v:1]
-WARNING: [Synth 8-689] width (10) of port connection 'row' does not match port width (9) of module 'VGA' [F:/LDFEXP/2024Final/pages/final_top.v:253]
-WARNING: [Synth 8-7071] port 'read_pixel' of module 'VGA' is unconnected for instance 'vga_inst' [F:/LDFEXP/2024Final/pages/final_top.v:249]
-WARNING: [Synth 8-7023] instance 'vga_inst' of module 'VGA' has 9 connections declared, but only 8 given [F:/LDFEXP/2024Final/pages/final_top.v:249]
+WARNING: [Synth 8-689] width (10) of port connection 'row' does not match port width (9) of module 'VGA' [F:/LDFEXP/2024Final/pages/final_top.v:255]
+WARNING: [Synth 8-7071] port 'read_pixel' of module 'VGA' is unconnected for instance 'vga_inst' [F:/LDFEXP/2024Final/pages/final_top.v:251]
+WARNING: [Synth 8-7023] instance 'vga_inst' of module 'VGA' has 9 connections declared, but only 8 given [F:/LDFEXP/2024Final/pages/final_top.v:251]
+INFO: [Synth 8-6157] synthesizing module 'buzzer' [F:/LDFEXP/2024Final/buzzer.v:1]
+WARNING: [Synth 8-311] ignoring non-constant assignment in initial block [F:/LDFEXP/2024Final/buzzer.v:145]
+INFO: [Synth 8-6155] done synthesizing module 'buzzer' (0#1) [F:/LDFEXP/2024Final/buzzer.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'final_top' (0#1) [F:/LDFEXP/2024Final/pages/final_top.v:1]
 WARNING: [Synth 8-6014] Unused sequential element data_done_reg was removed.  [F:/LDFEXP/2024Final/keybroad/PS2.v:65]
-WARNING: [Synth 8-6014] Unused sequential element i_reg was removed.  [F:/LDFEXP/2024Final/pages/page_game.v:35]
-WARNING: [Synth 8-6014] Unused sequential element dx_reg was removed.  [F:/LDFEXP/2024Final/pages/page_game.v:36]
-WARNING: [Synth 8-7137] Register addra_reg in module page_game has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [F:/LDFEXP/2024Final/pages/page_game.v:21]
-WARNING: [Synth 8-3848] Net vga_rst in module/entity final_top does not have driver. [F:/LDFEXP/2024Final/pages/final_top.v:66]
+WARNING: [Synth 8-6014] Unused sequential element i_reg was removed.  [F:/LDFEXP/2024Final/pages/page_game.v:36]
+WARNING: [Synth 8-6014] Unused sequential element dx_reg was removed.  [F:/LDFEXP/2024Final/pages/page_game.v:37]
+WARNING: [Synth 8-7137] Register addra_reg in module page_game has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [F:/LDFEXP/2024Final/pages/page_game.v:22]
+WARNING: [Synth 8-6014] Unused sequential element tone_duration_reg was removed.  [F:/LDFEXP/2024Final/buzzer.v:153]
+WARNING: [Synth 8-3848] Net vga_rst in module/entity final_top does not have driver. [F:/LDFEXP/2024Final/pages/final_top.v:68]
 WARNING: [Synth 8-7129] Port predict[3] in module page_game is either unconnected or has no load
 WARNING: [Synth 8-7129] Port predict[2] in module page_game is either unconnected or has no load
 WARNING: [Synth 8-7129] Port predict[1] in module page_game is either unconnected or has no load
@@ -131,18 +135,18 @@ WARNING: [Synth 8-7129] Port disp_num[6] in module page_config is either unconne
 WARNING: [Synth 8-7129] Port disp_num[5] in module page_config is either unconnected or has no load
 WARNING: [Synth 8-7129] Port disp_num[4] in module page_config is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1471.656 ; gain = 563.398
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1474.574 ; gain = 564.926
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1471.656 ; gain = 563.398
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1474.574 ; gain = 564.926
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1471.656 ; gain = 563.398
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1474.574 ; gain = 564.926
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1471.656 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1474.574 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -168,22 +172,22 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/final_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1547.980 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1577.852 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1547.980 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1577.852 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:15 . Memory (MB): peak = 1547.980 ; gain = 639.723
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 1577.852 ; gain = 668.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k160tffg676-2L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:15 . Memory (MB): peak = 1547.980 ; gain = 639.723
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 1577.852 ; gain = 668.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -194,7 +198,7 @@ Applied set_property KEEP_HIERARCHY = SOFT for page_main_inst/main_menu_data. (c
 Applied set_property KEEP_HIERARCHY = SOFT for page_help_inst/help_menu_data. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for page_config_inst/config_menu_data. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:15 . Memory (MB): peak = 1547.980 ; gain = 639.723
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 1577.852 ; gain = 668.203
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[0][0]' and it is trimmed from '8' to '7' bits. [F:/LDFEXP/2024Final/keybroad/mat_key.v:33]
 WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[0][1]' and it is trimmed from '8' to '7' bits. [F:/LDFEXP/2024Final/keybroad/mat_key.v:33]
@@ -212,8 +216,9 @@ WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[3][0]' a
 WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[3][1]' and it is trimmed from '8' to '7' bits. [F:/LDFEXP/2024Final/keybroad/mat_key.v:33]
 WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[3][2]' and it is trimmed from '8' to '7' bits. [F:/LDFEXP/2024Final/keybroad/mat_key.v:33]
 WARNING: [Synth 8-3936] Found unconnected internal register 'buffer_reg[3][3]' and it is trimmed from '8' to '7' bits. [F:/LDFEXP/2024Final/keybroad/mat_key.v:33]
+WARNING: [Synth 8-6040] Register note_index_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:16 . Memory (MB): peak = 1547.980 ; gain = 639.723
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:17 . Memory (MB): peak = 1577.852 ; gain = 668.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -221,7 +226,7 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   3 Input   33 Bit       Adders := 1     
-	   2 Input   32 Bit       Adders := 16    
+	   2 Input   32 Bit       Adders := 17    
 	   3 Input   32 Bit       Adders := 1     
 	   4 Input   32 Bit       Adders := 1     
 	   2 Input   27 Bit       Adders := 1     
@@ -233,7 +238,8 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit         XORs := 3     
 +---Registers : 
 	               40 Bit    Registers := 1     
-	               32 Bit    Registers := 3     
+	               32 Bit    Registers := 4     
+	               19 Bit    Registers := 1     
 	               16 Bit    Registers := 1     
 	               15 Bit    Registers := 1     
 	               12 Bit    Registers := 5     
@@ -244,18 +250,19 @@ Detailed RTL Component Info :
 	                5 Bit    Registers := 1     
 	                4 Bit    Registers := 6     
 	                2 Bit    Registers := 3     
-	                1 Bit    Registers := 17    
+	                1 Bit    Registers := 20    
 +---Multipliers : 
 	               6x32  Multipliers := 1     
 	               7x26  Multipliers := 1     
 +---Muxes : 
 	   2 Input   40 Bit        Muxes := 11    
 	   2 Input   32 Bit        Muxes := 15    
+	   2 Input   26 Bit        Muxes := 1     
+	   2 Input   19 Bit        Muxes := 2     
 	   2 Input   16 Bit        Muxes := 3     
 	   2 Input   15 Bit        Muxes := 1     
-	   2 Input   12 Bit        Muxes := 6     
-	   3 Input   12 Bit        Muxes := 2     
-	   4 Input   12 Bit        Muxes := 1     
+	   2 Input   12 Bit        Muxes := 10    
+	   4 Input   12 Bit        Muxes := 3     
 	   2 Input    8 Bit        Muxes := 3     
 	   2 Input    6 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 3     
@@ -292,6 +299,7 @@ DSP Report: operator addra_menu0 is absorbed into DSP addra_menu.
 DSP Report: Generating DSP p_1_out, operation Mode is: C+A*(B:0x140).
 DSP Report: operator p_1_out is absorbed into DSP p_1_out.
 DSP Report: operator p_0_out is absorbed into DSP p_1_out.
+WARNING: [Synth 8-6040] Register note_index_reg_rep_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
 DSP Report: Generating DSP page_main_inst/addra, operation Mode is: C+(A:0x280)*B.
 DSP Report: operator page_main_inst/addra is absorbed into DSP page_main_inst/addra.
 DSP Report: operator page_main_inst/addra0 is absorbed into DSP page_main_inst/addra.
@@ -344,7 +352,7 @@ WARNING: [Synth 8-7129] Port disp_num[15] in module page_config is either unconn
 WARNING: [Synth 8-7129] Port disp_num[14] in module page_config is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:27 . Memory (MB): peak = 1547.980 ; gain = 639.723
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:29 . Memory (MB): peak = 1577.852 ; gain = 668.203
 ---------------------------------------------------------------------------------
  Sort Area is  addra_number_0 : 0 0 : 186 186 : Used 1 time 0
  Sort Area is  p_1_out_4 : 0 0 : 186 186 : Used 1 time 0
@@ -353,6 +361,15 @@ Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elaps
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|buzzer      | melody     | 128x19        | LUT            | 
+|buzzer      | melody     | 128x19        | LUT            | 
++------------+------------+---------------+----------------+
+
 
 DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
 +------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
@@ -373,19 +390,19 @@ Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-565] redefining clock 'sys_clk'
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:37 . Memory (MB): peak = 1547.980 ; gain = 639.723
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:37 . Memory (MB): peak = 1577.852 ; gain = 668.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:37 . Memory (MB): peak = 1547.980 ; gain = 639.723
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:38 . Memory (MB): peak = 1577.852 ; gain = 668.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:39 . Memory (MB): peak = 1547.980 ; gain = 639.723
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:39 . Memory (MB): peak = 1577.852 ; gain = 668.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -403,37 +420,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:45 . Memory (MB): peak = 1552.340 ; gain = 644.082
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:43 . Memory (MB): peak = 1577.852 ; gain = 668.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:45 . Memory (MB): peak = 1552.340 ; gain = 644.082
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:43 . Memory (MB): peak = 1577.852 ; gain = 668.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:46 . Memory (MB): peak = 1552.340 ; gain = 644.082
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:43 . Memory (MB): peak = 1577.852 ; gain = 668.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:46 . Memory (MB): peak = 1552.340 ; gain = 644.082
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:43 . Memory (MB): peak = 1577.852 ; gain = 668.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:46 . Memory (MB): peak = 1552.340 ; gain = 644.082
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:43 . Memory (MB): peak = 1577.852 ; gain = 668.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:46 . Memory (MB): peak = 1552.340 ; gain = 644.082
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:43 . Memory (MB): peak = 1577.852 ; gain = 668.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -469,43 +486,44 @@ Report Cell Usage:
 |3     |blk_mem_main_menu   |     1|
 |4     |blk_mem_num_font    |     2|
 |6     |BUFG                |     3|
-|7     |CARRY4              |   315|
+|7     |CARRY4              |   353|
 |8     |DSP48E1             |     4|
-|10    |LUT1                |   184|
-|11    |LUT2                |   525|
-|12    |LUT3                |   185|
-|13    |LUT4                |   288|
-|14    |LUT5                |   378|
-|15    |LUT6                |   666|
-|16    |MUXF7               |     4|
-|17    |MUXF8               |     1|
+|10    |LUT1                |   188|
+|11    |LUT2                |   579|
+|12    |LUT3                |   204|
+|13    |LUT4                |   332|
+|14    |LUT5                |   365|
+|15    |LUT6                |   716|
+|16    |MUXF7               |     6|
+|17    |MUXF8               |     2|
 |18    |FDCE                |    21|
-|19    |FDRE                |   350|
-|20    |IBUF                |     4|
-|21    |OBUF                |    18|
+|19    |FDRE                |   469|
+|20    |FDSE                |     6|
+|21    |IBUF                |     4|
+|22    |OBUF                |    19|
 +------+--------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:46 . Memory (MB): peak = 1552.340 ; gain = 644.082
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:43 . Memory (MB): peak = 1577.852 ; gain = 668.203
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 75 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:44 . Memory (MB): peak = 1552.340 ; gain = 567.758
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:46 . Memory (MB): peak = 1552.340 ; gain = 644.082
+Synthesis finished with 0 errors, 0 critical warnings and 77 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:41 . Memory (MB): peak = 1577.852 ; gain = 564.926
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:44 . Memory (MB): peak = 1577.852 ; gain = 668.203
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 1564.461 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 324 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 1577.852 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 365 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1570.246 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1577.852 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 4e24cd6e
+Synth Design complete | Checksum: e10baa50
 INFO: [Common 17-83] Releasing license: Synthesis
-56 Infos, 134 Warnings, 0 Critical Warnings and 0 Errors encountered.
+58 Infos, 138 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:52 . Memory (MB): peak = 1570.246 ; gain = 1081.844
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1570.246 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:49 . Memory (MB): peak = 1577.852 ; gain = 1089.207
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1577.852 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'F:/LDFEXP/2024Final/2024Final.runs/synth_1/final_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file final_top_utilization_synth.rpt -pb final_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Jun 18 14:12:58 2024...
+INFO: [Common 17-206] Exiting Vivado at Tue Jun 18 15:15:38 2024...
