@@ -26,8 +26,9 @@ module final_top(input sys_clk,
     reg cur_player = 2'b0;
     reg [1:0] add_zero = 2'b0;
     reg [1:0]game_end = 2'h0;
-    integer selected = 0, cur_select = 0;
-    wire [3:0] predict_value = ($signed(status[cur_select +4-:]) + $signed(status[selected +4-:])) % 10;
+    integer selected = 0;
+    integer cur_select = 0;
+    wire [3:0] predict_value = ($signed(status[cur_select +4-:4]) + $signed(status[selected +4-:4])) % 10;
     // ctrl_transfer #(.WIDTH(16)) ctrl_transfer_inst1(.enable(page_status == 2'b0), .data_in(btns), .data_out(btns_pending[0]));
     // ctrl_transfer #(.WIDTH(16)) ctrl_transfer_inst2(.enable(page_status == 2'h2), .data_in(btns), .data_out(btns_pending[2]));
     PS2 PS2_inst(
@@ -95,13 +96,13 @@ module final_top(input sys_clk,
                     cur_player = 1'h0;
                     add_zero = 2'h0;
                     game_end = 2'h0;
+                end
                 2'h3: begin
-                        if(cur_select<=4*(num-1))begin //在第一行，溢出
-                            cur_select=cur_select+20; //移到第二行
-                        end
-                        else begin
-                            cur_select=cur_select-20;
-                        end
+                    if(cur_select<=4*(num-1))begin //在第一行，溢出
+                        cur_select=cur_select+20; //移到第二行
+                    end
+                    else begin
+                        cur_select=cur_select-20;
                     end
                 end
             endcase
@@ -112,15 +113,15 @@ module final_top(input sys_clk,
                     if (total_number <= 2) begin
                         total_number = 2;
                     end
+                end
                 2'h3: begin
-                        if(cur_select == 0)begin 
-                            cur_select=(num - 1) * 4; 
-                        end
-                        else if (cur_select == 20) begin
-                            cur_select=20 + (num - 1) * 4;
-                        end else begin
-                            cur_select = cur_select - 4;
-                        end
+                    if(cur_select == 0)begin 
+                        cur_select=(num - 1) * 4; 
+                    end
+                    else if (cur_select == 20) begin
+                        cur_select=20 + (num - 1) * 4;
+                    end else begin
+                        cur_select = cur_select - 4;
                     end
                 end
             endcase
@@ -131,15 +132,15 @@ module final_top(input sys_clk,
                     if (total_number >= 5) begin
                         total_number = 5;
                     end
+                end
                 2'h3: begin
-                        if(cur_select==20 + 4 * (num - 1))begin //溢出
-                            cur_select=20; //移动到第一个
-                        end
-                        else if(cur_select == 4 * (num - 1)) begin
-                            cur_select=0;
-                        end else begin
-                            cur_select=cur_select+4;
-                        end
+                    if(cur_select==20 + 4 * (num - 1))begin //溢出
+                        cur_select=20; //移动到第一个
+                    end
+                    else if(cur_select == 4 * (num - 1)) begin
+                        cur_select=0;
+                    end else begin
+                        cur_select=cur_select+4;
                     end
                 end
             endcase
@@ -149,14 +150,13 @@ module final_top(input sys_clk,
                 2'h2: page_status <= 2'h0;
                 2'h1: page_status <= 2'h0;
                 2'h3: begin
-                        if(cur_select>=20)begin //在第二行，溢出
-                            cur_select=cur_select-20; //移到第一行
-                        end
-                        else begin
-                            cur_select=cur_select+20;
-                        end
+                    if(cur_select>=20)begin //在第二行，溢出
+                        cur_select=cur_select-20; //移到第一行
                     end
-                
+                    else begin
+                        cur_select=cur_select+20;
+                    end
+                end
             endcase
         end else if (~prev_keys[4] & keys[4]) begin // space
             case (page_status)
@@ -178,7 +178,7 @@ module final_top(input sys_clk,
                             if (status[cur_select+4-:4] == 4'h0) begin
                                 
                             end else begin
-                                status [cur_select + 4-:4] = ($signed(status[cur_select + 4-:4]) + $signed(status[selected + 4-:4])) % 10;
+                                status [cur_select + 4-:4] = predict_value;
                                 if (status[selected + 4-:4] == 4'h0) begin
                                     add_zero = {add_zero[0], 1'b1};
                                 end else begin
@@ -195,7 +195,7 @@ module final_top(input sys_clk,
                             game_end = 2'h3; // 玩家3获胜
                         end
                     end
-                    selecting = ~selecting
+                    selecting = ~selecting;
                 end 
             endcase
         end

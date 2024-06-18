@@ -1,9 +1,14 @@
 module page_game(input vga_clk,
-                 input [4:0] keys,
                  input vga_rst,
                  input [9:0] x_pos,
                  input [9:0] y_pos,
-                 input [15:0] btns,
+                 // 显示相关
+                 input [39:0] status,
+                 input [3:0] predict;
+                 input selecting,
+                 input integer cur_select,
+                 input integer selected,
+
                  output reg [11:0] pixel_data); // 蓝蓝蓝蓝绿绿绿绿红红红红
     // x_pos in (0, 639), y_pos in (0, 479)
     wire [3:0] bcd_num = disp_num [3:0];
