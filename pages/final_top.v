@@ -21,7 +21,13 @@ module final_top(input sys_clk,
     reg [1:0] page_status = 2'h0;
     assign vga_clk        = counter[1];
     integer total_number = 2;
-    
+    reg status [39:0] = 40'h1111111111;
+    reg selecting = 0;
+    reg cur_player = 2'b0;
+    reg [1:0] add_zero = 2'b0;
+    reg [1:0]game_end = 2'h0;
+    integer selected = 0, cur_select = 0;
+    wire [3:0] predict_value = ($signed(status[cur_select +4-:]) + $signed(status[selected +4-:])) % 10;
     // ctrl_transfer #(.WIDTH(16)) ctrl_transfer_inst1(.enable(page_status == 2'b0), .data_in(btns), .data_out(btns_pending[0]));
     // ctrl_transfer #(.WIDTH(16)) ctrl_transfer_inst2(.enable(page_status == 2'h2), .data_in(btns), .data_out(btns_pending[2]));
     PS2 PS2_inst(
@@ -79,35 +85,119 @@ module final_top(input sys_clk,
     //     page_status = page_status + 2'b1;
     // end
     always @(posedge counter[6]) begin
-        if (~prev_keys[0] & keys[0]) begin
+        if (~prev_keys[0] & keys[0]) begin // up
             case (page_status)
                 2'h0: page_status <= 2'h2;
+                2'h2: begin 
+                    page_status <= 2'h3;
+                    status = 40'h1111111111;
+                    selecting = 1'h0;
+                    cur_player = 1'h0;
+                    add_zero = 2'h0;
+                    game_end = 2'h0;
+                2'h3: begin
+                        if(cur_select<=4*(num-1))begin //在第一行，溢出
+                            cur_select=cur_select+20; //移到第二行
+                        end
+                        else begin
+                            cur_select=cur_select-20;
+                        end
+                    end
+                end
             endcase
-        end else if (~prev_keys[1] & keys[1]) begin
+        end else if (~prev_keys[1] & keys[1]) begin // left
             case (page_status)
                 2'h2: begin
                     total_number = total_number - 1;
                     if (total_number <= 2) begin
                         total_number = 2;
                     end
+                2'h3: begin
+                        if(cur_select == 0)begin 
+                            cur_select=(num - 1) * 4; 
+                        end
+                        else if (cur_select == 20) begin
+                            cur_select=20 + (num - 1) * 4;
+                        end else begin
+                            cur_select = cur_select - 4;
+                        end
+                    end
                 end
             endcase
-        end else if (~prev_keys[2] & keys[2]) begin
+        end else if (~prev_keys[2] & keys[2]) begin //right
             case (page_status)
                 2'h2: begin
                     total_number = total_number + 1;
                     if (total_number >= 5) begin
                         total_number = 5;
                     end
+                2'h3: begin
+                        if(cur_select==20 + 4 * (num - 1))begin //溢出
+                            cur_select=20; //移动到第一个
+                        end
+                        else if(cur_select == 4 * (num - 1)) begin
+                            cur_select=0;
+                        end else begin
+                            cur_select=cur_select+4;
+                        end
+                    end
                 end
             endcase
-        end else if (~prev_keys[3] & keys[3]) begin
+        end else if (~prev_keys[3] & keys[3]) begin // down
             case (page_status)
                 2'h0: page_status <= 2'h1;
                 2'h2: page_status <= 2'h0;
                 2'h1: page_status <= 2'h0;
+                2'h3: begin
+                        if(cur_select>=20)begin //在第二行，溢出
+                            cur_select=cur_select-20; //移到第一行
+                        end
+                        else begin
+                            cur_select=cur_select+20;
+                        end
+                    end
+                
             endcase
-        end else if (~prev_keys[4] & keys[4]) begin
+        end else if (~prev_keys[4] & keys[4]) begin // space
+            case (page_status)
+                2'h3: begin
+                    if (game_end) begin
+                        
+                    end else if (~selecting) begin
+                        selected = cur_select;
+                    end else begin
+                        if ((selected <= 16 && cur_select <= 16) || (selected >= 20 && cur_select >= 20)) begin
+                            
+                        end else begin
+                            if (cur_select <= 16 && cur_player == 1 || cur_select >= 20 && cur_player == 0) begin
+                                cur_select = selected ^ cur_select;
+                                selected = selected ^ cur_select;
+                                cur_select = selected ^ cur_select;
+                                // 异或交换大法，cur_select为操纵玩家的当前的值，selected为计划增加的值
+                            end
+                            if (status[cur_select+4-:4] == 4'h0) begin
+                                
+                            end else begin
+                                status [cur_select + 4-:4] = ($signed(status[cur_select + 4-:4]) + $signed(status[selected + 4-:4])) % 10;
+                                if (status[selected + 4-:4] == 4'h0) begin
+                                    add_zero = {add_zero[0], 1'b1};
+                                end else begin
+                                    add_zero = {add_zero[0], 1'b0};
+                                end
+                            end
+                        end
+                        cur_player = ~cur_player;
+                        if (&status[0+:num * 4] == 1'b0) begin
+                            game_end = 2'h1; // 玩家1获胜
+                        end else if (&status[20+:num * 4] == 1'b0)begin
+                            game_end = 2'h2; // 玩家2获胜
+                        end else if (&add_zero == 1'b1) begin
+                            game_end = 2'h3; // 玩家3获胜
+                        end
+                    end
+                    selecting = ~selecting
+                end 
+            endcase
         end
         prev_keys = keys;
     end

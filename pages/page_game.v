@@ -19,9 +19,6 @@ module page_game(input vga_clk,
     );
 
 
-    reg [39:0] game_status = 40'h11111111;
-    reg [1:0] add_zero = 2'b00;
-
 
 
     always @(posedge vga_clk or posedge vga_rst) begin
