@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7k160tffg676-2L" LaunchTime="1718616192" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/vga_test_top.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7k160tffg676-2L" LaunchTime="1718690283" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/vga_test_top.dcp">
   <File Type="PA-TCL" Name="final_top.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="final_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="final_top_reports.tcl"/>
@@ -39,6 +39,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/pages/page_game.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/pages/page_help.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -65,6 +72,13 @@
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/vga_test_top.dcp">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/VGA/test_pic.v">
@@ -185,13 +199,6 @@
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/utils_1/imports/synth_1/vga_test_top.dcp">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
     <File Path="$PRUNDIR/synth_1/vga_test_top.dcp">

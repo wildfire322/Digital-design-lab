@@ -97,6 +97,7 @@ read_verilog -library xil_defaultlib {
   F:/LDFEXP/2024Final/clkdiv.v
   F:/LDFEXP/2024Final/keybroad/mat_key.v
   F:/LDFEXP/2024Final/pages/page_config.v
+  F:/LDFEXP/2024Final/pages/page_game.v
   F:/LDFEXP/2024Final/pages/page_help.v
   F:/LDFEXP/2024Final/pages/page_main.v
   F:/LDFEXP/2024Final/VGA/vga.v
@@ -111,7 +112,7 @@ set_property used_in_implementation false [get_files -all f:/LDFEXP/2024Final/20
 read_ip -quiet F:/LDFEXP/2024Final/2024Final.srcs/sources_1/ip/blk_mem_help_menu/blk_mem_help_menu.xci
 set_property used_in_implementation false [get_files -all f:/LDFEXP/2024Final/2024Final.gen/sources_1/ip/blk_mem_help_menu/blk_mem_help_menu_ooc.xdc]
 
-read_ip -quiet f:/LDFEXP/2024Final/2024Final.srcs/sources_1/ip/blk_mem_config_menu/blk_mem_config_menu.xci
+read_ip -quiet F:/LDFEXP/2024Final/2024Final.srcs/sources_1/ip/blk_mem_config_menu/blk_mem_config_menu.xci
 set_property used_in_implementation false [get_files -all f:/LDFEXP/2024Final/2024Final.gen/sources_1/ip/blk_mem_config_menu/blk_mem_config_menu_ooc.xdc]
 
 OPTRACE "Adding files" END { }
